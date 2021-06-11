@@ -2,160 +2,124 @@
 
 return [
     [
-        'restaurant_name' => 'Beer Condicio',
-        'description' => 'Birreria all\'aperto',
+        'name' => 'Beer Condicio',
         'VAT_number' => '12345678901',
         'address' => 'Corso Dante Alighieri, 76',
         'image' => 'beer-condicio.jpg',
         'rating' => 4.5,
         'reference_name' => 'Simone Verdi',
         'email' => 'beercondiciomolfetta@gmail.com',
-        'password' => '12345',
-        'phone_number' => '0804044847',
-        'visible' => true
+        'password' => '12345'
     ],
     [
-        'restaurant_name' => 'Sapemore',
-        'description' => 'Ristopub',
+        'name' => 'Sapemore',
         'VAT_number' => '23456789012',
         'address' => 'Via Cifariello, 5',
         'image' => 'sapemore.jpg',
         'rating' => 4.5,
         'reference_name' => 'Michele Bianchi',
         'email' => 'sapemoremolfetta@gmail.com',
-        'password' => '12345',
-        'phone_number' => '0804042788',
-        'visible' => true
+        'password' => '12345'
     ],
     [
-        'restaurant_name' => 'Erbavoglio Bistrot',
-        'description' => 'Bistrot',
+        'name' => 'Erbavoglio Bistrot',
         'VAT_number' => '34567890123',
         'address' => 'Piazza Principe di Napoli, 1/2',
         'image' => 'erbavoglio-bistrot.jpg',
         'rating' => 4.5,
         'reference_name' => 'Giacomo Marrone',
         'email' => 'erbavogliobistrot@gmail.com',
-        'password' => '12345',
-        'phone_number' => '0804039244',
-        'visible' => true
+        'password' => '12345'
     ],
     [
-        'restaurant_name' => 'XO',
-        'description' => 'Ristorante Italiano',
+        'name' => 'XO',
         'VAT_number' => '45678901234',
         'address' => 'Piazza Municipio, 6',
         'image' => 'xo-molfetta.jpg',
         'rating' => 4.3,
         'reference_name' => 'Stefania Lilla',
         'email' => 'xomolfetta@gmail.com',
-        'password' => '12345',
-        'phone_number' => '0804031756',
-        'visible' => true
+        'password' => '12345'
     ],
     [
-        'restaurant_name' => 'L\'Insolito',
-        'description' => 'Ristorante',
+        'name' => 'L\'Insolito',
         'VAT_number' => '93157323276',
         'address' => 'Viale Antonio Gramsci, 8',
         'image' => 'insolito.jpg',
         'rating' => 4.0,
         'reference_name' => 'Maria Moretti',
         'email' => 'insolitoristorante@gmail.com',
-        'password' => '45783934',
-        'phone_number' => '0962420229',
-        'visible' => true
+        'password' => '45783934'
     ],
     [
-        'restaurant_name' => 'A Ra Gghjàzza',
-        'description' => 'Trattoria',
+        'name' => 'A Ra Gghjàzza'
         'VAT_number' => '84664365671',
         'address' => 'Piazza Vittoria, 25',
         'image' => 'aragghjazza.jpg',
         'rating' => 4.2,
         'reference_name' => 'Sandro Merlo',
         'email' => 'aragghjazza@yahoo.com',
-        'password' => '45632494',
-        'phone_number' => '3206056466',
-        'visible' => true
+        'password' => '45632494'
     ],
     [
-        'restaurant_name' => 'Momò Pizzeria',
-        'description' => 'Pizzeria',
+        'name' => 'Momò Pizzeria'
         'VAT_number' => '34567890123',
         'address' => 'Viale Antonio Gramsci, 16',
         'image' => 'momopizzeria.jpg',
         'rating' => 4.0,
         'reference_name' => 'Milena Rossi',
         'email' => 'momopizzeria@gmail.com',
-        'password' => '54647745',
-        'phone_number' => '3488978217',
-        'visible' => true
+        'password' => '54647745'
     ],
     [
-        'restaurant_name' => 'I-Sushi',
-        'description' => 'Ristorante Giapponese',
+        'name' => 'I-Sushi'
         'VAT_number' => '76110193345',
         'address' => 'Via Chiodo, 79',
         'image' => 'isushi.jpg',
         'rating' => 4.5,
         'reference_name' => 'Renata Treccia',
         'email' => 'ishushiristorante@yahoo.com',
-        'password' => '75809087',
-        'phone_number' => '0187778304',
-        'visible' => true
+        'password' => '75809087'
     ],
     [
-        'restaurant_name' => 'L\'Arte della Tigella',
-        'description' => 'Tigelleria',
+        'name' => 'L\'Arte della Tigella'
         'VAT_number' => '66595527435',
         'address' => 'Via Bartolomeo Fazio, 63',
         'image' => 'arte-tigella.jpg',
         'rating' => 4.0,
         'reference_name' => 'Marco Mancini',
         'email' => 'artedellatigella@gmail.com',
-        'password' => '74573433',
-        'phone_number' => '01871508194',
-        'visible' => true
+        'password' => '74573433'
     ],
     [
-        'restaurant_name' => 'Pizza Gourmet',
-        'description' => 'Pizzeria',
+        'name' => 'Pizza Gourmet'
         'VAT_number' => '83951254511',
         'address' => 'Via dei Mille, 68',
         'image' => 'gourmet.jpg',
         'rating' => 4.0,
         'reference_name' => 'Rodolfo Stresa',
         'email' => 'pizzagourmet@gmail.com',
-        'password' => '86763334',
-        'phone_number' => '01871866598',
-        'visible' => true
+        'password' => '86763334'
     ],
     [
-        'restaurant_name' => 'Dai C\' Andam',
-        'description' => 'Risotteria',
+        'name' => 'Dai C\' Andam'
         'VAT_number' => '65407890123',
         'address' => 'Via Giovanni Battista Scanaroli, 22',
         'image' => 'daicandam.jpg',
         'rating' => 5.0,
         'reference_name' => 'Serena Bevilacqua',
         'email' => 'daicandam@hotmail.com',
-        'password' => '36345768',
-        'phone_number' => '3519954996',
-        'visible' => true
+        'password' => '36345768'
     ],
     [
-        'restaurant_name' => 'Sosta Emiliana',
-        'description' => 'Ristorante',
+        'name' => 'Sosta Emiliana'
         'VAT_number' => '53439249234',
         'address' => 'Piazza XX Settembre, 21',
         'image' => 'sosta-emiliana.jpg',
         'rating' => 4.0,
         'reference_name' => 'Margherita Bianco',
         'email' => 'sostaemiliana@gmail.com',
-        'password' => '2566763w',
-        'phone_number' => '0598676971',
-        'visible' => true
+        'password' => '2566763w'
     ],
 ];
 
