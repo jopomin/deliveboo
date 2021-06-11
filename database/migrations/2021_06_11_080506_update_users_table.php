@@ -34,6 +34,7 @@ class UpdateUsersTable extends Migration
             $table->dropColumn('address');
             $table->dropColumn('vat_number');
             $table->dropColumn('rating');
+            $table->dropColumn('image');
         });
     }
 }
