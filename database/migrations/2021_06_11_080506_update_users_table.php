@@ -18,6 +18,7 @@ class UpdateUsersTable extends Migration
             $table->string('address');
             $table->string('vat_number', 11)->unique();
             $table->float('rating', 2, 1)->nullable();
+            $table->text('image');
         });
     }
 
