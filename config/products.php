@@ -311,4 +311,314 @@ return
         'image' => '',
         'visible' => 1
     ],
+
+    [
+        'user_id' => 1,
+        'category_id' => 5,
+        'name' => 'Gnocco fritto con salumi',
+        'price' => 10,
+        'description' => 'Gnocco fritto accompagnato da coppa, prosciutto crudo e salame',
+        'image' => 'https://blog.giallozafferano.it/duecuorieunaleccarda/wp-content/uploads/2019/02/20180829_202335-960x1280.jpg',
+        'visible' => 0
+    ],
+
+    [
+        'user_id' => 1,
+        'category_id' => 5,
+        'name' => 'Filetto al pepe verde',
+        'price' => 17,
+        'description' => 'Filetto scelto di manzo leggermente grigliato e rosolato con pepe verde e aggiunta di panna',
+        'image' => 'https://www.giallozafferano.it/images/184-18454/Filetto-al-pepe-verde_650x433_wm.jpg',
+        'visible' => 1
+    ],
+
+    [
+        'user_id' => 1,
+        'category_id' => 6,
+        'name' => 'Tagliata di tonno con semi di sesamo',
+        'price' => 17,
+        'description' => 'Classica tagliata di tonno fresco con semi di sesamo',
+        'image' => 'https://blog.giallozafferano.it/pelledipollo/wp-content/uploads/2019/02/tagliata_tonno2.jpg',
+        'visible' => 0
+    ],
+    
+    [
+        'user_id' => 2,
+        'category_id' => 5,
+        'name' => 'Bombette pugliesi',
+        'price' => 10,
+        'description' => 'involtini di vitello avvolti da pancetta, con un cuore saporito di caciocavallo.',
+        'image' => 'https://www.giallozafferano.it/images/17-1753/Bombette-pugliesi_780x520_wm.jpg',
+        'visible' => 0
+    ],
+
+    [
+        'user_id' => 2,
+        'category_id' => 6,
+        'name' => 'Alici arraganate',
+        'price' => 15,
+        'description' => 'Alici inpanate in un mix di pangrattato e farina e fritte',
+        'image' => 'https://cdn.cook.stbm.it/thumbnails/ricette/1/1583/hd750x421.jpg',
+        'visible' => 1
+    ],
+
+    [
+        'user_id' => 2,
+        'category_id' => 5,
+        'name' => 'Carne alla pizzaiola',
+        'price' => 12,
+        'description' => 'Fettine di manzo ricoperte di salsa alla marinara ',
+        'image' => 'https://www.giallozafferano.it/images/182-18203/Carne-alla-pizzaiola_450x300.jpg',
+        'visible' => 0
+    ],
+
+    [
+        'user_id' => 2,
+        'category_id' => 6,
+        'name' => 'Insalata tiepida di polpo e patate',
+        'price' => 11,
+        'description' => 'Bocconcini di polpo e patate a cubetti con prezzemolo fersco',
+        'image' => 'https://www.giallozafferano.it/images/168-16893/Insalata-tiepida-di-polpo-e-patate_450x300.jpg',
+        'visible' => 1
+    ],
+
+    [
+        'user_id' => 3,
+        'category_id' => 21,
+        'name' => 'Parmigiana di melanzane',
+        'price' => 12,
+        'description' => 'Classica ricetta con melanzane scure pomodoro e parmigiano reggiano dop',
+        'image' => 'https://www.giallozafferano.it/images/174-17464/Parmigiana-di-melanzane_450x300.jpg',
+        'visible' => 0
+    ],
+
+    [
+        'user_id' => 3,
+        'category_id' => 21,
+        'name' => 'Hamburger di ceci',
+        'price' => 13,
+        'description' => 'Hamburger di ceci con pane abbrustolito accompagnate da patatine fritte e maionese veg',
+        'image' => 'https://www.giallozafferano.it/images/211-21178/Hamburger-di-ceci_450x300.jpg',
+        'visible' => 1
+    ],
+
+    [
+        'user_id' => 4,
+        'category_id' => 21,
+        'name' => 'Polpette di ricotta col sugo',
+        'price' => 10,
+        'description' => 'Polpette di ricotta coperte con salsa alla marinara e basilico fresco',
+        'image' => 'https://www.giallozafferano.it/images/218-21898/Polpette-di-ricotta-col-sugo_450x300.jpg',
+        'visible' => 0
+    ],
+
+    [
+        'user_id' => 4,
+        'category_id' => 6,
+        'name' => 'Salmone croccante',
+        'price' => 17,
+        'description' => 'Filetto di salmone fresco impanato in un mix di pangrattato pepe verde e aromi vari, infornato e gratinato',
+        'image' => 'https://www.giallozafferano.it/images/206-20645/Salmone-croccante_450x300.jpg',
+        'visible' => 0
+    ],
+
+    [
+        'user_id' => 4,
+        'category_id' => 6,
+        'name' => 'Seppie con piselli',
+        'price' => 15,
+        'description' => 'Seppie fresche ad anelli e piselli sbucciati, cotti in casseruola',
+        'image' => 'https://www.giallozafferano.it/images/178-17883/Seppie-con-piselli_450x300.jpg',
+        'visible' => 0
+    ],
+
+    [
+        'user_id' => 4,
+        'category_id' => 6,
+        'name' => 'Calamari ripieni',
+        'price' => 15,
+        'description' => 'Seppie con ripieno di acciughe mortadella e parmigiano reggiano dop',
+        'image' => 'https://www.giallozafferano.it/images/178-17865/Calamari-ripieni_450x300.jpg',
+        'visible' => 0
+    ],
+
+    [
+        'user_id' => 5,
+        'category_id' => 5,
+        'name' => 'Spezzatino di carne con cipolle',
+        'price' => 15,
+        'description' => 'Bocconcini di carne magra di manzo con cipolle rosse di tropea',
+        'image' => 'https://www.giallozafferano.it/images/18-1885/Spezzatino-di-carne-con-cipolle_780x520_wm.jpg',
+        'visible' => 0
+    ],
+
+    [
+        'user_id' => 5,
+        'category_id' => 5,
+        'name' => 'Brasato al Barolo',
+        'price' => 19,
+        'description' => 'Brasato di manzo con riduzione al barolo',
+        'image' => 'https://www.giallozafferano.it/images/182-18287/Brasato-al-Barolo_450x300.jpg',
+        'visible' => 0
+    ],
+
+    [
+        'user_id' => 6,
+        'category_id' => 5,
+        'name' => 'Salsiccia e patate al forno',
+        'price' => 12,
+        'description' => 'Salsiccia di maiale piccante con patate arrosto e rosmarino',
+        'image' => 'https://www.giallozafferano.it/images/198-19877/Salsiccia-e-patate-al-forno_450x300.jpg',
+        'visible' => 0
+    ],
+
+    [
+        'user_id' => 6,
+        'category_id' => 6,
+        'name' => 'Polpo alla Luciana',
+        'price' => 15,
+        'description' => 'Polpo in casseruola con peperoni, olive nere e pomodorini ciliegini',
+        'image' => 'https://www.giallozafferano.it/images/18-1839/Polpo-alla-Luciana_780x520_wm.jpg',
+        'visible' => 1
+    ],
+
+    [
+        'user_id' => 7,
+        'category_id' => 6,
+        'name' => 'Orata alla mediterranea',
+        'price' => 25,
+        'description' => 'Orata intera accompagnata con pomodorini olive e rosmarino',
+        'image' => 'https://www.giallozafferano.it/images/167-16791/Orata-alla-mediterranea_780x520_wm.jpg',
+        'visible' => 0
+    ],
+
+    [
+        'user_id' => 7,
+        'category_id' => 21,
+        'name' => 'Carciofi fritti alla senape',
+        'price' => 9,
+        'description' => 'Carciofi, impastellati in farina, uova e semi di senape tritati, fritti',
+        'image' => 'https://www.giallozafferano.it/images/5-538/Carciofi-fritti-alla-senape_780x520_wm.jpg',
+        'visible' => 0
+    ],
+
+    [
+        'user_id' => 8,
+        'category_id' => 6,
+        'name' => 'Onigiri al salmone',
+        'price' => 8,
+        'description' => 'Polpettone di riso ripieno di salmone cotto e maionese',
+        'image' => 'https://blog.giallozafferano.it/iltronodiforchette/wp-content/uploads/2017/09/21294746_694951447357441_3767401194423582720_n-945x945.jpg',
+        'visible' => 1
+    ],
+
+    [
+        'user_id' => 8,
+        'category_id' => 6,
+        'name' => 'Tempura di gamberi',
+        'price' => 15,
+        'description' => 'Gamberoni fritti in pastella',
+        'image' => 'https://www.finedininglovers.it/sites/g/files/xknfdk1106/files/styles/recipe_full_desktop/public/fdl_content_import_it/tempura-di-gamberi.jpg?itok=rPP4T7Ff',
+        'visible' => 0
+    ],
+
+    [
+        'user_id' => 8,
+        'category_id' => 4,
+        'name' => 'Uramaki di tonno',
+        'price' => 15,
+        'description' => 'sushi di tonno con sesamo e avocado',
+        'image' => 'https://www.giallozafferano.it/images/225-22509/Uramaki_450x300.jpg',
+        'visible' => 1
+    ],
+
+    [
+        'user_id' => 8,
+        'category_id' => 4,
+        'name' => 'Hossomaki di salmone',
+        'price' => 14,
+        'description' => 'Sushi di salmone impanato e fritto',
+        'image' => 'https://wips.plug.it/cips/buonissimo.org/cms/2018/10/Hosomaki-4.jpg?w=712&a=c&h=406',
+        'visible' => 0
+    ],
+
+    [
+        'user_id' => 9,
+        'category_id' => 5,
+        'name' => 'Tigelle con salumi',
+        'price' => 15,
+        'description' => 'Tigelle appena sfornate con salumi nostrali a volontà',
+        'image' => 'https://www.mammafelice.it/wp-content/uploads/2015/05/ricetta-tigelle-crescentine-modenesi-emiliane-bologna.jpg',
+        'visible' => 0
+    ],
+
+    [
+        'user_id' => 9,
+        'category_id' => 5,
+        'name' => 'Sgabei con salumi',
+        'price' => 13,
+        'description' => 'Sgabei caldi con salumi nostrali e formaggi a volontà',
+        'image' => 'https://media-cdn.tripadvisor.com/media/photo-s/0e/24/16/fa/sgabei-con-salumi-e-formaggi.jpg',
+        'visible' => 1
+    ],
+
+    [
+        'user_id' => 10,
+        'category_id' => 1,
+        'name' => 'Ligure',
+        'price' => 7,50,
+        'description' => 'Pomodoro, pesto, stracchino',
+        'image' => 'https://media-cdn.tripadvisor.com/media/photo-s/0e/98/f3/a4/pizza-ligure.jpg',
+        'visible' => 0
+    ],
+
+    [
+        'user_id' => 10,
+        'category_id' => 1,
+        'name' => 'Napoli',
+        'price' => 8,
+        'description' => 'Pomodoro, mozzarella, olive, acciughe e cappero',
+        'image' => 'https://wips.plug.it/cips/buonissimo.org/cms/2012/07/pizza-napoli-5.jpg',
+        'visible' => 0
+    ],
+
+    [
+        'user_id' => 11,
+        'category_id' => 7,
+        'name' => '4 porchi',
+        'price' => 8,
+        'description' => 'Piadina con salsiccia, crudo, wurstel e salame piccante',
+        'image' => '',
+        'visible' => 1
+    ],
+
+    [
+        'user_id' => 11,
+        'category_id' => 7,
+        'name' => 'Vegetariana',
+        'price' => 7,
+        'description' => 'Piadina con verdure grigliate, pomodori e maionese',
+        'image' => '',
+        'visible' => 0
+    ],
+
+    [
+        'user_id' => 12,
+        'category_id' => 5,
+        'name' => 'Ossibuchi alla milanese',
+        'price' => 15,
+        'description' => 'Ossobuchi infarinati in padella spolverati con aglio, limone e zenzero',
+        'image' => 'https://www.giallozafferano.it/images/182-18239/Ossibuchi-alla-milanese_450x300.jpg',
+        'visible' => 0
+    ],
+
+    [
+        'user_id' => 12,
+        'category_id' => 2,
+        'name' => 'Fritto misto',
+        'price' => 12,
+        'description' => 'Fritto di anelli di calamari, gamberi, acciughe e verdure miste',
+        'image' => 'https://images.lacucinaitaliana.it/wp-content/uploads/2017/10/Fritto-misto-di-pesci-e-verdure.jpg',
+        'visible' => 1
+    ],
 ];
