@@ -9,7 +9,16 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use Notifiable;
+    
+    public function typologies()
+    {
+        return $this->belongsToMany('App\Typology');
+    }
 
+    public function products()
+    {
+        return $this->hasMany('App\Product');
+    }
     /**
      * The attributes that are mass assignable.
      *
@@ -18,6 +27,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password', 'vat_number', 'address', 'image', 'rating', 'reference_name'
     ];
+
 
     /**
      * The attributes that should be hidden for arrays.
