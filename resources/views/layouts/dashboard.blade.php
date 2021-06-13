@@ -36,7 +36,8 @@
         <div class="sidebar_menu">
             <ul>
                 <li>
-                    <a href="" class="active">
+                    <a class="{{ Request::route()->getName() == 'admin.homepage' ? 'active' : null }}"
+                        href="{{route('admin.homepage')}}">
                         <i class="fas fa-igloo"></i>
                         <span>Dashboard</span>
                     </a>
@@ -48,13 +49,15 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a class="{{ Request::route()->getName() == 'admin.orders.index' ? 'active' : null }}"
+                        href="{{route('admin.orders.index')}}">
                         <i class="fas fa-shipping-fast"></i>
                         <span>Orders</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a class="{{ Request::route()->getName() == 'admin.products.index' ? 'active' : null }}"
+                        href="{{route('admin.products.index')}}">
                         <i class="fas fa-utensils"></i>
                         <span>Products</span>
                     </a>
