@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Product;
+use App\Category;
+use App\Intolerance;
 
 class ProductController extends Controller
 {
@@ -15,8 +18,9 @@ class ProductController extends Controller
      */
     public function index()
     {
+        $products = Product::where('user_id',Auth::id())->get();
         $data = [
-            'products' => Product::All(),
+            'products' => $products
         ];
         return view('admin.products.index', $data);
     }
@@ -28,7 +32,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            'categories' => Category::all(),
+            'intollerances'=>Intolerance::all()
+        ];
+        return view('admin.products.create',$data);
     }
 
     /**
@@ -39,7 +47,17 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $formData = $request->all();
+        $newProduct = new Product();
+        $newProduct->fill($formData);
+        $newProduct->user_id = Auth::id();
+        if(array_key_exists('intollerance', $formData)){
+            $newProduct->intollerance()->sync($formData['intollerances']);
+        };
+
+        $newProduct->save();
+
+        return redirect()->route('admin.products.index');
     }
 
     /**
@@ -50,7 +68,11 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = Product::where('id',$id)->first();
+        $data = [
+            'product' => $product
+        ];
+        return view('admin.products.show', $data);
     }
 
     /**
@@ -61,7 +83,15 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        if(Product::findOrFail($id)){
+            $data = [
+                'product' => Product::findOrFail($id),
+                'categories' => Category::all(),
+                'intollerances'=>Intolerance::all()
+            ];
+        }
+
+        return view('admin.products.edit',$data);
     }
 
     /**
@@ -73,7 +103,19 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        
+
+        $editProduct = Product::findOrFail($id);
+        // if(array_key_exists('intollerance', $data)){
+        //     $editProduct->intollerance()->sync($data['intollerance']);
+        // }
+        // else {
+        //     $editProduct->intollerance()->sync([]);
+        // };
+        $editProduct->update($data);
+
+        return redirect()->route("admin.products.index");
     }
 
     /**
@@ -84,6 +126,10 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::findOrFail($id);
+
+        $product->delete();
+
+        return redirect()->route("admin.products.index");
     }
 }
