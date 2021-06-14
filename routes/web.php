@@ -44,6 +44,15 @@ Route::prefix('admin')
         'destroy' => 'admin.products.destroy',
         'create' => 'admin.products.create'
     ]);
+    Route::resource('/categories', CategoryController::class)->names([
+        'index' => 'admin.categories.index',
+        'store' => 'admin.categories.store',
+        'show' => 'admin.categories.show',
+        'edit' => 'admin.categories.edit',
+        'update' => 'admin.categories.update',
+        'destroy' => 'admin.categories.destroy',
+        'create' => 'admin.categories.create'
+    ]);
 });
 
 Route::get('/products/{id}', 'ProductsController@index')->name('products_index');

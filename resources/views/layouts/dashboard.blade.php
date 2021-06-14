@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Deliveboo') }}</title>
     
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -22,6 +22,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -63,7 +64,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a class="{{ Request::route()->getName() == 'admin.categories.index' ? 'active' : null }}"
+                        href="{{route('admin.categories.index')}}">
                         <i class="fas fa-clipboard-list"></i>
                         <span>Categories</span>
                     </a>
