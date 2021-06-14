@@ -84,7 +84,7 @@ class RegisterController extends Controller
             'typologies' => $data['typologies']
         ]);
 
-        $user->typologies()->attach($data['typologies']);
+        $user->typologies()->sync($data['typologies']);
 
         return $user;
     }

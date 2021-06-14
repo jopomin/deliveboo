@@ -75,7 +75,7 @@ return [
         'name' => 'I-Sushi',
         'vat_number' => '76110193345',
         'address' => 'Via Chiodo, 79',
-        'image' => 'isushi.jpg',
+        'image' => 'i-sushi.jpg',
         'rating' => 4.5,
         'reference_name' => 'Renata Treccia',
         'email' => 'ishushiristorante@yahoo.com',
