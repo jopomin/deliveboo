@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Auth::routes();
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('register', 'Auth\RegisterController@register');
+
 
 Route::get('/', 'HomeController@index')->name('guest.homepage');
 
