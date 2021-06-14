@@ -19,7 +19,7 @@ return [
         'rating' => 4.5,
         'reference_name' => 'Michele Bianchi',
         'email' => 'sapemoremolfetta@gmail.com',
-        'password' => '12345'
+        'password' => '$2y$10$nRM2yeDncn.jdYBBQX.KFOMaLSxbeT2TVGsKXjRSdMq2EYkMnwouW'
     ],
     [
         'name' => 'Erbavoglio Bistrot',
@@ -29,7 +29,7 @@ return [
         'rating' => 4.5,
         'reference_name' => 'Giacomo Marrone',
         'email' => 'erbavogliobistrot@gmail.com',
-        'password' => '12345'
+        'password' => '$2y$10$nRM2yeDncn.jdYBBQX.KFOMaLSxbeT2TVGsKXjRSdMq2EYkMnwouW'
     ],
     [
         'name' => 'XO',
@@ -39,7 +39,7 @@ return [
         'rating' => 4.3,
         'reference_name' => 'Stefania Lilla',
         'email' => 'xomolfetta@gmail.com',
-        'password' => '12345'
+        'password' => '$2y$10$nRM2yeDncn.jdYBBQX.KFOMaLSxbeT2TVGsKXjRSdMq2EYkMnwouW'
     ],
     [
         'name' => 'L\'Insolito',
@@ -49,7 +49,7 @@ return [
         'rating' => 4.0,
         'reference_name' => 'Maria Moretti',
         'email' => 'insolitoristorante@gmail.com',
-        'password' => '45783934'
+        'password' => '$2y$10$nRM2yeDncn.jdYBBQX.KFOMaLSxbeT2TVGsKXjRSdMq2EYkMnwouW'
     ],
     [
         'name' => 'A Ra Gghjàzza',
@@ -59,7 +59,7 @@ return [
         'rating' => 4.2,
         'reference_name' => 'Sandro Merlo',
         'email' => 'aragghjazza@yahoo.com',
-        'password' => '45632494'
+        'password' => '$2y$10$nRM2yeDncn.jdYBBQX.KFOMaLSxbeT2TVGsKXjRSdMq2EYkMnwouW'
     ],
     [
         'name' => 'Momò Pizzeria',
@@ -69,7 +69,7 @@ return [
         'rating' => 4.0,
         'reference_name' => 'Milena Rossi',
         'email' => 'momopizzeria@gmail.com',
-        'password' => '54647745'
+        'password' => '$2y$10$nRM2yeDncn.jdYBBQX.KFOMaLSxbeT2TVGsKXjRSdMq2EYkMnwouW'
     ],
     [
         'name' => 'I-Sushi',
@@ -79,7 +79,7 @@ return [
         'rating' => 4.5,
         'reference_name' => 'Renata Treccia',
         'email' => 'ishushiristorante@yahoo.com',
-        'password' => '75809087'
+        'password' => '$2y$10$nRM2yeDncn.jdYBBQX.KFOMaLSxbeT2TVGsKXjRSdMq2EYkMnwouW'
     ],
     [
         'name' => 'L\'Arte della Tigella',
@@ -89,7 +89,7 @@ return [
         'rating' => 4.0,
         'reference_name' => 'Marco Mancini',
         'email' => 'artedellatigella@gmail.com',
-        'password' => '74573433'
+        'password' => '$2y$10$nRM2yeDncn.jdYBBQX.KFOMaLSxbeT2TVGsKXjRSdMq2EYkMnwouW'
     ],
     [
         'name' => 'Pizza Gourmet',
@@ -99,7 +99,7 @@ return [
         'rating' => 4.0,
         'reference_name' => 'Rodolfo Stresa',
         'email' => 'pizzagourmet@gmail.com',
-        'password' => '86763334'
+        'password' => '$2y$10$nRM2yeDncn.jdYBBQX.KFOMaLSxbeT2TVGsKXjRSdMq2EYkMnwouW'
     ],
     [
         'name' => 'Dai C\' Andam',
@@ -109,7 +109,7 @@ return [
         'rating' => 5.0,
         'reference_name' => 'Serena Bevilacqua',
         'email' => 'daicandam@hotmail.com',
-        'password' => '36345768'
+        'password' => '$2y$10$nRM2yeDncn.jdYBBQX.KFOMaLSxbeT2TVGsKXjRSdMq2EYkMnwouW'
     ],
     [
         'name' => 'Sosta Emiliana',
@@ -119,7 +119,7 @@ return [
         'rating' => 4.0,
         'reference_name' => 'Margherita Bianco',
         'email' => 'sostaemiliana@gmail.com',
-        'password' => '2566763w'
+        'password' => '$2y$10$nRM2yeDncn.jdYBBQX.KFOMaLSxbeT2TVGsKXjRSdMq2EYkMnwouW'
     ],
 ];
 
