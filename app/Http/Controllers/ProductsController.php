@@ -15,13 +15,14 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
+        $products = Product::where('user_id',$id)->get();
         $data = [
-            'products' => Product::All(),
+            'products' => $products
         ];
 
-        return view('product.index', $data);
+        return view('products', $data);
     }
 
     /**
@@ -31,12 +32,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        $data = [
-            'intolerancess' => Intolerance::All(),
-            'categorys' => Category::All(),
-        ];
 
-        return view('product.create', $data);
     }
 
     /**
@@ -47,25 +43,7 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name'=>"required|max:225",
-            'price'=> "required",
-            'description' => "required",
-            'visibile' => "required"
-        ]);
-        $formData = $request->all();
-        $newProduct = new Product();
-        $newProduct->fill($formData);
-        $newProduct->user_id = Auth::id();
-        $newProduct->save();
-        if(array_key_exists('intolerances', $formData)){
-            $newProduct->intolerances()->sync($formData['intolerances']);
-        };
-        if(array_key_exists('category', $formData)){
-            $newProduct->category()->sync($formData['category']);
-        };
-
-        return redirect()->route('product.index');
+        
     }
 
     /**
@@ -80,7 +58,7 @@ class ProductsController extends Controller
         $data = [
             'products' => $product
         ];
-        return view('product.show',$data);
+        return view('details',$data);
     }
 
     /**
@@ -91,15 +69,7 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        if(Product::findOrFail($id)){
-            $data = [
-                'product' => Product::findOrFail($id),
-                'intolerances' => Intolerance::all(),
-                'category' => Category::all(),
-            ];
-        }
-
-        return view('product.edit',$data);
+        
     }
 
     /**
@@ -111,28 +81,7 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
         
-
-        $editProduct = Product::findOrFail($id);
-        if(array_key_exists('category', $data)){
-            $editProduct->category()->sync($data['category']);
-        }
-        else {
-            $editProduct->category()->sync([]);
-        };
-
-        if(array_key_exists('intolerance', $data)){
-            $editProduct->intolerance()->sync($data['intolerance']);
-        }
-        else {
-            $editProduct->intolerance()->sync([]);
-        };
-
-
-        $editProduct->update($data);
-
-        return redirect()->route("products.index");
     }
 
     /**
@@ -143,10 +92,6 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        $product = Product::findOrFail($id);
-
-        $product->delete();
-
-        return redirect()->route("product.index");
+        
     }
 }

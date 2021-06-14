@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Product;
 
 class ProductController extends Controller
 {
@@ -14,7 +15,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('admin.products.index');
+        $data = [
+            'products' => Product::All(),
+        ];
+        return view('admin.products.index', $data);
     }
 
     /**

@@ -42,3 +42,6 @@ Route::prefix('admin')
         'create' => 'admin.products.create'
     ]);
 });
+
+Route::get('/products/{id}', 'ProductsController@index')->name('products_index');
+Route::get('/product/{id}', 'ProductsController@show')->name('products_details');
