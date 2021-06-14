@@ -46,5 +46,5 @@ Route::prefix('admin')
     ]);
 });
 
-Route::get('/products/{id}', 'ProductsController@index')->name('products_index');
-Route::get('/product/{id}', 'ProductsController@show')->name('products_details');
+Route::get('/products/{id}', 'ProductController@index')->name('products_index');
+Route::get('/product/{id}', 'ProductController@show')->name('products_details');

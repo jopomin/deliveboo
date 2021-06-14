@@ -8,7 +8,7 @@ use App\Product;
 use App\Category;
 use App\Intolerance;
 
-class ProductsController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
