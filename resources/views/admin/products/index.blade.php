@@ -28,6 +28,7 @@
                     <tr>
                         <td>ID</td>
                         <td>Name</td>
+                        <td>Category</td>
                         <td>Description</td>
                         <td>Image</td>
                         <td>Price</td>
@@ -40,9 +41,10 @@
                     <tr>
                         <td>{{$product->id}}</td>
                         <td>{{$product->name}}</td>
+                        <td>{{$product->category->name}}</td>
                         <td>{{$product->description}}</td>
                         <td>{{$product->image}}</td>
-                        <td>{{$product->price}}</td>
+                        <td>€ {{$product->price}}</td>
                         <td>{{$product->visible}}</td>
                         <td>
                             <a href="{{ route('admin.products.show', $product->id)}}" class="btn far fa-eye"></a>
