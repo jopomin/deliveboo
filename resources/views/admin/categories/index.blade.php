@@ -8,14 +8,14 @@
             <a href="{{route('admin.categories.create')}}">New categories</a>
         </div>
         <div class="bottom_content">
-            @if(session('status_create'))
+            @if(session('success_message'))
             <div class="alert alert-success">
-                {{ session('status_create') }}
+                {{ session('success_message') }}
             </div>
             @endif
-            @if(session('status_update'))
+            @if(session('info_message'))
             <div class="alert alert-warning">
-                {{ session('status_update') }}
+                {{ session('info_message') }}
             </div>
             @endif
             @if(session('status_delete'))
@@ -56,4 +56,6 @@
         </div>
     </div>
 </div>
+@include('sweetalert::alert')
+
 @endsection

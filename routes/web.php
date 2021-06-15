@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -57,5 +59,8 @@ Route::prefix('admin')
 
 Route::get('/products/{id}', 'ProductController@index')->name('products_index');
 Route::get('/products/{id}', 'ProductController@show')->name('product_details');
-Route::get('/restourant', 'UserController@index')->name('restourant_list');
-Route::get('/restourant/{id}', 'UserController@show')->name('restourants_details');
+Route::get('/restaurant', 'UserController@index')->name('restaurant_list');
+Route::get('/restaurant/{id}', 'UserController@show')->name('restaurants_details');
+Route::get('/restaurant/{id}/order', 'OrderController@create')->name('order.create');
+Route::post('/restaurant/order', 'OrderController@store')->name('order.store');
+

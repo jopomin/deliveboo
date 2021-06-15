@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Category;
 use illuminate\Support\Str;
+use illuminate\Support\Facades\Validator;
 
 class CategoryController extends Controller
 {
@@ -54,7 +55,7 @@ class CategoryController extends Controller
         $new_category->slug = Str::slug($new_category->name, '-');
         $new_category->save();
 
-        return redirect()->route('admin.categories.index')->with('status_create', 'Add new category');
+        return redirect()->route('admin.categories.index')->with('success', 'Add new category');
     }
 
     /**
@@ -93,7 +94,7 @@ class CategoryController extends Controller
         $category->slug = Str::slug($data['name'], '-');
         $category->update($data);
 
-        return redirect()->route('admin.categories.index')->with('status_update', 'Category updated');
+        return redirect()->route('admin.categories.index')->with('info', 'Category updated');
     }
 
     /**

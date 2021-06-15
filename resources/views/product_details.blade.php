@@ -2,7 +2,7 @@
 
 @section('content')
     <main>
-        <a href="{{ route('restourants_details', $products->user->id) }}"><input type="button"value="Back" ></a>
+        <a href="{{ route('restaurants_details', $products->user->id) }}"><input type="button"value="Back" ></a>
         <h1>
             {{$products->name}}
         </h1>

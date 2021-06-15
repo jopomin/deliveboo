@@ -9,22 +9,22 @@ class UserController extends Controller
 {
     public function index()
     {
-        $restourant = User::all();
+        $restaurant = User::all();
         $data = [
-            'restourants' => $restourant
+            'restaurants' => $restaurant
         ];
 
-        return view('guest.restourant', $data);
+        return view('guest.restaurant', $data);
     }
 
     public function show($id)
     {
-        $restourants = User::findOrFail($id);
+        $restaurants = User::findOrFail($id);
         $products = Product::where('user_id',$id)->get();
         $data = [
-            'restourant' => $restourants,
+            'restaurant' => $restaurants,
             'menu' => $products
         ];
-        return view('guest.resturants_details',$data);
+        return view('guest.restaurant_details',$data);
     }
 }
