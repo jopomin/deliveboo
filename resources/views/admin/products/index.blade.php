@@ -1,9 +1,6 @@
 @extends('layouts.dashboard')
 
 @section('content')
-<<<<<<< HEAD
-    @dd($products)
-=======
     <main>
         <a href="{{ route('admin.products.create') }}"><input type="button"value="Aggiungi Prodotto" ></a>
         <ul>
@@ -23,5 +20,4 @@
             @endforeach
         </ul>
     </main>
->>>>>>> c66d31f7dd966ab9fb6c89aa99cb72c82dadb89d
 @endsection
