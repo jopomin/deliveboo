@@ -23,17 +23,17 @@
     
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
 </head>
 <body>
     <input type="checkbox" id="nav_toggle">
     <div class="sidebar">
-        <div class="sidebar_brand">
-            <img src="{{ asset('img\deliveboo_logo_white.png') }}" alt="">
-        </div>
-        <div class="sidebar_mini_brand">
-            <img class="mini" src="{{ asset('img\deliveboo_logo_white_mini.png') }}" alt="">
-        </div>
+        <a href="{{route('guest.homepage')}}" class="sidebar_brand">
+            <img src="{{ asset('img\deliveboo_logo_white.png') }}" alt="Logo Deliveboo">
+        </a>
+        <a href="{{route('guest.homepage')}}" class="sidebar_mini_brand">
+            <img class="mini" src="{{ asset('img\deliveboo_logo_white_mini.png') }}" alt="Logo Deliveboo">
+        </a>
         <div class="sidebar_menu">
             <ul>
                 <li>

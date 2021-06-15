@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Staatliches', cursive;
+    font-size: 16px;
+}
+a:hover {
+    text-decoration: none;
+}
+header {
+    background-image: url('../img/pattern.jpg');
+}
+#search_toggle {
+    display: none;
+}
+nav {
+    width: 80%;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    height: 80%;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.logo img {
+    height: 100%;
+}
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+nav ul li {
+    display: inline-block;
+}
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #2f93b5;
+    font-weight: 500;
+    font-size: 120%;
+    text-transform: uppercase;
+}
+nav ul li a {
+    position: relative;
+}
+nav ul li a:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #2f93b5;
+    height: 1px;
+}
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+    transition: all .3s;
+}
+nav ul li a:hover {
+    color: #2f93b5;
+}
+nav ul li a {
+    transition: all 1s;
+}
+nav ul li a:after {
+    text-align: left;
+    content: '.';
+    margin: 0;
+    opacity: 0;
+}
+nav ul li a:hover {
+    color: #143a47;
+    z-index: 1;
+}
+nav ul li a:hover:after {
+    z-index: -10;
+    animation: fill 1s forwards;
+    -webkit-animation: fill 1s forwards;
+    -moz-animation: fill 1s forwards;
+    opacity: 1;
+}
+.button {
+    padding: 10px 20px;
+    background-color: #2f93b5;
+    color: white;
+    border-radius: 2px;
+    border: none;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+.button.login {
+    background-color: #2f93b5;
+}
+.button.register {
+    background-color: #7dc51e;
+}
+.button:hover {
+    transition: 0.3s;
+    color: white;
+}
+.button.login:hover {
+    background-color: #215f74;
+}
+.button.register:hover {
+    background-color: #50830e;
+}
+.jumbo {
+    width: 100%;
+    height: 650px;
+    background-image: url('../img/pattern.jpg');
+    display: flex;
+}
+.jumbo_image {
+    align-self: center;
+    width: 50%;
+}
+.jumbo_content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 50px;
+}
+.jumbo_text h1 {
+    font-size: 250%;
+    color: #2f93b5;
+    margin-bottom: 30px;
+}
+.input_box {
+    width: 500px;
+    font-family: 'Rubik', sans-serif;
+    background-color: white;
+    border-radius: 3px;
+    padding: 30px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.input_box p {
+    text-align: center;
+}
+.input_box input {
+    width: 80%;
+    height: 40px;
+    border-radius: 3px 0 0 3px;
+    border: 1px solid lightgrey;
+    padding: 10px;
+    font-size: 110%;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+.input_box label {
+    color: #2f93b5;
+    font-weight: 600;
+    cursor: pointer;
+}
+.input_box form {
+    display: flex;
+    margin: 20px 0;
+}
+.input_box .advanced {
+    display: none;
+    flex-direction: column;
+    animation: fade-out 0.5s;
+}
+p label .fa-chevron-down {
+    transition: 300ms;
+}
+#search_toggle:checked ~ .advanced {
+    display: flex;
+    animation: fade-in 0.5s;
+}
+#search_toggle:checked ~ p label .fa-chevron-down {
+    transform: rotate(180deg);
+    transition: 300ms;
+}
+.input_box .advanced input {
+    margin: 10px 0;
+}
+.input_box button {
+    width: 90px;
+    height: 40px;
+    border: none;
+    background: linear-gradient(to right, #7dc51e, #2f93b5);
+    background: -webkit-linear-gradient(to right, #7dc51e, #2f93b5);  
+    background: -moz-linear-gradient(to right, #7dc51e, #2f93b5);  
+    background: -o-linear-gradient(to right, #7dc51e, #2f93b5);  
+    color: white;
+    font-weight: 500;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    transition: background 0.3s ease-out;
+}
+.input_box button:hover {
+    background-position: 90px;
+}
+input, button {
+    font-family: 'Rubik', sans-serif;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(189, 189, 189);
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(189, 189, 189);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgb(189, 189, 189);
+}
+
+@keyframes fill {
+    0% {
+        width: 0%;
+        height: 1px;
+    }
+    50% {
+        width: 100%;
+        height: 1px;
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+        background: #7dc51e;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
