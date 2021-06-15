@@ -18,7 +18,7 @@
         <ul>
             @foreach ($menu as $product)
                 <li>
-                    {{$product->name}} - {{$product->price}}  
+                    <a href="{{ route('product_details', ['id' => $product->id]) }}">{{$product->name}} </a> - Prezzo:{{$product->price}}€  
                 </li>
             @endforeach
         </ul>
