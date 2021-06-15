@@ -263,6 +263,7 @@ main {
 table {
     border-collapse: collapse;
     width: 100%;
+    word-wrap: break-word;
 }
 table thead {
     font-weight: 600;
@@ -270,6 +271,7 @@ table thead {
 }
 table td {
     padding: 5px 10px;
+    max-width: 250px;
 }
 table tbody tr {
     background-color: #2f93b57f;
@@ -283,7 +285,7 @@ table tbody tr:nth-of-type(2n+0) {
 .content_box {
     width: 90%;
     margin: 0 auto;
-    padding: 10px;
+    padding: 20px;
     background-color: white;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -412,4 +414,60 @@ table tbody tr:nth-of-type(2n+0) {
     .statistic_image img {
         width: 50%;
     }
+}
+
+
+.bottom_content {
+    padding-top: 15px;
+}
+
+.prod_info_cont {
+    display: flex;
+}
+
+.prod_pic img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.prod_info {
+    padding: 40px 100px 40px 40px;
+}
+
+.prod_cat {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #2f93b5;
+    margin-bottom: 5px;
+}
+
+.prod_price {
+    font-size: 30px;
+    font-weight: 600;
+    color: #2f93b5;
+    margin-bottom: 10px;
+}
+
+.prod_descr {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 50px;
+}
+
+.prod_av {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 8px 12px;
+    color: #fff;
+}
+
+.av_yes {
+    background: #7dc51e;
+}
+
+.av_no {
+    background: #aaa;
 }
