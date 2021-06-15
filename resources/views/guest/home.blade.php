@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    DELIVEBO ALFA VERSION
+                    DELIVEBOO ALFA VERSION
                 </div>
 
                 <div class="links">
