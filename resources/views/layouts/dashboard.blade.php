@@ -102,10 +102,10 @@
             <input type="search" placeholder="Search here">
         </div>
         <div class="user_wrapper">
-            <img src="{{ asset('img\restaurantName.jpg') }}" alt="" width="50px" height="50px">
+            <img src="{{asset('img\restaurants\\')}}{{Auth::user()->image}}" alt="{{Auth::user()->name}}" width="50px" height="50px">
             <div>
-                <h4>Restaurant Name</h4>
-                <small>Reference Name</small>
+                <h4>{{Auth::user()->name}}</h4>
+                <small>{{Auth::user()->reference_name}}</small>
             </div>
         </div>
     </header>

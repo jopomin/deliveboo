@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="links">
-                <a href="{{ route('restourant_list') }}">Lista Ristoranti Prova</a>
+                <a href="{{ route('restaurant_list') }}">Lista Ristoranti Prova</a>
             </div>
         </div>
     </main>
