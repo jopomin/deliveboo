@@ -28,10 +28,10 @@
                     <tr>
                         <td>ID</td>
                         <td>Name</td>
-                        <td>description</td>
-                        <td>image</td>
-                        <td>price</td>
-                        <td>available</td>
+                        <td>Description</td>
+                        <td>Image</td>
+                        <td>Price</td>
+                        <td>Available</td>
                         <td>Action</td>
                     </tr>
                 </thead>

@@ -262,6 +262,7 @@ main {
 table {
     border-collapse: collapse;
     width: 100%;
+    word-wrap: break-word;
 }
 table thead {
     font-weight: 600;
@@ -269,6 +270,7 @@ table thead {
 }
 table td {
     padding: 5px 10px;
+    max-width: 250px;
 }
 table tbody tr {
     background-color: #2f93b57f;

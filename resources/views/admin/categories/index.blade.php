@@ -29,7 +29,7 @@
                         <td>ID</td>
                         <td>Name</td>
                         <td>Slug</td>
-                        <td>image</td>
+                        <td>Image</td>
                         <td>Action</td>
                     </tr>
                 </thead>
