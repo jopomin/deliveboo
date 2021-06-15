@@ -16,6 +16,7 @@ class CategoriesTableSeeder extends Seeder
         foreach($categories as $category) {
             $new_category = new Category();
             $new_category->name = $category['name'];
+            $new_category->slug = $category['slug'];
             $new_category->image = $category['image'];
             $new_category->save();
         }
