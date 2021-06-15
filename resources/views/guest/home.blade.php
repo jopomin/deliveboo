@@ -49,7 +49,6 @@
                 <div class="jumbo_text">
                     <h1>I piatti che ami, a domicilio.</h1>
                 </div>
-<<<<<<< HEAD
                 <div class="input_box">
                     <p>Inserisci il nome del ristorante che vuoi visitare</p>
                     <input type="checkbox" id="search_toggle">
@@ -63,13 +62,6 @@
                         <input type="text" name="categories" id="categories" placeholder="Inserisci la categoria di prodotto">
                         <button type="submit">Cerca</button>
                     </form>
-=======
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    DELIVEBOO ALFA VERSION
->>>>>>> b37bea1c527c46d660a72d5e7c47bfa7115b5605
                 </div>
             </div>
             <div class="links">

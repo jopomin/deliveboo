@@ -4,8 +4,8 @@
 <div class="content_box">
     <div class="content">
         <div class="top_content">
-            <h1>Categories</h1>
-            <a href="{{route('admin.categories.create')}}">New categories</a>
+            <h1 class="sect_main_title">Categorie</h1>
+            <a class="boo_btn create_btn" href="{{route('admin.categories.create')}}">Inserisci Categoria</a>
         </div>
         <div class="bottom_content">
             @if(session('status_create'))
@@ -27,10 +27,10 @@
                 <thead>
                     <tr>
                         <td>ID</td>
-                        <td>Name</td>
+                        <td>Nome</td>
                         <td>Slug</td>
-                        <td>Image</td>
-                        <td>Action</td>
+                        <td>Immagine</td>
+                        <td>Azioni</td>
                     </tr>
                 </thead>
                 <tbody>

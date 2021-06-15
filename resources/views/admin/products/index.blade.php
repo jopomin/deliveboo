@@ -4,8 +4,8 @@
 <div class="content_box">
     <div class="content">
         <div class="top_content">
-            <h1>Products</h1>
-            <a href="{{route('admin.products.create')}}">New Product</a>
+            <h1 class="sect_main_title">Prodotti</h1>
+            <a class="boo_btn create_btn" href="{{route('admin.products.create')}}">Inserisci Prodotto</a>
         </div>
         <div class="bottom_content">
             @if(session('status_create'))
@@ -27,13 +27,13 @@
                 <thead>
                     <tr>
                         <td>ID</td>
-                        <td>Name</td>
-                        <td>Category</td>
-                        <td>Description</td>
-                        <td>Image</td>
-                        <td>Price</td>
-                        <td>Available</td>
-                        <td>Action</td>
+                        <td>Nome</td>
+                        <td>Categoria</td>
+                        <td>Descrizione</td>
+                        <td>Immagine</td>
+                        <td>Prezzo</td>
+                        <td>Disponibilità</td>
+                        <td>Azioni</td>
                     </tr>
                 </thead>
                 <tbody>
