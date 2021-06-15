@@ -57,3 +57,4 @@ Route::prefix('admin')
 
 Route::get('/products/{id}', 'ProductController@index')->name('products_index');
 Route::get('/product/{id}', 'ProductController@show')->name('products_details');
+Route::get('/restourant', 'UserController@index')->name('restourant_list');
