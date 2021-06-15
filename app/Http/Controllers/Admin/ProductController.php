@@ -127,6 +127,9 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
 
+        $product->intolerances()->sync([]);
+
+
         $product->delete();
 
         return redirect()->route("admin.products.index");
