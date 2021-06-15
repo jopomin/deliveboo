@@ -57,17 +57,17 @@
 
                 <div class="form-group">
                     <p>Seleziona le intolleranze:</p>
-                    @foreach ($intollerances as $intollerance)
-                        <div class="form-check @error('intollerances') is-invalid @enderror">
+                    @foreach ($intolerances as $intolerance)
+                        <div class="form-check @error('intolerances') is-invalid @enderror">
                             
-                            <input name="intollerances[]" class="form-check-input" type="checkbox" value="{{ $intollerance->id }}">
+                            <input name="intolerances[]" class="form-check-input" type="checkbox" value="{{ $intolerance->id }}">
                             
                             <label class="form-check-label">
-                                {{ $intollerance->name }}
+                                {{ $intolerance->name }}
                             </label>
                         </div>
                     @endforeach
-                    @error('intollerances')
+                    @error('intolerances')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>

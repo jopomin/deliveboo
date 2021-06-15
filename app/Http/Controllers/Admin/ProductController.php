@@ -34,7 +34,7 @@ class ProductController extends Controller
     {
         $data = [
             'categories' => Category::all(),
-            'intollerances'=>Intolerance::all()
+            'intolerances'=>Intolerance::all()
         ];
         return view('admin.products.create',$data);
     }
@@ -51,12 +51,11 @@ class ProductController extends Controller
         $newProduct = new Product();
         $newProduct->fill($formData);
         $newProduct->user_id = Auth::id();
-        if(array_key_exists('intollerance', $formData)){
-            $newProduct->intollerance()->sync($formData['intollerances']);
-        };
 
         $newProduct->save();
-
+        if(array_key_exists('intolerances', $formData)){
+            $newProduct->intolerances()->sync($formData['intolerances']);
+        };
         return redirect()->route('admin.products.index');
     }
 
@@ -87,7 +86,7 @@ class ProductController extends Controller
             $data = [
                 'product' => Product::findOrFail($id),
                 'categories' => Category::all(),
-                'intollerances'=>Intolerance::all()
+                'intolerances'=>Intolerance::all()
             ];
         }
 
@@ -107,12 +106,12 @@ class ProductController extends Controller
         
 
         $editProduct = Product::findOrFail($id);
-        // if(array_key_exists('intollerance', $data)){
-        //     $editProduct->intollerance()->sync($data['intollerance']);
-        // }
-        // else {
-        //     $editProduct->intollerance()->sync([]);
-        // };
+        if(array_key_exists('intolerances', $data)){
+            $editProduct->intolerances()->sync($data['intolerances']);
+        }
+        else {
+            $editProduct->intolerances()->sync([]);
+        };
         $editProduct->update($data);
 
         return redirect()->route("admin.products.index");
