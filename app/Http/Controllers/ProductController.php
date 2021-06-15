@@ -58,7 +58,7 @@ class ProductController extends Controller
         $data = [
             'products' => $product
         ];
-        return view('details',$data);
+        return view('product_details',$data);
     }
 
     /**
