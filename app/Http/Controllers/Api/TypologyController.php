@@ -4,19 +4,18 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\User;
 use App\Typology;
+use App\User;
 
-class UserController extends Controller
+class TypologyController extends Controller
 {
-
     public function index() {
 
-        $users = User::with('typologies')->get();      
+        $typologies = Typology::with('users')->get();
 
         return response()->json([
             'success' => true,
-            'results' => $users
+            'results' => $typologies
         ]);
     }
 }

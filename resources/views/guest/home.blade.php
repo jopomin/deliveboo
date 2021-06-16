@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <title>Deliveboo</title>
-    
+ 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
@@ -19,55 +19,68 @@
     <link rel="stylesheet" href="{{asset('css/home.css')}}">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="{{asset('img/deliveboo_logo.png')}}" alt="Deliveboo Logo">
-            </div>
-            <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Lavora con noi</a></li>
-                @if (Route::has('login'))
-                @auth
-                <li><a href="{{ url('/admin') }}">Dashboard</a></li>
-                @else
-                @if (Route::has('register'))
-                <a class="button login" href="{{ route('login') }}">Login</a>
-                <a class="button register" href="{{ route('register') }}">Registrati</a>
-                @endif
-                @endauth
-                @endif
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="jumbo">
-            <div class="jumbo_image">
-                <img src="{{asset('img/jumbo_image.gif')}}" alt="Jumbo image">
-            </div>
-            <div class="jumbo_content">
-                <div class="jumbo_text">
-                    <h1>I piatti che ami, a domicilio.</h1>
+    <div id="root">
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="{{asset('img/deliveboo_logo.png')}}" alt="Deliveboo Logo">
                 </div>
-                <div class="input_box">
-                    <p>Inserisci il nome del ristorante che vuoi visitare</p>
-                    <input type="checkbox" id="search_toggle">
-                    <form action="">
-                        <input type="text" name="name" id="name" placeholder="Inserisci il ristorante">
-                        <button type="submit">Cerca</button>
-                    </form>
-                    <p>Effettua una <label for="search_toggle">ricerca avanzata <i class="fas fa-chevron-down"></i></label></p>
-                    <form class="advanced" action="">
-                        <input type="text" name="typologies" id="typologies" placeholder="Inserisci la tipologia di ristorante">
-                        <input type="text" name="categories" id="categories" placeholder="Inserisci la categoria di prodotto">
-                        <button type="submit">Cerca</button>
-                    </form>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Lavora con noi</a></li>
+                    @if (Route::has('login'))
+                    @auth
+                    <li><a href="{{ url('/admin') }}">Dashboard</a></li>
+                    @else
+                    @if (Route::has('register'))
+                    <a class="button login" href="{{ route('login') }}">Login</a>
+                    <a class="button register" href="{{ route('register') }}">Registrati</a>
+                    @endif
+                    @endauth
+                    @endif
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="src_res">
+                <p class="typ_rest" v-for="rest in restaurants" :key="rest">@{{ rest.name }}</p>
+            </div>
+            <div class="jumbo">
+                <div class="jumbo_image">
+                    <img src="{{asset('img/jumbo_image.gif')}}" alt="Jumbo image">
+                </div>
+                <div class="jumbo_content">
+                    <div class="jumbo_text">
+                        <h1>I piatti che ami, a domicilio.</h1>
+{{--                         <input id="src_bar" type="text" v-model="query" @keyup.enter="searchType"> --}}
+                    </div>
+{{--                     <form action=""> --}}
+                    <div class="input_box">
+                        <p>Inserisci la tipologia del ristorante che vuoi visitare</p>
+                        <div class="src_box">
+                            <input v-model="query" @keyup.enter="searchType" type="text" name="name" id="name" placeholder="Inserisci la tipologia">
+                            <button @click="searchType">Cerca</button>
+                        </div>
+{{--                         </form> --}}
+                        <p>Effettua una <label for="search_toggle">ricerca avanzata <i class="fas fa-chevron-down"></i></label></p>
+                        <form class="advanced" action="">
+                            <input type="text" name="typologies" id="typologies" placeholder="Inserisci la tipologia di ristorante">
+                            <input type="text" name="categories" id="categories" placeholder="Inserisci la categoria di prodotto">
+                            <button type="submit">Cerca</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="links">
+                    <a href="{{ route('restaurant_list') }}">Lista Ristoranti Prova</a>
                 </div>
             </div>
-            <div class="links">
-                <a href="{{ route('restaurant_list') }}">Lista Ristoranti Prova</a>
-            </div>
-        </div>
-    </main>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+    <script src="{{asset('js/main.js')}}"></script>
+
 </body>
 </html>

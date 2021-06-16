@@ -139,6 +139,33 @@ nav ul li a:hover:after {
     color: #2f93b5;
     margin-bottom: 30px;
 }
+
+.src_box {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#name {
+    margin-right: 15px;
+}
+
+.src_res {
+    background: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    padding: 30px;
+    width: 60%;
+}
+
+.typ_rest p {
+    color: #000;
+}
+
 .input_box {
     width: 500px;
     font-family: 'Rubik', sans-serif;
