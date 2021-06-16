@@ -308,12 +308,38 @@ table tbody tr:nth-of-type(2n+0) {
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
-
+.content_box a:hover {
+    color: white;
+    opacity: 0.8;
+}
+.action_btn {
+    padding: 10px;
+    color: white;
+    border-radius: 2px;
+}
+.action_btn.show {
+    background-color: #7dc51e;
+}
+.action_btn.edit {
+    background-color: #2f93b5;
+}
+.action_btn.delete {
+    background-color: red;
+    border: none;
+}
+.action_btn.delete:hover {
+    opacity: 0.8;
+}
 .top_content {
     display: flex;
     align-items: center;
 }
-
+.bottom_content table tbody tr {
+    background-color: #ececec;
+}
+.bottom_content table tbody tr:nth-of-type(2n+0) {
+    background-color: white;
+}
 .sect_main_title {
     color: #2f93b5;
     margin-right: 20px;

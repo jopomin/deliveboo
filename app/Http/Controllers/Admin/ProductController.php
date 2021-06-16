@@ -18,7 +18,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::where('user_id',Auth::id())->get();
+        $products = Product::where('user_id',Auth::id())->orderBy('name')->get();
         $data = [
             'products' => $products
         ];
