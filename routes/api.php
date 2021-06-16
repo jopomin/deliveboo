@@ -19,3 +19,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/restaurants', 'Api\UserController@index');
+<<<<<<< HEAD
+=======
+
+Route::get('/categories', 'Api\CategoryController@index');
+
+Route::get('/products', 'Api\ProductController@index');
+>>>>>>> a7048406b3c153715800672b440571522f031d9f
