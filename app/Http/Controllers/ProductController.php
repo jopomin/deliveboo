@@ -94,4 +94,72 @@ class ProductController extends Controller
     {
         
     }
+
+    public function cart()
+    {
+        return view('guest.cart');
+    }
+    public function addToCart($id)
+    {
+        $product = Product::find($id);
+        if(!$product) {
+            abort(404);
+        }
+        $cart = session()->get('cart');
+        if(!$cart) 
+        {
+            $cart = [
+                    $id => [
+                        "name" => $product->name,
+                        "quantity" => 1,
+                        "price" => $product->price,
+                        "photo" => $product->photo,
+                        "user_id" => $product->user_id
+                    ]
+            ];
+            session()->put('cart', $cart);
+            return redirect()->back()->with('success', 'Prodotto aggiunto al carrello');
+        }
+        if(isset($cart[$id])) 
+        {
+            $cart[$id]['quantity']++;
+            session()->put('cart', $cart);
+            return redirect()->back()->with('success', 'Prodotto aggiunto al carrello');
+        }
+        $cart[$id] = [
+            "name" => $product->name,
+            "quantity" => 1,
+            "price" => $product->price,
+            "photo" => $product->photo,
+            "user_id" => $product->user_id
+        ];
+        session()->put('cart', $cart);
+        return redirect()->back()->with('success', 'Prodotto aggiunto al carrello');
+
+    }
+
+    public function updatecart($id)
+    {
+        $cart = session()->get('cart');
+        $cart[$id]['quantity']++;
+        session()->put('cart', $cart);
+        return redirect()->back()->with('success', 'Prodotto aggiunto al carrello');
+    }
+
+    public function removecart($id)
+    {
+        $cart = session()->get('cart');
+        if($cart[$id]['quantity']>1)
+        {
+        $cart[$id]['quantity']--;
+            session()->put('cart', $cart);
+        }
+        return redirect()->back();
+    }
+
+    public function resetCart()
+    {
+        session()->forget('cart');
+        return redirect()->back()->with('success', 'Carrello svuotato');
+    }
 }

@@ -20,7 +20,7 @@ class UserController extends Controller
     public function show($id)
     {
         $restaurants = User::findOrFail($id);
-        $products = Product::where('user_id',$id)->get();
+        $products = Product::where([['user_id',$id],['visible', 0 ]])->get();
         $data = [
             'restaurant' => $restaurants,
             'menu' => $products
