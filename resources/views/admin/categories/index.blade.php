@@ -41,12 +41,12 @@
                         <td>{{$category->slug}}</td>
                         <td>{{$category->image}}</td>
                         <td>
-                            <a href="{{ route('admin.categories.show', $category->id)}}" class="btn far fa-eye"></a>
-                            <a href="{{ route('admin.categories.edit', $category->id)}}" class="btn fas fa-edit"></a>
+                            <a href="{{ route('admin.categories.show', $category->id)}}" class="action_btn show far fa-eye"></a>
+                            <a href="{{ route('admin.categories.edit', $category->id)}}" class="action_btn edit fas fa-edit"></a>
                             <form class="d-inline-block" action="{{ route('admin.categories.destroy', $category->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn fas fa-trash-alt" onclick="return confirm('Sei sicuro di voler eliminare la categoria \'{{ $category->name }}\'?')"></button>
+                                <button type="submit" class="action_btn delete fas fa-trash-alt" onclick="return confirm('Sei sicuro di voler eliminare la categoria \'{{ $category->name }}\'?')"></button>
                             </form>
                         </td>
                     </tr>

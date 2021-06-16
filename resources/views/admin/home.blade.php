@@ -5,7 +5,7 @@
     <div class="card_single">
         <div>
             <h1>45</h1>
-            <span>Orders</span>
+            <span>Ordini</span>
         </div>
         <div class="statistic_image">
             <img src="{{ asset('img\statistic.png') }}" alt="">
@@ -16,8 +16,8 @@
     </div>
     <div class="card_single">
         <div>
-            <h1>15</h1>
-            <span>Products</span>
+            <h1>{{count($products)}}</h1>
+            <span>Prodotti</span>
         </div>
         <div class="statistic_image">
             <img src="{{ asset('img\statistic.png') }}" alt="">
@@ -28,8 +28,8 @@
     </div>
     <div class="card_single">
         <div>
-            <h1>8</h1>
-            <span>Categories</span>
+            <h1>5</h1>
+            <span>Categorie</span>
         </div>
         <div class="statistic_image">
             <img src="{{ asset('img\statistic.png') }}" alt="">
@@ -41,7 +41,7 @@
     <div class="card_single">
         <div>
             <h1>€2k</h1>
-            <span>Sale</span>
+            <span>Guadagni</span>
         </div>
         <div class="statistic_image">
             <img src="{{ asset('img\statistic_white.png') }}" alt="">

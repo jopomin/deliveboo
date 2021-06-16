@@ -47,12 +47,12 @@
                         <td>€ {{$product->price}}</td>
                         <td>{{$product->visible}}</td>
                         <td>
-                            <a href="{{ route('admin.products.show', $product->id)}}" class="btn far fa-eye"></a>
-                            <a href="{{ route('admin.products.edit', $product->id)}}" class="btn fas fa-edit"></a>
+                            <a href="{{ route('admin.products.show', $product->id)}}" class="action_btn show far fa-eye"></a>
+                            <a href="{{ route('admin.products.edit', $product->id)}}" class="action_btn edit fas fa-edit"></a>
                             <form class="d-inline-block" action="{{ route('admin.products.destroy', $product->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn fas fa-trash-alt" onclick="return confirm('Sei sicuro di voler eliminare il prodotto \'{{ $product->name }}\'?')"></button>
+                                <button type="submit" class="action_btn delete fas fa-trash-alt" onclick="return confirm('Sei sicuro di voler eliminare il prodotto \'{{ $product->name }}\'?')"></button>
                             </form>
                         </td>
                     </tr>

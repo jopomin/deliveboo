@@ -44,7 +44,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a class="{{ Request::route()->getName() == 'admin.users.index' ? 'active' : null }}"
+                        href="{{route('admin.users.index')}}">
                         <i class="fas fa-user"></i>
                         <span>User</span>
                     </a>

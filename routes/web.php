@@ -28,6 +28,7 @@ Route::prefix('admin')
     ->middleware('auth')
     ->group(function () {
     Route::get('/', 'HomeController@index')->name('admin.homepage');
+    Route::get('/user', 'UserController@index')->name('admin.users.index');
     Route::resource('/orders', OrderController::class)->names([
         'index' => 'admin.orders.index',
         'store' => 'admin.orders.store',
