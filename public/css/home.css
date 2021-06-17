@@ -7,6 +7,39 @@ body {
     font-family: 'Staatliches', cursive;
     font-size: 16px;
 }
+.deliv_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boo_btn {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+
+.btn_form {
+    border-width: 0;
+    margin-top: 15px;
+}
+
+.btn_form i {
+    margin-right: 6px;
+}
+
+.create_btn {
+    color: #fff;
+    background: #7dc51e;
+}
+
+.back_btn {
+    color: #fff;
+    background: #2f93b5;
+}
+
 a:hover {
     text-decoration: none;
 }
@@ -145,10 +178,6 @@ nav ul li a:hover:after {
     margin-bottom: 20px;
 }
 
-#name {
-    margin-right: 15px;
-}
-
 .src_res {
     background: #fff;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -159,11 +188,23 @@ nav ul li a:hover:after {
     transform: translateX(-50%);
     z-index: 999;
     padding: 30px;
-    width: 60%;
+    width: 40%;
+    text-align: center;
+    color: #215f74;
+/*     display: flex;
+    flex-wrap: wrap; */
 }
 
-.typ_rest p {
+.typ_rest {
+    display: block;
     color: #000;
+    cursor: pointer;
+}
+
+.rest_img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
 }
 
 .input_box {
@@ -215,7 +256,8 @@ p label .fa-chevron-down {
 .input_box .advanced input {
     margin: 10px 0;
 }
-.input_box button {
+.input_box button,
+.input_box .deliv_btn {
     width: 90px;
     height: 40px;
     border: none;
@@ -229,10 +271,11 @@ p label .fa-chevron-down {
     cursor: pointer;
     transition: background 0.3s ease-out;
 }
-.input_box button:hover {
+.input_box button:hover,
+.input_box .deliv_btn:hover {
     background-position: 90px;
 }
-input, button {
+input, button, .deliv_btn {
     font-family: 'Rubik', sans-serif;
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */

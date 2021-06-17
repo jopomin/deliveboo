@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{{asset('css/home.css')}}">
 </head>
 <body>
-    <div id="root">
+<div id="root">
         <header>
             <nav>
                 <div class="logo">
@@ -47,9 +47,9 @@
             </nav>
         </header>
         <main>
-{{--             <div class="src_res">
-                <p class="typ_rest" v-for="rest in restaurants" :key="rest">@{{ rest.name }}</p>
-            </div> --}}
+            <div class="src_res">
+                <a class="typ_rest" v-for="rest in filteredRest" :href="'restaurant/'+rest.id">@{{rest.name}}</a>                    
+            </div>
             <div class="jumbo">
                 <div class="jumbo_image">
                     <img src="{{asset('img/jumbo_image.gif')}}" alt="Jumbo image">
@@ -61,13 +61,14 @@
                     <div class="input_box">
                         <p>Inserisci il nome del ristorante che vuoi visitare</p>
                         <input type="checkbox" id="search_toggle">
-{{--                         <form action="">
+    {{--                         <form action="">
                             <input type="text" name="name" id="name" placeholder="Inserisci il ristorante">
                             <button type="submit">Cerca</button>
                         </form> --}}
                         <div class="src_box">
-                            <input v-model="query" @keyup.enter="searchType" type="text" name="name" id="name" placeholder="Inserisci la tipologia">
-                            <button @click="searchType">Cerca</button>
+                            <input v-model="query" @keyup.enter="searchRestaurant" type="text" name="name" id="name" placeholder="Inserisci il nome del ristorante">
+                            <a class="deliv_btn" href="#" @click="searchRestaurant">Cerca</a>
+    {{--                             <button @click="searchRestaurant">Cerca</button> --}}
                         </div>
                         <p>Effettua una <label for="search_toggle">ricerca avanzata <i class="fas fa-chevron-down"></i></label></p>
                         <form class="advanced" action="">
@@ -98,5 +99,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="{{asset('js/main.js')}}"></script>
+
 </body>
 </html>
