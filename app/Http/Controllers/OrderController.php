@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\In_order;
+use App\Placed_order;
 
 class OrderController extends Controller
 {
@@ -34,9 +35,11 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create(Request $request)
     {
-        
+        $order = Placed_order::all();
+        $cart = session()->get('cart');
+        return view('guest.orders.create', compact('order', 'cart'));
     }
 
     /**
@@ -47,7 +50,14 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+        $data = $request->all();
+        $this->valida($request);
+        $new_order = new Placed_order();
+        $new_order->fill($data);
+        $new_order->payment_status = 1;
+        $new_order->save();
 
+        return redirect()->route('restaurant_list')->with('success', 'Add new category');
     }
 
     /**
