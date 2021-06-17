@@ -36,8 +36,7 @@ class OrderController extends Controller
      */
     public function create($id)
     {
-        $products = Product::where('user_id', $id)->get();
-        return view('guest.orders.create', compact('products'));
+        
     }
 
     /**
@@ -48,13 +47,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $this->valida($request);
-        $new_order = new In_order();
-        $new_order->fill($data);
-        $new_order->save();
 
-        return redirect()->route('guest.restaurant_details')->with('success', 'Ordine aggiunto al carrello');
     }
 
     /**

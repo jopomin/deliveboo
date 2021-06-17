@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\Auth;
 use App\Product;
 use App\Category;
 use App\Intolerance;
+use App\User;
+use Illuminate\Support\Facades\Session;
+
+
 
 class ProductController extends Controller
 {
@@ -95,9 +99,11 @@ class ProductController extends Controller
         
     }
 
-    public function cart()
+    public function cart($id)
     {
-        return view('guest.cart');
+        $restaurant = User::findOrFail($id);
+
+        return view('guest.cart', compact('restaurant'));
     }
     public function addToCart($id)
     {
@@ -113,7 +119,7 @@ class ProductController extends Controller
                         "name" => $product->name,
                         "quantity" => 1,
                         "price" => $product->price,
-                        "photo" => $product->photo,
+                        "photo" => $product->image,
                         "user_id" => $product->user_id
                     ]
             ];
@@ -130,7 +136,7 @@ class ProductController extends Controller
             "name" => $product->name,
             "quantity" => 1,
             "price" => $product->price,
-            "photo" => $product->photo,
+            "photo" => $product->image,
             "user_id" => $product->user_id
         ];
         session()->put('cart', $cart);

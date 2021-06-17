@@ -62,10 +62,8 @@ Route::get('/products/{id}', 'ProductController@index')->name('products_index');
 Route::get('/products/{id}', 'ProductController@show')->name('product_details');
 Route::get('/restaurant', 'UserController@index')->name('restaurant_list');
 Route::get('/restaurant/{id}', 'UserController@show')->name('restaurants_details');
-Route::get('/restaurant/{id}/order', 'OrderController@create')->name('order.create');
-Route::post('/restaurant/order', 'OrderController@store')->name('order.store');
 
-Route::get('cart', 'ProductController@cart')->name('cart');
+Route::get('cart/{id}', 'ProductController@cart')->name('cart');
 Route::get('update-cart/{id}', 'ProductController@updatecart')->name('updatecart');
 Route::get('remove-cart/{id}', 'ProductController@removecart')->name('removecart');
 Route::get('add-to-cart/{id}', 'ProductController@addToCart')->name('add_to_cart');
