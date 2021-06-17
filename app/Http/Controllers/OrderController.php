@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
-use App\Placed_order;
+use App\In_order;
 
 class OrderController extends Controller
 {
@@ -50,11 +50,11 @@ class OrderController extends Controller
     {
         $data = $request->all();
         $this->valida($request);
-        $new_order = new Placed_order();
+        $new_order = new In_order();
         $new_order->fill($data);
         $new_order->save();
 
-        return redirect()->route('guest.restaurant_details')->with('status_create', 'Ordine aggiunto al carrello');
+        return redirect()->route('guest.restaurant_details')->with('success', 'Ordine aggiunto al carrello');
     }
 
     /**

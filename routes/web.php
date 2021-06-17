@@ -28,6 +28,7 @@ Route::prefix('admin')
     ->middleware('auth')
     ->group(function () {
     Route::get('/', 'HomeController@index')->name('admin.homepage');
+    Route::get('/user', 'UserController@index')->name('admin.users.index');
     Route::resource('/orders', OrderController::class)->names([
         'index' => 'admin.orders.index',
         'store' => 'admin.orders.store',
@@ -63,4 +64,10 @@ Route::get('/restaurant', 'UserController@index')->name('restaurant_list');
 Route::get('/restaurant/{id}', 'UserController@show')->name('restaurants_details');
 Route::get('/restaurant/{id}/order', 'OrderController@create')->name('order.create');
 Route::post('/restaurant/order', 'OrderController@store')->name('order.store');
+
+Route::get('cart', 'ProductController@cart')->name('cart');
+Route::get('update-cart/{id}', 'ProductController@updatecart')->name('updatecart');
+Route::get('remove-cart/{id}', 'ProductController@removecart')->name('removecart');
+Route::get('add-to-cart/{id}', 'ProductController@addToCart')->name('add_to_cart');
+Route::get('cartReset', 'ProductController@resetCart')->name('reset_cart');
 

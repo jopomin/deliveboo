@@ -18,11 +18,13 @@
         <ul>
             @foreach ($menu as $product)
                 <li>
-                    <a href="{{ route('product_details', ['id' => $product->id]) }}">{{$product->name}} </a> - Prezzo:{{$product->price}}€
+                    <a href="{{ route('product_details', ['id' => $product->id]) }}">{{$product->name}} </a> 
+                    - Prezzo:{{$product->price}}€
+                    <a href="{{ route('add_to_cart', ['id' => $product->id])}}"><input type="button"value="Aggiungi al carrello" ></a>
                 </li>
             @endforeach
         </ul>
     </div>
-
+    <a href="{{route('cart')}}"><input type="button"value="Vedi il carrello" ></a>
     <a href="{{route('order.create', ['id' => $restaurant->id])}}"><input type="button"value="Fai il tuo ordine" ></a>
 @endsection
