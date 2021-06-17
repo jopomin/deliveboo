@@ -14,6 +14,8 @@ class UserController extends Controller
             'restaurants' => $restaurant
         ];
 
+        session()->forget('cart');
+
         return view('guest.restaurant', $data);
     }
 

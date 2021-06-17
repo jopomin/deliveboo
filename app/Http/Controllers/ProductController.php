@@ -163,9 +163,33 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
+    public function cartdestroy(Request $request)
+    {
+        if($request->id) {
+            $cart = session()->get('cart');
+            if(isset($cart[$request->id])) {
+                unset($cart[$request->id]);
+                session()->put('cart', $cart);
+            }
+            
+            return redirect()->back();
+        }
+        
+    }
+
     public function resetCart()
     {
         session()->forget('cart');
         return redirect()->back()->with('success', 'Carrello svuotato');
+    }
+
+    public function prova()
+    {
+        $data = session()->get('cart');
+
+        $dataProva = [
+            'data' => $data
+        ];
+        return view('prova' , $dataProva);
     }
 }

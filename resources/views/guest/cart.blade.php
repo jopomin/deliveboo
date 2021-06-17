@@ -35,7 +35,13 @@
                     <td >
                         <a href="{{ route('removecart', ['id' => $id])}}"><button type="submit"><i class="fas fa-caret-down"></i></button></a>
                         <a href="{{ route('updatecart', ['id' => $id])}}"><button type="submit"><i class="fas fa-caret-up"></i></button></a>
-                        <a href=""><button type="submit">x</button></a>
+                        <form  action="{{ route('delete_cart', ['id'=>$id]) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">
+                                X
+                            </button>
+                        </form>
                     </td>
                     
                 </tr>
