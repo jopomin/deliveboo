@@ -4,6 +4,7 @@ var app = new Vue ({
         query: "",
         typologies: [],
         restaurants: [],
+        filteredRest: [],
     },
     
     methods: {
@@ -26,8 +27,14 @@ var app = new Vue ({
                 axios
                 .get('http://localhost:8000/api/restaurants')
                 .then((response) => {
+                    this.filteredRest = [];
                     this.restaurants = response.data.results;
-                    console.log(this.restaurants);
+                    this.restaurants.forEach((restaurant) => {
+                        if (restaurant.name.toLowerCase().includes(this.query.toLowerCase())) {
+                            this.filteredRest.push(restaurant);
+                            console.log(restaurant.name);
+                        }
+                    });
                 });
             },
 
