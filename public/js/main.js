@@ -22,14 +22,14 @@ var app = new Vue ({
                 });
             },
 
-/*             searchRestaurant() {
+            searchRestaurant() {
                 axios
                 .get('http://localhost:8000/api/restaurants')
                 .then((response) => {
                     this.restaurants = response.data.results;
                     console.log(this.restaurants);
                 });
-            }, */
+            },
 
     }
 })

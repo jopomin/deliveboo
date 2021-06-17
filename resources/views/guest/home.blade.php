@@ -60,8 +60,8 @@
                     </div>
                     <div class="input_box">
                         <p>Inserisci il nome del ristorante che vuoi visitare</p>
-{{--                         <input type="checkbox" id="search_toggle">
-                        <form action="">
+                        <input type="checkbox" id="search_toggle">
+{{--                         <form action="">
                             <input type="text" name="name" id="name" placeholder="Inserisci il ristorante">
                             <button type="submit">Cerca</button>
                         </form> --}}
