@@ -68,4 +68,7 @@ Route::get('update-cart/{id}', 'ProductController@updatecart')->name('updatecart
 Route::get('remove-cart/{id}', 'ProductController@removecart')->name('removecart');
 Route::get('add-to-cart/{id}', 'ProductController@addToCart')->name('add_to_cart');
 Route::get('cartReset', 'ProductController@resetCart')->name('reset_cart');
+Route::get('order', 'OrderController@create')->name('orders.create');
+Route::post('order', 'OrderController@store')->name('orders.store');
+
 

@@ -37,6 +37,7 @@
                         <a href="{{ route('updatecart', ['id' => $id])}}"><button type="submit"><i class="fas fa-caret-up"></i></button></a>
                         <a href=""><button type="submit">x</button></a>
                     </td>
+                    
                 </tr>
             @endforeach
         @endif
@@ -48,7 +49,8 @@
         <tr>
             <td><a href="{{route('restaurants_details', ['id' => $restaurant->id])}}"> Ritorna al Ristorante</a></td>
             <td><a href="{{ route('reset_cart')}}"></i> Resetta il carrello</a></td>
-            <td colspan="2" class="hidden-xs"></td>
+            <td colspan="1" class="hidden-xs"></td>
+            <td><a href="{{route('orders.create')}}">Procedi con l'ordine</a></td>
             <td class="hidden-xs text-center"><strong>Totale €{{ $total }}</strong></td>
         </tr>
         </tfoot>
