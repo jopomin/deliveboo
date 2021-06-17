@@ -68,6 +68,7 @@ var app = new Vue ({
                 .get('http://localhost:8000/api/products')
                 .then((response) => {
                     this.filteredRest = [];
+                    this.restIds = [];
                     this.products = response.data.results;
                     this.products.forEach((product) => {
                         if (product.category_id == this.selCat) {
@@ -76,7 +77,23 @@ var app = new Vue ({
                             }
                         }
                     });
-                    console.log(this.restIds);
+                    this.connectId(this.restIds);
+                });
+            },
+
+            connectId(restIds) {
+                axios
+                .get('http://localhost:8000/api/restaurants')
+                .then((response) => {
+                    this.filteredRest = [];
+                    this.restaurants = response.data.results;
+                    this.restaurants.forEach((restaurant) => {
+                        restIds.forEach((rId) => {
+                            if (rId == restaurant.id) {
+                                this.filteredRest.push(restaurant);
+                            }
+                        }) 
+                    });
                 });
             },
 
