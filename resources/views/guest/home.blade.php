@@ -10,6 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+{{--     <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="{{asset('js/main.js')}}"></script> --}}
     
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -55,8 +60,8 @@
                     </div>
                     <div class="input_box">
                         <p>Inserisci il nome del ristorante che vuoi visitare</p>
-                        <input type="checkbox" id="search_toggle">
-{{--                         <form action="">
+{{--                         <input type="checkbox" id="search_toggle">
+                        <form action="">
                             <input type="text" name="name" id="name" placeholder="Inserisci il ristorante">
                             <button type="submit">Cerca</button>
                         </form> --}}
@@ -78,7 +83,7 @@
                                 <option value='{{$category->id}}'>{{$category->name}}</option>
                                 @endforeach
                             </select>
-{{--                             <button type="submit" @click="searchRestaurant">Cerca</button> --}}
+                            <button type="submit" @click="searchRestaurant">Cerca</button>
                         </form>
                     </div>
                 </div>

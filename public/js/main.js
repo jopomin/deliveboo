@@ -18,9 +18,18 @@ var app = new Vue ({
                             console.log(typology.users);
                         }
                     });
-                    console.log(this.restaurants);
+/*                     console.log(this.restaurants); */
                 });
             },
+
+/*             searchRestaurant() {
+                axios
+                .get('http://localhost:8000/api/restaurants')
+                .then((response) => {
+                    this.restaurants = response.data.results;
+                    console.log(this.restaurants);
+                });
+            }, */
 
     }
 })
