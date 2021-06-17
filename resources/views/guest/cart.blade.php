@@ -12,9 +12,11 @@
         </tr>
         </thead>
         <tbody>
-        <?php $total = 0 ?>
-        @if(session('cart'))
-            @foreach(session('cart') as $id => $details)
+            
+        <?php $total = 0; ?>
+        
+        @if(is_array(session('cart')))
+        @foreach(session('cart') as $id => $details)
                 <?php $total += $details['price'] * $details['quantity'] ;?>
                 <tr>
                     <td data-th="Product">
@@ -27,12 +29,13 @@
                     </td>
                     <td data-th="Price">${{ $details['price'] }}</td>
                     <td data-th="Quantity">
-                        <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity" />
+                        <input type="text" value="{{ $details['quantity'] }}" class="form-control quantity" readonly/>
                     </td>
                     <td data-th="Subtotal" class="text-center">${{ $details['price'] * $details['quantity'] }}</td>
                     <td >
-                        <a href="{{ route('removecart', ['id' => $id])}}"><button type="submit"><i class="fa fa-refresh"></i></button></a>
-                        <a href="{{ route('updatecart', ['id' => $id])}}"><button type="submit"><i class="fa fa-refresh"></i></button></a>
+                        <a href="{{ route('removecart', ['id' => $id])}}"><button type="submit"><i class="fas fa-caret-down"></i></button></a>
+                        <a href="{{ route('updatecart', ['id' => $id])}}"><button type="submit"><i class="fas fa-caret-up"></i></button></a>
+                        <a href=""><button type="submit">x</button></a>
                     </td>
                 </tr>
             @endforeach
@@ -43,7 +46,7 @@
             <td class="text-center"><strong>Totale {{ $total }}</strong></td>
         </tr>
         <tr>
-            <td><a href="#"> Ritorna al Ristorante</a></td>
+            <td><a href="{{route('restaurants_details', ['id' => $restaurant->id])}}"> Ritorna al Ristorante</a></td>
             <td><a href="{{ route('reset_cart')}}"></i> Resetta il carrello</a></td>
             <td colspan="2" class="hidden-xs"></td>
             <td class="hidden-xs text-center"><strong>Totale €{{ $total }}</strong></td>

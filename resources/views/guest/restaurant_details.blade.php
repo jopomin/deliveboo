@@ -7,6 +7,7 @@
             {{$restaurant->name}}
         </h1>
     </div>
+    
     <div class="rest_info">
         <ul>
             <li>Indirizzo : {{$restaurant->address}}</li>
@@ -25,6 +26,5 @@
             @endforeach
         </ul>
     </div>
-    <a href="{{route('cart')}}"><input type="button"value="Vedi il carrello" ></a>
-    <a href="{{route('order.create', ['id' => $restaurant->id])}}"><input type="button"value="Fai il tuo ordine" ></a>
+    <a href="{{route('cart', ['id' => $restaurant->id])}}"><input type="button"value="Vedi il carrello" ></a>
 @endsection
