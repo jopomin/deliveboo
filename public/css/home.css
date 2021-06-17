@@ -207,6 +207,15 @@ nav ul li a:hover:after {
     object-fit: cover;
 }
 
+.selection {
+    display: flex;
+    align-items: center;
+}
+
+.selection select {
+    margin-right: 10px;
+}
+
 .input_box {
     width: 500px;
     font-family: 'Rubik', sans-serif;
