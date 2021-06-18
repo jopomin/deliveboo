@@ -18,8 +18,8 @@
         @error('address_delivery')
         <div class="invalid-feedback">{{ $message }}</div>
         @enderror
-        <input type="text" name="dorbell" class="form-control @error('dorbell') is-invalid @enderror" placeholder="Inserisci il campanello di casa" value="">
-        @error('dorbell')
+        <input type="text" name="doorbell" class="form-control @error('doorbell') is-invalid @enderror" placeholder="Inserisci il campanello di casa" value="">
+        @error('doorbell')
         <div class="invalid-feedback">{{ $message }}</div>
         @enderror
         <textarea class="form-control" name="order_comment" id="order_comment" cols="30" rows="10"></textarea>
