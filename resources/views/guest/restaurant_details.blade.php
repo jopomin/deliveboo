@@ -26,5 +26,4 @@
             @endforeach
         </ul>
     </div>
-    <a href="{{route('cart', ['id' => $restaurant->id])}}"><input type="button"value="Vedi il carrello" ></a>
 @endsection
