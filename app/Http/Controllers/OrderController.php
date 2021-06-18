@@ -56,8 +56,8 @@ class OrderController extends Controller
         $new_order->fill($data);
         $new_order->payment_status = 1;
         $new_order->save();
-
-        return redirect()->route('restaurant_list')->with('success', 'Add new category');
+        session()->forget('cart');
+        return redirect()->route('restaurant_list')->with('success', 'Ordine effettuato');
     }
 
     /**

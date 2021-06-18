@@ -2,11 +2,7 @@
 
 
 @section('content')
-@if(session('success_message'))
-<div class="alert alert-success">
-    {{ session('success_message') }}
-</div>
-@endif
+
 <form action="{{ route('orders.store') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="form-group">
@@ -31,6 +27,18 @@
         <?php $total = 0; ?>
         @foreach ($cart as $item)
         <?php $total += $item['price'] * $item['quantity']; ?>
+        <div class="row">
+            <div class="col-sm-3 hidden-xs"><img src="{{ $item['photo'] }}" width="100" height="100" class="img-responsive"/></div>
+            <div class="col-sm-3">
+                <h4 class="nomargin">{{ $item['name'] }}</h4>
+            </div>
+            <div class="col-sm-3">
+                <h4 class="nomargin">{{ $item['price'] }}</h4>
+            </div>
+            <div class="col-sm-3">
+                <h4 class="nomargin">{{ $item['quantity'] }}</h4>
+            </div>
+        </div>
         @endforeach
         <label for="total_price">Prezzo totale:</label>
         <input class="form-control" type="numeric" id="total_price" name="total_price" value="{{$total}}" readonly>
@@ -41,4 +49,5 @@
         </button>
     </div>
 </form>
+@include('sweetalert::alert')
 @endsection
