@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddForeignKeyPlacedOrderInOrdersTable extends Migration
+class CreatePlacedOrderProductTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,18 @@ class AddForeignKeyPlacedOrderInOrdersTable extends Migration
      */
     public function up()
     {
-        Schema::table('in_orders', function (Blueprint $table) {
-            $table->unsignedBigInteger('placed_order_id')->after('product_id');
-
+        Schema::create('placed_order_product', function (Blueprint $table) {
+            $table->unsignedBigInteger('placed_order_id');
             $table->foreign('placed_order_id')
             ->references('id')
                 ->on('placed_orders');
+
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')
+            ->references('id')
+                ->on('products');
+
+            $table->primary(['placed_order_id', 'product_id']);
         });
     }
 
@@ -29,9 +35,6 @@ class AddForeignKeyPlacedOrderInOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::table('in_orders', function (Blueprint $table) {
-            $table->dropForeign('in_orders_placed_order_id_foreign');
-            $table->dropColumn('placed_order_id');
-        });
+        Schema::dropIfExists('placed_order_product');
     }
 }

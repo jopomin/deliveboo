@@ -25,18 +25,23 @@
         <textarea class="form-control" name="order_comment" id="order_comment" cols="30" rows="10"></textarea>
         <textarea class="form-control" name="product_comment" id="product_comment" cols="30" rows="10"></textarea>
         <?php $total = 0; ?>
-        @foreach ($cart as $item)
-        <?php $total += $item['price'] * $item['quantity']; ?>
+        @foreach ($cart as $id => $product)
+        <?php $total += $product['price'] * $product['quantity']; ?>
         <div class="row">
-            <div class="col-sm-3 hidden-xs"><img src="{{ $item['photo'] }}" width="100" height="100" class="img-responsive"/></div>
+            <div class="col-sm-3 hidden-xs"><img src="{{ $product['photo'] }}" width="100" height="100" class="img-responsive"/></div>
             <div class="col-sm-3">
-                <h4 class="nomargin">{{ $item['name'] }}</h4>
+                <input name="products[]" class="form-check-input" type="checkbox" value="{{ $id }}" checked>
+                
+                <label class="form-check-label">
+                    {{ $product['name'] }}
+                </label>
+                
             </div>
             <div class="col-sm-3">
-                <h4 class="nomargin">{{ $item['price'] }}</h4>
+                <h4 class="nomargin">{{ $product['price'] }}</h4>
             </div>
             <div class="col-sm-3">
-                <h4 class="nomargin">{{ $item['quantity'] }}</h4>
+                <h4 class="nomargin">{{ $product['quantity'] }}</h4>
             </div>
         </div>
         @endforeach
@@ -49,5 +54,4 @@
         </button>
     </div>
 </form>
-@include('sweetalert::alert')
 @endsection

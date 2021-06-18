@@ -10,8 +10,8 @@ class Placed_order extends Model
         'customer_name', 'customer_phone', 'doorbell', 'total_price', 'address_delivery', 'order_comment', 'product_comment', 'payment_status'
     ];
 
-    public function in_orders()
+    public function products()
     {
-        return $this->hasMany('App\In_order');
+        return $this->belongsToMany('App\Product');
     }
 }

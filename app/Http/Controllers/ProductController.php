@@ -124,13 +124,13 @@ class ProductController extends Controller
                     ]
             ];
             session()->put('cart', $cart);
-            return redirect()->back()->with('success', 'Prodotto aggiunto al carrello');
+            return redirect()->back();
         }
         if(isset($cart[$id])) 
         {
             $cart[$id]['quantity']++;
             session()->put('cart', $cart);
-            return redirect()->back()->with('success', 'Prodotto aggiunto al carrello');
+            return redirect()->back();
         }
         $cart[$id] = [
             "name" => $product->name,
@@ -140,7 +140,7 @@ class ProductController extends Controller
             "user_id" => $product->user_id
         ];
         session()->put('cart', $cart);
-        return redirect()->back()->with('success', 'Prodotto aggiunto al carrello');
+        return redirect()->back();
 
     }
 
@@ -149,7 +149,7 @@ class ProductController extends Controller
         $cart = session()->get('cart');
         $cart[$id]['quantity']++;
         session()->put('cart', $cart);
-        return redirect()->back()->with('success', 'Prodotto aggiunto al carrello');
+        return redirect()->back();
     }
 
     public function removecart($id)
@@ -180,7 +180,7 @@ class ProductController extends Controller
     public function resetCart()
     {
         session()->forget('cart');
-        return redirect()->back()->with('success', 'Carrello svuotato');
+        return redirect()->back();
     }
 
     public function prova()

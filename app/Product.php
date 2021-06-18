@@ -24,9 +24,9 @@ class Product extends Model
     {
         return $this->belongsToMany('App\Intolerance');
     }
-
-    public function in_orders()
+    
+    public function placed_orders()
     {
-        return $this->hasMany('App\In_order');
+        return $this->belongsToMany('App\Placed_order');
     }
 }
