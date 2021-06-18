@@ -30,13 +30,54 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <div class="dropdown">
+                    <button type="button" class="btn btn-info" data-toggle="dropdown">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
+                    </button>
+                    <div class="dropdown-menu" style="width: 500px">
+                        <div class="row total-header-section">
+                            <div class="col-lg-6 col-sm-6 col-6">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
+                            </div>
+                            <?php $total = 0 ?>
+                            @foreach((array) session('cart') as $id => $details)
+                                <?php $total += $details['price'] * $details['quantity'] ?>
+                            @endforeach
+                            <div class="col-lg-6 col-sm-6 col-6 total-section text-right">
+                                <p>Total: <span class="text-info">$ {{ $total }}</span></p>
+                            </div>
+                        </div>
+                        @if(session('cart'))
+                            @foreach(session('cart') as $id => $details)
+                                <div class="row cart-detail">
+                                    <div >
+                                        <img src="{{ $details['photo'] }}" style="heigth:50px; width:50px">
+                                    </div>
+                                    <div>
+                                        <p>{{ $details['name'] }}</p>
+                                        <span class="price text-info"> ${{ $details['price'] }}</span> <span class="count"> Quantity:{{ $details['quantity'] }}</span>
+                                    </div>
+                                    <a href="{{ route('removecart', ['id' => $id])}}"><button type="submit"><i class="fas fa-caret-down"></i></button></a>
+                                    <a href="{{ route('updatecart', ['id' => $id])}}"><button type="submit"><i class="fas fa-caret-up"></i></button></a>
+                                    <form  action="{{ route('delete_cart', ['id'=>$id]) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit">
+                                            X
+                                        </button>
+                                    </form>
+                                    </div>
+                            @endforeach
+                            <a href="{{route('orders.create')}}">Procedi con l'ordine</a>
+                        @endif
+                    </div>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
-
+                    
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->

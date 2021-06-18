@@ -14,7 +14,7 @@ class OrderController extends Controller
         $request->validate([
             'customer_name' => 'required|max:255',
             'customer_phone' => 'required|max:255',
-            'dorbell' => 'max:255',
+            'doorbell' => 'max:255',
             'address_delivery' => 'required|max:255',
             'order_comment' => 'max:255',
             'product_comment' => 'max:255'
