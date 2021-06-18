@@ -9,7 +9,8 @@ return [
         'rating' => 4.5,
         'reference_name' => 'Simone Verdi',
         'email' => 'beercondiciomolfetta@gmail.com',
-        'password' => '$2y$10$nRM2yeDncn.jdYBBQX.KFOMaLSxbeT2TVGsKXjRSdMq2EYkMnwouW'
+        'password' => '$2y$10$nRM2yeDncn.jdYBBQX.KFOMaLSxbeT2TVGsKXjRSdMq2EYkMnwouW',
+        'typology_id' => [12, 13, 16]
     ],
     [
         'name' => 'Sapemore',
