@@ -4,7 +4,12 @@ var app = new Vue ({
         query: "",
         typologies: [],
         restaurants: [],
+        categories: [],
+        products: [],
         filteredRest: [],
+        restIds: [],
+        selType: "",
+        selCat: "",
     },
     
     methods: {
@@ -34,6 +39,60 @@ var app = new Vue ({
                             this.filteredRest.push(restaurant);
                             console.log(restaurant.name);
                         }
+                    });
+                });
+            },
+
+            showSel() {
+                console.log(this.selected);
+            },
+
+            selectType() {
+                axios
+                .get('http://localhost:8000/api/restaurants')
+                .then((response) => {
+                    this.filteredRest = [];
+                    this.restaurants = response.data.results;
+                    this.restaurants.forEach((restaurant) => {
+                        restaurant.typologies.forEach((type) => {
+                            if (type.id == this.selType) {
+                                this.filteredRest.push(restaurant);
+                            }
+                        }) 
+                    });
+                });
+            },
+
+            selectCat() {
+                axios
+                .get('http://localhost:8000/api/products')
+                .then((response) => {
+                    this.filteredRest = [];
+                    this.restIds = [];
+                    this.products = response.data.results;
+                    this.products.forEach((product) => {
+                        if (product.category_id == this.selCat) {
+                            if (!this.restIds.includes(product.user_id)) {
+                                this.restIds.push(product.user_id)
+                            }
+                        }
+                    });
+                    this.connectId(this.restIds);
+                });
+            },
+
+            connectId(restIds) {
+                axios
+                .get('http://localhost:8000/api/restaurants')
+                .then((response) => {
+                    this.filteredRest = [];
+                    this.restaurants = response.data.results;
+                    this.restaurants.forEach((restaurant) => {
+                        restIds.forEach((rId) => {
+                            if (rId == restaurant.id) {
+                                this.filteredRest.push(restaurant);
+                            }
+                        }) 
                     });
                 });
             },

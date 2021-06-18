@@ -72,19 +72,25 @@
                         </div>
                         <p>Effettua una <label for="search_toggle">ricerca avanzata <i class="fas fa-chevron-down"></i></label></p>
                         <form class="advanced" action="">
-                            <select name='typology'>
+                        <div class="selection">
+                            <select v-model="selType" name='typology'>
                                 <option value="">Seleziona la tipologia del ristorante</option>
                                 @foreach ($typologies as $typology)
                                 <option value='{{$typology->id}}'>{{$typology->name}}</option>
                                 @endforeach
                             </select>
-                            <select name='category'>
+                            <a class="boo_btn create_btn" href="#" @click="selectType">Cerca</a>
+                        </div>
+                        <div class="selection">
+                            <select v-model="selCat" name='category'>
                                 <option value="">Seleziona la categoria del prodotto</option>
                                 @foreach ($categories as $category)
                                 <option value='{{$category->id}}'>{{$category->name}}</option>
                                 @endforeach
                             </select>
-                            <button type="submit" @click="searchRestaurant">Cerca</button>
+                            <a class="boo_btn create_btn" href="#" @click="selectCat">Cerca</a>
+                        </div>                    
+{{--                             <button type="submit" @click="searchRestaurant">Cerca</button> --}}
                         </form>
                     </div>
                 </div>

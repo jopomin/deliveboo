@@ -19,12 +19,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/restaurants', 'Api\UserController@index');
-/* <<<<<<< HEAD
-======= */
 
 Route::get('/categories', 'Api\CategoryController@index');
 
 Route::get('/products', 'Api\ProductController@index');
 
 Route::get('/typologies', 'Api\TypologyController@index');
-/* >>>>>>> 5630e36d070c6fc2789b4b38e6fc06fb85124514 */
