@@ -54,7 +54,7 @@ var app = new Vue ({
                     this.filteredRest = [];
                     this.restaurants = response.data.results;
                     this.restaurants.forEach((restaurant) => {
-                        restaurant.typologies.forEach((type) => {, v
+                        restaurant.typologies.forEach((type) => {
                             if (type.id == this.selType) {
                                 this.filteredRest.push(restaurant);
                             }

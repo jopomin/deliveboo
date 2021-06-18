@@ -36,7 +36,7 @@ class TypologyUserTableSeeder extends Seeder
             $user11 = User::find(11);
             $user11->typologies()->sync([11, 14, 17]);
             $user12 = User::find(12);
-            $user12->typologies()->sync([9, 14, 16]);
+            $user12->typologies()->sync([9, 10, 14, 16]);
 
     }
 }
