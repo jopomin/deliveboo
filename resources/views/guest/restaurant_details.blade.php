@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.cart')
 
 @section('content')
 <a href="{{ route('restaurant_list') }}"><input type="button"value="Back" ></a>

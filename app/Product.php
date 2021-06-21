@@ -27,6 +27,6 @@ class Product extends Model
     
     public function placed_orders()
     {
-        return $this->belongsToMany('App\Placed_order');
+        return $this->belongsToMany('App\Placed_order')->withPivot('quantity');
     }
 }
