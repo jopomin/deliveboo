@@ -17,7 +17,7 @@ body {
 .boo_btn {
     font-size: 13px;
     font-weight: 600;
-    padding: 6px 10px;
+    padding: 12px 15px;
     border-radius: 5px;
     margin-bottom: 8px;
 }
@@ -180,7 +180,7 @@ nav ul li a:hover:after {
 }
 
 .src_res {
-    display: flex; 
+/*     display: flex;  */
     background: #fff;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 5px;
@@ -188,8 +188,6 @@ nav ul li a:hover:after {
     padding: 30px;
     text-align: center;
     color: #215f74;
-    /*     display: flex;
-    flex-wrap: wrap; */
 }
 
 .typ_rest {
@@ -262,6 +260,17 @@ p label .fa-chevron-down {
 .input_box .advanced input {
     margin: 10px 0;
 }
+
+.advanced {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.advanced > * {
+    margin: 10px 0;
+}
+
 .input_box button,
 .input_box .deliv_btn {
     width: 90px;

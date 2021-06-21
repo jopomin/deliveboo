@@ -3,119 +3,91 @@ var app = new Vue ({
     el: '#root',
     data: {
         query: "",
-        typologies: [],
-        restaurants: [],
-        categories: [],
-        products: [],
-        filteredRest: [],
-        restIds: [],
         selType: "",
         selCat: "",
+        nameFil: [],
+        typeFil: [],
+        filteredRest: [],
     },
     
     methods: {
-            searchType() {
-                axios
-                .get('http://localhost:8000/api/typologies')
-                .then((response) => {
-                    this.typologies = response.data.results;
-                    this.typologies.forEach((typology) => {
-                        if (typology.name.toLowerCase().includes(this.query.toLowerCase())) {
-                            this.restaurants.push(typology.users);
-                            console.log(typology.users);
-                        }
+        searchName() {
+            this.nameFil = [];
+            this.typeFil = [];
+            this.filteredRest = [];
+            axios
+            .get('http://localhost:8000/api/restaurants')
+            .then ((response) => {
+                restaurants = response.data.results;
+                
+                if (this.query == "") {
+                    this.filteredRest = restaurants;
+                }
+
+                else {
+                    this.filteredRest = restaurants.filter((restaurant) => {
+                        return restaurant.name.toLowerCase().includes(this.query.toLowerCase());
                     });
-/*                     console.log(this.restaurants); */
-                });
-            },
+                };
+                console.log(this.filteredRest);
+            });
+        },
 
-            searchRestaurant() {
-                axios
-                .get('http://localhost:8000/api/restaurants')
-                .then((response) => {
-                    console.log(response);
-                    this.filteredRest = [];
-                    this.restaurants = response.data.results;
-                    this.restaurants.forEach((restaurant) => {
-                        if (restaurant.name.toLowerCase().includes(this.query.toLowerCase())) {
-                            this.filteredRest.push(restaurant);
-                            console.log(this.filteredRest);
-                        }
+        totalSrc() {
+            this.nameFil = [];
+            this.typeFil = [];
+            this.filteredRest = [];
+            axios
+            .get('http://localhost:8000/api/restaurants')
+            .then ((response) => {
+                restaurants = response.data.results;
+                
+                if (this.query == "") {
+                    this.nameFil = restaurants;
+                }
+
+                else {
+                    this.nameFil = restaurants.filter((restaurant) => {
+                        return restaurant.name.toLowerCase().includes(this.query.toLowerCase());
                     });
-                });
-            },
+                };
+                console.log(this.nameFil);
 
-            showSel() {
-                console.log(this.selected);
-            },
+                if (this.selType == "") {
+                    this.typeFil = this.nameFil 
+                } 
 
-            selectType() {
-                axios
-                .get('http://localhost:8000/api/restaurants')
-                .then((response) => {
-                    this.filteredRest = [];
-                    this.restaurants = response.data.results;
-                    this.restaurants.forEach((restaurant) => {
-                        restaurant.typologies.forEach((type) => {
-                            if (type.id == this.selType) {
-                                this.filteredRest.push(restaurant);
-                            }
-                        }) 
-                    });
-                });
-            },
-
-            selectCat() {
-                axios
-                .get('http://localhost:8000/api/products')
-                .then((response) => {
-                    this.filteredRest = [];
-                    this.restIds = [];
-                    this.products = response.data.results;
-                    this.products.forEach((product) => {
-                        if (product.category_id == this.selCat) {
-                            if (!this.restIds.includes(product.user_id)) {
-                                this.restIds.push(product.user_id)
-                            }
-                        }
-                    });
-                    this.connectId(this.restIds);
-                });
-            },
-
-            selectInt() {
-                axios
-                .get('http://localhost:8000/api/products')
-                .then((response) => {
-                    this.filteredRest = [];
-                    this.restIds = [];
-                    this.products = response.data.results;
-                    this.products.forEach((product) => {
-                        if (product.category_id == this.selCat) {
-                            if (!this.restIds.includes(product.user_id)) {
-                                this.restIds.push(product.user_id)
-                            }
-                        }
-                    });
-                    this.connectId(this.restIds);
-                });
-            },
-
-            connectId(restIds) {
-                axios
-                .get('http://localhost:8000/api/restaurants')
-                .then((response) => {
-                    this.filteredRest = [];
-                    this.restaurants = response.data.results;
-                    this.restaurants.forEach((restaurant) => {
-                        restIds.forEach((rId) => {
-                            if (rId == restaurant.id) {
-                                this.filteredRest.push(restaurant);
+                else {
+                    this.nameFil.forEach((restaurant) => {
+                        restaurant.typologies.forEach((restType) => {
+                            if (restType.id == this.selType) {
+                                this.typeFil.push(restaurant)
                             }
                         })
                     });
-                });
-            }
+                }
+                console.log(this.selType);
+                console.log(this.typeFil);
+
+                if (this.selCat == "") {
+                    this.filteredRest = this.typeFil;
+                }
+
+                else {
+                    this.typeFil.forEach((restaurant) => {
+                        restaurant.products.forEach((restProd) => {
+                            if (restProd.category_id == this.selCat) {
+                                this.filteredRest.push(restaurant)
+                            }
+                        })
+                    });
+                }
+                console.log(this.filteredRest);
+                
+            });
+
+        },
+
     }
     
 });

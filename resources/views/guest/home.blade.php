@@ -58,14 +58,9 @@
                     <div class="input_box">
                         <p>Inserisci il nome del ristorante che vuoi visitare</p>
                         <input type="checkbox" id="search_toggle">
-                        {{--                         <form action="">
-                            <input type="text" name="name" id="name" placeholder="Inserisci il ristorante">
-                            <button type="submit">Cerca</button>
-                        </form> --}}
                         <div class="src_box">
-                            <input v-model="query" @keyup.enter="searchRestaurant" type="text" name="name" id="name" placeholder="Inserisci il nome del ristorante">
-                            <a class="deliv_btn" href="#" @click="searchRestaurant">Cerca</a>
-                            {{--                             <button @click="searchRestaurant">Cerca</button> --}}
+                            <input v-model="query" type="text" name="name" id="name" placeholder="Inserisci il nome del ristorante">
+                            <a class="deliv_btn" href="#" @click="searchName">Cerca</a>
                         </div>
                         <p>Effettua una <label for="search_toggle">ricerca avanzata <i class="fas fa-chevron-down"></i></label></p>
                         <form class="advanced" action="">
@@ -76,7 +71,6 @@
                                     <option value='{{$typology->id}}'>{{$typology->name}}</option>
                                     @endforeach
                                 </select>
-                                <a class="boo_btn create_btn" href="#" @click="selectType">Cerca</a>
                             </div>
                             <div class="selection">
                                 <select v-model="selCat" name='category'>
@@ -85,14 +79,13 @@
                                     <option value='{{$category->id}}'>{{$category->name}}</option>
                                     @endforeach
                                 </select>
-                                <a class="boo_btn create_btn" href="#" @click="selectCat">Cerca</a>
-                            </div>                    
-                            {{--                             <button type="submit" @click="searchRestaurant">Cerca</button> --}}
+                            </div>                                      
+                            <a class="boo_btn create_btn" href="#" @click="totalSrc">Cerca</a>
                         </form>
                     </div>
                 </div>
             </div>
-            <div class="src_res" v-if="filteredRest.length > 1">
+            <div class="src_res">
                 <a class="typ_rest" v-for="rest in filteredRest" :href="'restaurant/'+rest.id">@{{rest.name}}</a>                    
             </div>
             <div class="slider_box">

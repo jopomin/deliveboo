@@ -25,3 +25,5 @@ Route::get('/categories', 'Api\CategoryController@index');
 Route::get('/products', 'Api\ProductController@index');
 
 Route::get('/typologies', 'Api\TypologyController@index');
+
+Route::get('/intolerances', 'Api\IntoleranceController@index');

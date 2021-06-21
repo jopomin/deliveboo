@@ -12,7 +12,7 @@ class UserController extends Controller
 
     public function index() {
 
-        $users = User::with('typologies')->get();      
+        $users = User::with('typologies', 'products')->get();
 
         return response()->json([
             'success' => true,

@@ -4,17 +4,17 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Product;
+use App\Intolerance;
 
-class ProductController extends Controller
+class IntoleranceController extends Controller
 {
     public function index() {
 
-        $products = Product::with('intolerances')->get();
+        $intolerances = Intolerance::with('products')->get();
 
         return response()->json([
             'success' => true,
-            'results' => $products
+            'results' => $intolerances
         ]);
     }
 }
