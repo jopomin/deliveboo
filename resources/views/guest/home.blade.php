@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <title>Deliveboo</title>
- 
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+    
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{{asset('css/home.css')}}">
 </head>
 <body>
-<div id="root">
+    <div id="root">
         <header>
             <nav>
                 <div class="logo">
@@ -32,7 +32,7 @@
                 </div>
                 <ul>
                     <li><a href="#">About</a></li>
-                    <li><a href="#">Lavora con noi</a></li>
+                    <li><a href="{{ route('restaurant_list') }}">I nostri ristoranti</a></li>
                     @if (Route::has('login'))
                     @auth
                     <li><a href="{{ url('/admin') }}">Dashboard</a></li>
@@ -47,9 +47,6 @@
             </nav>
         </header>
         <main>
-            <div class="src_res">
-                <a class="typ_rest" v-for="rest in filteredRest" :href="'restaurant/'+rest.id">@{{rest.name}}</a>                    
-            </div>
             <div class="jumbo">
                 <div class="jumbo_image">
                     <img src="{{asset('img/jumbo_image.gif')}}" alt="Jumbo image">
@@ -61,50 +58,74 @@
                     <div class="input_box">
                         <p>Inserisci il nome del ristorante che vuoi visitare</p>
                         <input type="checkbox" id="search_toggle">
-    {{--                         <form action="">
+                        {{--                         <form action="">
                             <input type="text" name="name" id="name" placeholder="Inserisci il ristorante">
                             <button type="submit">Cerca</button>
                         </form> --}}
                         <div class="src_box">
                             <input v-model="query" @keyup.enter="searchRestaurant" type="text" name="name" id="name" placeholder="Inserisci il nome del ristorante">
                             <a class="deliv_btn" href="#" @click="searchRestaurant">Cerca</a>
-    {{--                             <button @click="searchRestaurant">Cerca</button> --}}
+                            {{--                             <button @click="searchRestaurant">Cerca</button> --}}
                         </div>
                         <p>Effettua una <label for="search_toggle">ricerca avanzata <i class="fas fa-chevron-down"></i></label></p>
                         <form class="advanced" action="">
-                        <div class="selection">
-                            <select v-model="selType" name='typology'>
-                                <option value="">Seleziona la tipologia del ristorante</option>
-                                @foreach ($typologies as $typology)
-                                <option value='{{$typology->id}}'>{{$typology->name}}</option>
-                                @endforeach
-                            </select>
-                            <a class="boo_btn create_btn" href="#" @click="selectType">Cerca</a>
-                        </div>
-                        <div class="selection">
-                            <select v-model="selCat" name='category'>
-                                <option value="">Seleziona la categoria del prodotto</option>
-                                @foreach ($categories as $category)
-                                <option value='{{$category->id}}'>{{$category->name}}</option>
-                                @endforeach
-                            </select>
-                            <a class="boo_btn create_btn" href="#" @click="selectCat">Cerca</a>
-                        </div>                    
-{{--                             <button type="submit" @click="searchRestaurant">Cerca</button> --}}
+                            <div class="selection">
+                                <select v-model="selType" name='typology'>
+                                    <option value="">Seleziona la tipologia del ristorante</option>
+                                    @foreach ($typologies as $typology)
+                                    <option value='{{$typology->id}}'>{{$typology->name}}</option>
+                                    @endforeach
+                                </select>
+                                <a class="boo_btn create_btn" href="#" @click="selectType">Cerca</a>
+                            </div>
+                            <div class="selection">
+                                <select v-model="selCat" name='category'>
+                                    <option value="">Seleziona la categoria del prodotto</option>
+                                    @foreach ($categories as $category)
+                                    <option value='{{$category->id}}'>{{$category->name}}</option>
+                                    @endforeach
+                                </select>
+                                <a class="boo_btn create_btn" href="#" @click="selectCat">Cerca</a>
+                            </div>                    
+                            {{--                             <button type="submit" @click="searchRestaurant">Cerca</button> --}}
                         </form>
                     </div>
                 </div>
-                <div class="links">
-                    <a href="{{ route('restaurant_list') }}">Lista Ristoranti Prova</a>
+            </div>
+            <div class="src_res" v-if="filteredRest.length > 1">
+                <a class="typ_rest" v-for="rest in filteredRest" :href="'restaurant/'+rest.id">@{{rest.name}}</a>                    
+            </div>
+            <div class="slider_box">
+                <h1>Tanti menu da poter ordinare</h1>
+                <div id="slider">
+                    <input type="radio" name="slider" id="foto1" checked>
+                    <input type="radio" name="slider" id="foto2">
+                    <input type="radio" name="slider" id="foto3">
+                    <input type="radio" name="slider" id="foto4">
+                    <input type="radio" name="slider" id="foto5">
+                    <label for="foto1" id="slide1"><img
+                        src="{{asset('img/slider/foto1.jpg')}}"
+                        alt=""></label>
+                    <label for="foto2" id="slide2"><img
+                        src="{{asset('img/slider/foto2.jpg')}}"
+                        alt=""></label>
+                    <label for="foto3" id="slide3"><img src="{{asset('img/slider/foto3.jpg')}}" alt=""></label>
+                    <label for="foto4" id="slide4"><img
+                        src="{{asset('img/slider/foto4.jpg')}}"
+                        alt=""></label>
+                    <label for="foto5" id="slide5"><img
+                        src="{{asset('img/slider/foto5.jpg')}}"
+                        alt=""></label>
                 </div>
             </div>
         </main>
     </div>
-
+                    
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="{{asset('js/main.js')}}"></script>
-
+    
 </body>
 </html>
+                

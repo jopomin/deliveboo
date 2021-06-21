@@ -56,9 +56,12 @@ class OrderController extends Controller
         $new_order->fill($data);
         $new_order->payment_status = 1;
         $new_order->save();
+        $cart = session()->get('cart');
         
-        if (array_key_exists('products', $data)) {
-            $new_order->products()->sync($data['products']);
+        for($i = 0; $i < count($data['products']); $i++) {
+            if (array_key_exists('products', $data)) {
+                $new_order->products()->attach($data['products'][$i], ['quantity' => $cart[$data['products'][$i]]['quantity']]);
+            }
         }
         
         session()->forget('cart');

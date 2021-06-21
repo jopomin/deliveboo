@@ -1,3 +1,4 @@
+Vue.config.devtools = true;
 var app = new Vue ({
     el: '#root',
     data: {
@@ -32,12 +33,13 @@ var app = new Vue ({
                 axios
                 .get('http://localhost:8000/api/restaurants')
                 .then((response) => {
+                    console.log(response);
                     this.filteredRest = [];
                     this.restaurants = response.data.results;
                     this.restaurants.forEach((restaurant) => {
                         if (restaurant.name.toLowerCase().includes(this.query.toLowerCase())) {
                             this.filteredRest.push(restaurant);
-                            console.log(restaurant.name);
+                            console.log(this.filteredRest);
                         }
                     });
                 });
@@ -92,10 +94,10 @@ var app = new Vue ({
                             if (rId == restaurant.id) {
                                 this.filteredRest.push(restaurant);
                             }
-                        }) 
+                        })
                     });
                 });
-            },
-
+            }
     }
-})
+    
+});

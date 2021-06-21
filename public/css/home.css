@@ -6,6 +6,7 @@
 body {
     font-family: 'Staatliches', cursive;
     font-size: 16px;
+    user-select: none; /* permette di non far diventare blu le immagni selezionandole */
 }
 .deliv_btn {
     display: flex;
@@ -151,7 +152,7 @@ nav ul li a:hover:after {
 }
 .jumbo {
     width: 100%;
-    height: 650px;
+    height: 600px;
     background-image: url('../img/pattern.jpg');
     display: flex;
 }
@@ -167,7 +168,7 @@ nav ul li a:hover:after {
     align-items: center;
     margin-top: 50px;
 }
-.jumbo_text h1 {
+.jumbo_text h1, .slider_box h1 {
     font-size: 250%;
     color: #2f93b5;
     margin-bottom: 30px;
@@ -179,19 +180,15 @@ nav ul li a:hover:after {
 }
 
 .src_res {
+    display: flex; 
     background: #fff;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 5px;
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
     z-index: 999;
     padding: 30px;
-    width: 40%;
     text-align: center;
     color: #215f74;
-/*     display: flex;
+    /*     display: flex;
     flex-wrap: wrap; */
 }
 
@@ -332,4 +329,68 @@ input, button, .deliv_btn {
     to {
         opacity: 0;
     }
+}
+
+/* SLIDER */
+.slider_box {
+    padding: 50px 0;
+}
+.slider_box h1 {
+    text-align: center;
+}
+[type=radio] {
+    display: none;
+}
+#slider {
+    padding: 50px 0;
+    height: 35vw;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+#slider label {
+    margin: auto;
+    width: 50%;
+    height: 90%;
+    border-radius: 4px;
+    position: absolute;
+    left: 0; right: 0;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+#foto1:checked ~ #slide4, #foto2:checked ~ #slide5,
+#foto3:checked ~ #slide1, #foto4:checked ~ #slide2,
+#foto5:checked ~ #slide3 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+#foto1:checked ~ #slide5, #foto2:checked ~ #slide1,
+#foto3:checked ~ #slide2, #foto4:checked ~ #slide3,
+#foto5:checked ~ #slide4 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3);
+    transform: translate3d(-15%,0,-100px);
+}
+#foto1:checked ~ #slide1, #foto2:checked ~ #slide2,
+#foto3:checked ~ #slide3, #foto4:checked ~ #slide4,
+#foto5:checked ~ #slide5 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3);
+    transform: translate3d(0,0,0);
+}
+#foto1:checked ~ #slide2, #foto2:checked ~ #slide3,
+#foto3:checked ~ #slide4, #foto4:checked ~ #slide5,
+#foto5:checked ~ #slide1 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3);
+    transform: translate3d(15%,0,-100px);
+}
+#foto1:checked ~ #slide3, #foto2:checked ~ #slide4,
+#foto3:checked ~ #slide5, #foto4:checked ~ #slide1,
+#foto5:checked ~ #slide2 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+label img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:5px;
 }
