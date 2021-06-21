@@ -83,6 +83,24 @@ var app = new Vue ({
                 });
             },
 
+            selectInt() {
+                axios
+                .get('http://localhost:8000/api/products')
+                .then((response) => {
+                    this.filteredRest = [];
+                    this.restIds = [];
+                    this.products = response.data.results;
+                    this.products.forEach((product) => {
+                        if (product.category_id == this.selCat) {
+                            if (!this.restIds.includes(product.user_id)) {
+                                this.restIds.push(product.user_id)
+                            }
+                        }
+                    });
+                    this.connectId(this.restIds);
+                });
+            },
+
             connectId(restIds) {
                 axios
                 .get('http://localhost:8000/api/restaurants')
