@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Category;
 use illuminate\Support\Str;
-use illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
+
 
 class CategoryController extends Controller
 {
@@ -53,9 +54,15 @@ class CategoryController extends Controller
         $new_category = new Category();
         $new_category->fill($data);
         $new_category->slug = Str::slug($new_category->name, '-');
+        if (array_key_exists('image', $data)) {
+            $image_path = Storage::put('categories', $data['image']);
+            $data['image'] = $image_path;
+        }
+
+        $new_category->image = $data['image'];
         $new_category->save();
 
-        return redirect()->route('admin.categories.index')->with('success', 'Add new category');
+        return redirect()->route('admin.categories.index')->with('success', 'Aggiunta nuova categoria');
     }
 
     /**
@@ -94,7 +101,7 @@ class CategoryController extends Controller
         $category->slug = Str::slug($data['name'], '-');
         $category->update($data);
 
-        return redirect()->route('admin.categories.index')->with('info', 'Category updated');
+        return redirect()->route('admin.categories.index')->with('info', 'Categoria modificata');
     }
 
     /**
@@ -107,6 +114,6 @@ class CategoryController extends Controller
     {
         $category->delete();
 
-        return redirect()->route('admin.categories.index')->with('status_delete', 'Category deleted');
+        return redirect()->route('admin.categories.index')->with('status_delete', 'Category eliminata');
     }
 }

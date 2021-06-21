@@ -28,10 +28,9 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
-
                 <div class="form-group">
-                    <label>Immagine</label>
-                    <input type="text" name="image" class="form-control @error('image') is-invalid @enderror" placeholder="Inserire link immagine" value="" required>
+                    <label for="image">Immagine</label>
+                    <input type="file" name="image" class="form-control-file @error('image') is-invalid @enderror" placeholder="Inserire link immagine" value="" required>
                     @error('image')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror

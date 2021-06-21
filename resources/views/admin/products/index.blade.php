@@ -8,14 +8,14 @@
             <a class="boo_btn create_btn" href="{{route('admin.products.create')}}">Inserisci Prodotto</a>
         </div>
         <div class="bottom_content">
-            @if(session('status_create'))
+            @if(session('success_message'))
             <div class="alert alert-success">
-                {{ session('status_create') }}
+                {{ session('success_message') }}
             </div>
             @endif
-            @if(session('status_update'))
+            @if(session('info_message'))
             <div class="alert alert-warning">
-                {{ session('status_update') }}
+                {{ session('info_message') }}
             </div>
             @endif
             @if(session('status_delete'))
@@ -45,7 +45,7 @@
                         <td>{{$product->description}}</td>
                         <td>{{$product->image}}</td>
                         <td>€ {{$product->price}}</td>
-                        <td>{{$product->visible}}</td>
+                        <td>{{ $product->visible == 1 ? 'Disponibile' : 'Non disponibile'}}</td>
                         <td>
                             <a href="{{ route('admin.products.show', $product->id)}}" class="action_btn show far fa-eye"></a>
                             <a href="{{ route('admin.products.edit', $product->id)}}" class="action_btn edit fas fa-edit"></a>
@@ -62,4 +62,5 @@
         </div>
     </div>
 </div>
+@include('sweetalert::alert')
 @endsection

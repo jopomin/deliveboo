@@ -10,7 +10,7 @@
         <div class="bottom_content">
             <div class="prod_info_cont">
                 <div class="prod_pic">
-                    <img src="{{$product->image}}" alt="{{$product->name}}">
+                    <img src="{{substr( $product->image, 0, 4 ) === "http" ? $product->image : asset('storage/' . $product->image)}}" alt="{{$product->name}}">
                 </div>
                 <div class="prod_info">
                     <p class="prod_cat">{{$product->category->name}}</p>

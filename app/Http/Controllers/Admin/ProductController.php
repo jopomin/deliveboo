@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
 use App\Intolerance;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -52,11 +53,18 @@ class ProductController extends Controller
         $newProduct->fill($formData);
         $newProduct->user_id = Auth::id();
 
+        if (array_key_exists('image', $formData)) {
+            $image_path = Storage::put('products', $formData['image']);
+            $data['image'] = $image_path;
+        }
+
+        $newProduct->image = $data['image'];
+
         $newProduct->save();
         if(array_key_exists('intolerances', $formData)){
             $newProduct->intolerances()->sync($formData['intolerances']);
         };
-        return redirect()->route('admin.products.index');
+        return redirect()->route('admin.products.index')->with('success', 'Aggiunto nuovo prodotto');
     }
 
     /**
@@ -114,7 +122,7 @@ class ProductController extends Controller
         };
         $editProduct->update($data);
 
-        return redirect()->route("admin.products.index");
+        return redirect()->route("admin.products.index")->with('info', 'Prodotto modificato');
     }
 
     /**
@@ -132,6 +140,6 @@ class ProductController extends Controller
 
         $product->delete();
 
-        return redirect()->route("admin.products.index");
+        return redirect()->route("admin.products.index")->with('status_delete', 'Prodotto eliminato');
     }
 }

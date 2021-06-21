@@ -29,13 +29,14 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
-
                 <div class="form-group">
-                    <label>Immagine</label>
-                    <input type="text" name="image" class="form-control @error('image') is-invalid @enderror" placeholder="Inserisci il titolo" value="{{ old('image', $product->image) }}" required>
-                    @error('image')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
+                    @if($product->image)
+                        <img class="img-thumbnail" style="height:200px" src="{{ substr( $product->image, 0, 4 ) === "http" ? $product->image : asset('storage/' . $product->image) }}" alt="">
+                    @else
+                        <p>Immagine non presente</p>
+                        <label for="image">Immagine copertina</label>
+                    @endif
+                    <input type="file" name="image" class="form-control-file">
                 </div>
 
                 <div class="form-group">

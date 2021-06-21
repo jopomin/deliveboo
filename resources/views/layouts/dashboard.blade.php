@@ -47,28 +47,28 @@
                     <a class="{{ Request::route()->getName() == 'admin.users.index' ? 'active' : null }}"
                         href="{{route('admin.users.index')}}">
                         <i class="fas fa-user"></i>
-                        <span>User</span>
+                        <span>Utente</span>
                     </a>
                 </li>
                 <li>
                     <a class="{{ Request::route()->getName() == 'admin.orders.index' ? 'active' : null }}"
                         href="{{route('admin.orders.index')}}">
                         <i class="fas fa-shipping-fast"></i>
-                        <span>Orders</span>
+                        <span>Ordini</span>
                     </a>
                 </li>
                 <li>
                     <a class="{{ Request::route()->getName() == 'admin.products.index' ? 'active' : null }}"
                         href="{{route('admin.products.index')}}">
                         <i class="fas fa-utensils"></i>
-                        <span>Products</span>
+                        <span>Prodotti</span>
                     </a>
                 </li>
                 <li>
                     <a class="{{ Request::route()->getName() == 'admin.categories.index' ? 'active' : null }}"
                         href="{{route('admin.categories.index')}}">
                         <i class="fas fa-clipboard-list"></i>
-                        <span>Categories</span>
+                        <span>Categorie</span>
                     </a>
                 </li>
                 <li>
@@ -100,7 +100,7 @@
         </div>
         <div class="search_wrapper">
             <i class="fas fa-search"></i>
-            <input type="search" placeholder="Search here">
+            <input type="search" placeholder="Cerca">
         </div>
         <div class="user_wrapper">
             <img src="{{asset('img\restaurants\\')}}{{Auth::user()->image}}" alt="{{Auth::user()->name}}" width="50px" height="50px">

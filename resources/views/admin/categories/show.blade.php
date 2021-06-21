@@ -9,7 +9,8 @@
         </div>
         <div class="bottom_content">
             <div class="category_pic">
-                <img src="{{ asset('img/products') }}/{{$category->image}}" alt="{{$category->name}}">
+                <?php $array_string = explode('.', $category->image); $first_word = $array_string[0];?>
+                <img src="{{ $first_word == $category->slug ? asset('img/categories/' . $category->image) : asset('storage/' . $category->image) }}" alt="{{$category->name}}">
             </div>
         </div>
     </div>

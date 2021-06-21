@@ -29,6 +29,13 @@
                     @enderror
                 </div>
                 <div class="form-group">
+                    <label for="image">Immagine</label>
+                    <input type="file" name="image" class="form-control-file @error('image') is-invalid @enderror" placeholder="Inserire link immagine" value="" required>
+                    @error('image')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="form-group">
                     <button type="submit" class="boo_btn btn_form create_btn">
                         <i class="far fa-save"></i>Salva Categoria
                     </button>
