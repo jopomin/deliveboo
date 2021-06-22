@@ -61,4 +61,6 @@
         </tr>
         </tfoot>
     </table>
+</div>
+        
 @endsection

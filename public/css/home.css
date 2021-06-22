@@ -8,6 +8,11 @@ body {
     font-size: 16px;
     user-select: none; /* permette di non far diventare blu le immagni selezionandole */
 }
+
+#root {
+    position: relative;
+}
+
 .deliv_btn {
     display: flex;
     justify-content: center;
@@ -178,80 +183,6 @@ nav ul li a:hover:after {
 .src_box {
     display: flex;
     margin-bottom: 20px;
-}
-
-.src_res {
-    background: #fff;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    border-radius: 5px;
-    z-index: 999;
-    padding: 20px;
-    text-align: center;
-    color: #215f74;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-height: 80vh;
-    width: 710px;
-    overflow-y: scroll;
-}
-
-.src_res_top_bar {
-    height: 50px;
-    border-bottom: 1px solid #ccc;
-    padding: 10px 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.src_results {
-    width: 100%;
-    display: flex;
-    padding: 10px 5px;
-    flex-wrap: wrap;
-}
-
-.src_res_card {
-    width: 150px;
-    margin: 10px 10px 10px 0;
-    border-radius: 5px;
-    background: lightblue;
-}
-
-.src_res_card:hover {
-    background: #7dc51e;
-    color: #fff;
-}
-
-.src_res_card:last-child {
-    margin: 10px 0 10px 0;
-}
-
-.src_res_card img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-}
-
-.src_res_card h2 {
-    text-align: center;
-    font-size: 18px;
-    color: #215f74;
-    margin: 15px 0;
-}
-
-.typ_rest {
-    display: block;
-    color: #000;
-    cursor: pointer;
-}
-
-.rest_img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
 }
 
 .selection {
@@ -454,4 +385,143 @@ label img{
     height:100%;
     object-fit:cover;
     border-radius:5px;
+}
+
+/* SEARCH RESULTS */
+
+.src_res_main_cont {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 997;
+    width: 100%;
+    height: 100%;
+    background: rgba(125, 197, 30, 0.8);
+}
+
+.src_res_box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 870px;
+    height: 80vh;
+    z-index: 998;
+}
+
+.src_res_controller {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    font-size: 20px;
+    color: rgba(33, 95, 116);
+}
+
+.src_res_controller p {
+    margin: 0;
+}
+
+.close_src_res {
+    font-size: 24px;
+}
+
+.close_src_res:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+.src_results {
+    background: #fff;
+    box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
+    padding: 20px 20px 10px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: calc(80vh - 50px);
+    position: relative;
+}
+
+/* istruzioni per nascondere la scrollbar */
+
+.src_results {
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll; 
+}
+
+.src_results::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
+.src_res_card {
+    width: 200px;
+    margin: 0 10px 10px 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.src_res_card_text {
+    background: #2f93b5;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+.src_res_card_text h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.src_res_card:hover .src_res_card_text {
+    background: #7dc51e;
+    color: #fff;
+}
+
+.src_res_card:active .src_res_card_text {
+    background: #7dc51e;
+    color: #215f74;
+}
+
+.src_res_card:nth-child(4n+4) {
+    margin: 0 0 10px 0;
+}
+
+.src_res_card_img {
+    width: 200px;
+    height: 200px;
+}
+
+.src_res_card_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.no_res {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+}
+
+.no_res p {
+    font-size: 30px;
+    color: #ddd;
+    margin: 0;
+}
+
+.typ_rest {
+    display: block;
+    color: #000;
+    cursor: pointer;
+}
+
+.rest_img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
 }
