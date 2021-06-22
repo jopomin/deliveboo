@@ -84,21 +84,6 @@
                         </form>
                     </div>
                 </div>
-                <div class="src_res" v-if="results">
-                    <div class="src_res_top_bar">
-                        <div>
-                            <p>Risultati</p>
-                        </div>
-                        <div class="close_res" @click="closeRes"><p>X</p></div>
-                    </div>
-                    <div class="src_results">
-                        <a class="src_res_card" :href="'restaurant/'+rest.id" v-for="rest in filteredRest">
-                            <img :src="'img/restaurants/'+rest.image" alt="">
-                            <h2>@{{rest.name}}</h2>
-                        </a>  
-{{--                         <a class="typ_rest"  :href="'restaurant/'+rest.id">@{{rest.name}}</a>    --}}                 
-                    </div>
-                </div>
             </div>
             <div class="slider_box">
                 <h1>Tanti menu da poter ordinare</h1>
@@ -124,7 +109,25 @@
                 </div>
             </div>
         </main>
-    </div>
+        <div class="src_res_main_cont" v-if="results" @click="closeRes">
+            <div class="src_res_box">
+                <div class="src_res_controller">
+                    <div class="src_res_ctrl_txt"><p>Risultati Ricerca</p></div>
+                    <div class="close_src_res" @click="closeRes"><i class="fas fa-window-close"></i></div>
+                </div>
+                <div class="src_results">
+                    <a class="src_res_card" v-if="filteredRest.length > 0" :href="'restaurant/'+rest.id" v-for="rest in filteredRest">
+                        <div class="src_res_card_img">
+                            <img :src="'img/restaurants/'+rest.image" :alt="rest.name">
+                        </div>
+                        <div class="src_res_card_text">
+                            <h2>@{{rest.name}}</h2>
+                        </div>
+                    </a>
+                    <div class="no_res" v-if="filteredRest.length == 0">
+                        <p>Nessun ristorante corrisponde ai criteri di ricerca</p>
+                    </div>
+                </div> 
                     
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
