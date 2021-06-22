@@ -4,7 +4,7 @@
 <div class="cards">
     <div class="card_single">
         <div>
-            <h1>45</h1>
+            <h1>{{count($orders_count)}}</h1>
             <span>Ordini</span>
         </div>
         <div class="statistic_image">
@@ -28,7 +28,7 @@
     </div>
     <div class="card_single">
         <div>
-            <h1>5</h1>
+            <h1>{{count($categories_count)}}</h1>
             <span>Categorie</span>
         </div>
         <div class="statistic_image">
@@ -40,7 +40,7 @@
     </div>
     <div class="card_single">
         <div>
-            <h1>€2k</h1>
+            <h1>€{{$sale}}</h1>
             <span>Guadagni</span>
         </div>
         <div class="statistic_image">
@@ -55,56 +55,28 @@
     <div class="recent_orders">
         <div class="card">
             <div class="card_header">
-                <h3>Recent Orders</h3>
-                <button>See All<i class="fas fa-arrow-right"></i></button>
+                <h3>Ordini recenti</h3>
+                <a href="{{route('admin.orders.index')}}">Vedi tutto<i class="fas fa-arrow-right"></i></a>
             </div>
             <div class="card_body">
                 <table>
                     <thead>
                         <tr>
-                            <td width="50%">Name</td>
-                            <td>Price</td>
-                            <td>Quantity</td>
-                            <td>Payment</td>
+                            <td width="50%">Prodotto</td>
+                            <td>Prezzo</td>
+                            <td>Quantità</td>
+                            <td>Data</td>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($recent_orders as $order)
                         <tr>
-                            <td>Arizona Master</td>
-                            <td>€10.00</td>
-                            <td>1</td>
-                            <td>Mastercard</td>
+                            <td>{{$order->name}}</td>
+                            <td>{{$order->price}}</td>
+                            <td>{{$order->quantity}}</td>
+                            <td>{{$order->date}}</td>
                         </tr>
-                        <tr>
-                            <td>Arizona</td>
-                            <td>€10.00</td>
-                            <td>1</td>
-                            <td>Mastercard</td>
-                        </tr>
-                        <tr>
-                            <td>Arizona</td>
-                            <td>€10.00</td>
-                            <td>1</td>
-                            <td>Mastercard</td>
-                        </tr>
-                        <tr>
-                            <td>Arizona</td>
-                            <td>€10.00</td>
-                            <td>1</td>
-                            <td>Mastercard</td>
-                        </tr>
-                        <tr>
-                            <td>Arizona</td>
-                            <td>€10.00</td>
-                            <td>1</td>
-                            <td>Mastercard</td>
-                        </tr>
-                        <tr>
-                            <td>Arizona</td>
-                            <td>€10.00</td>
-                            <td>1</td>
-                            <td>Mastercard</td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -113,42 +85,24 @@
     <div class="recent_costumers">
         <div class="card">
             <div class="card_header">
-                <h3>Recent Customers</h3>
-                <button>See All<i class="fas fa-arrow-right"></i></button>
+                <h3>Clienti recenti</h3>
+                <a href="{{route('admin.customers.index')}}">Vedi tutto<i class="fas fa-arrow-right"></i></a>
             </div>
             <div class="card_body">
                 <table>
                     <thead>
                         <tr>
-                            <td>Name</td>
-                            <td>Address</td>
+                            <td>Nome</td>
+                            <td>Indirizzo</td>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($recent_customers as $customer)
                         <tr>
-                            <td>Antonio Marrone</td>
-                            <td>Via Alessandro Manzoni, 4</td>
+                            <td>{{$customer->name}}</td>
+                            <td>{{$customer->address}}</td>
                         </tr>
-                        <tr>
-                            <td>Antonio Marrone</td>
-                            <td>Via Alessandro Manzoni, 4</td>
-                        </tr>
-                        <tr>
-                            <td>Antonio Marrone</td>
-                            <td>Via Alessandro Manzoni, 4</td>
-                        </tr>
-                        <tr>
-                            <td>Antonio Marrone</td>
-                            <td>Via Alessandro Manzoni, 4</td>
-                        </tr>
-                        <tr>
-                            <td>Antonio Marrone</td>
-                            <td>Via Alessandro Manzoni, 4</td>
-                        </tr>
-                        <tr>
-                            <td>Antonio Marrone</td>
-                            <td>Via Alessandro Manzoni, 4</td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

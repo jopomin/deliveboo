@@ -28,7 +28,10 @@ Route::prefix('admin')
     ->middleware('auth')
     ->group(function () {
     Route::get('/', 'HomeController@index')->name('admin.homepage');
+    Route::get('/customers', 'CustomerController@index')->name('admin.customers.index');
     Route::get('/user', 'UserController@index')->name('admin.users.index');
+    Route::get('/user/{user}', 'UserController@edit')->name('admin.users.edit');
+    Route::put('/user/{user}', 'UserController@update')->name('admin.users.update');
     Route::resource('/orders', OrderController::class)->names([
         'index' => 'admin.orders.index',
         'store' => 'admin.orders.store',

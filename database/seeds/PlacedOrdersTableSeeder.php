@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\PlacedOrder;
+use App\Placed_order;
 
 class PlacedOrdersTableSeeder extends Seeder
 {
@@ -14,7 +14,7 @@ class PlacedOrdersTableSeeder extends Seeder
     {
         $placorders = config('placorders');
         foreach($placorders as $placorder) {
-            $new_placorder = new PlacedOrder();
+            $new_placorder = new Placed_order();
 
             $new_placorder->customer_name = $placorder['customer_name'];
             $new_placorder->customer_phone = $placorder['customer_phone'];

@@ -30,7 +30,6 @@
                         <td>Nome</td>
                         <td>Categoria</td>
                         <td>Descrizione</td>
-                        <td>Immagine</td>
                         <td>Prezzo</td>
                         <td>Disponibilità</td>
                         <td>Azioni</td>
@@ -43,7 +42,6 @@
                         <td>{{$product->name}}</td>
                         <td>{{$product->category->name}}</td>
                         <td>{{$product->description}}</td>
-                        <td>{{$product->image}}</td>
                         <td>€ {{$product->price}}</td>
                         <td>{{ $product->visible == 1 ? 'Disponibile' : 'Non disponibile'}}</td>
                         <td>

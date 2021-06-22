@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -14,7 +16,16 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return view('admin.orders.index');
+        $recent_orders = DB::table("placed_orders")
+        ->join("placed_order_product", "placed_order_id", "=", "placed_orders.id")
+        ->join("products", "product_id", "=", "products.id")
+        ->join("users", "user_id", "=", "users.id")
+        ->select("products.name as name", "products.price as price", "quantity", "placed_orders.created_at as date")
+        ->where("users.id", "=", Auth::id())
+        ->orderBy("date", "desc")
+        ->get();
+
+        return view('admin.orders.index', compact('recent_orders'));
     }
 
     /**

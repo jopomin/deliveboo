@@ -58,6 +58,13 @@
                     </a>
                 </li>
                 <li>
+                    <a class="{{ Request::route()->getName() == 'admin.customers.index' ? 'active' : null }}"
+                        href="{{route('admin.customers.index')}}">
+                        <i class="fas fa-users"></i>
+                        <span>Clienti</span>
+                    </a>
+                </li>
+                <li>
                     <a class="{{ Request::route()->getName() == 'admin.products.index' ? 'active' : null }}"
                         href="{{route('admin.products.index')}}">
                         <i class="fas fa-utensils"></i>
@@ -69,6 +76,13 @@
                         href="{{route('admin.categories.index')}}">
                         <i class="fas fa-clipboard-list"></i>
                         <span>Categorie</span>
+                    </a>
+                </li>
+                <li>
+                    <a class=""
+                        href="">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Statistiche</span>
                     </a>
                 </li>
                 <li>
