@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Providers\Braintree_Configuration;
+use Illuminate\Http\Request;
+
 
 
 /*
@@ -75,3 +78,62 @@ Route::post('order', 'OrderController@store')->name('orders.store');
 
 
 Route::get('/prova', 'ProductController@prova')->name('prova');
+
+
+
+/* BRAINTREE */
+
+Route::get('/payment', function () {
+    $gateway = new Braintree\Gateway([
+        'environment' => config('services.braintree.environment'),
+        'merchantId' => config('services.braintree.merchantId'),
+        'publicKey' => config('services.braintree.publicKey'),
+        'privateKey' => config('services.braintree.privateKey')
+    ]);
+
+    $token = $gateway->ClientToken()->generate();
+
+    return view('guest.orders.payment', [
+        'token' => $token
+    ]);
+}
+)->name('payment');
+
+Route::post('/payment/checkout', function (Request $request) {
+    $gateway = new Braintree\Gateway([
+        'environment' => config('services.braintree.environment'),
+        'merchantId' => config('services.braintree.merchantId'),
+        'publicKey' => config('services.braintree.publicKey'),
+        'privateKey' => config('services.braintree.privateKey')
+    ]);
+
+    $amount = $request->amount;
+    $nonce = $request->payment_method_nonce;
+
+    $result = $gateway->transaction()->sale([
+        'amount' => $amount,
+        'paymentMethodNonce' => $nonce,
+        'customer' => [
+            'firstName' => 'Tony',
+            'lastName' => 'Stark',
+            'email' => 'tony@avengers.com',
+        ],
+        'options' => [
+            'submitForSettlement' => true
+        ]
+    ]);
+
+    if ($result->success) {
+        $transaction = $result->transaction;
+
+        return back()->with('success_message', 'Transaction successful. The ID is:'. $transaction->id);
+    } else {
+        $errorString = "";
+
+        foreach ($result->errors->deepAll() as $error) {
+            $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
+        }
+
+        return back()->withErrors('An error occurred with the message: '.$result->message);
+    }
+});

@@ -112,7 +112,9 @@
         <div class="src_res_main_cont" v-if="results" @click="closeRes">
             <div class="src_res_box">
                 <div class="src_res_controller">
-                    <div class="src_res_ctrl_txt"><p>Risultati Ricerca</p></div>
+                    <div class="src_res_ctrl_txt">
+                        <p>Risultati Ricerca</p>
+                    </div>
                     <div class="close_src_res" @click="closeRes"><i class="fas fa-window-close"></i></div>
                 </div>
                 <div class="src_results">

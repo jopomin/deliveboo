@@ -49,9 +49,12 @@
         <input class="form-control" type="numeric" id="total_price" name="total_price" value="{{$total}}" readonly>
     </div>
     <div class="form-group">
-        <button type="submit" class="boo_btn btn_form create_btn">
+{{--         <button type="submit" class="boo_btn btn_form create_btn">
             <i class="far fa-save"></i>Invia ordine
-        </button>
+        </button> --}}
     </div>
 </form>
+<a href="{{route('payment')}}" class="boo_btn btn_form create_btn">
+    <i class="far fa-save"></i>Effettua il pagamento
+</a>
 @endsection
