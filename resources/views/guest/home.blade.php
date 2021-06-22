@@ -84,9 +84,21 @@
                         </form>
                     </div>
                 </div>
-            </div>
-            <div class="src_res">
-                <a class="typ_rest" v-for="rest in filteredRest" :href="'restaurant/'+rest.id">@{{rest.name}}</a>                    
+                <div class="src_res" v-if="results">
+                    <div class="src_res_top_bar">
+                        <div>
+                            <p>Risultati</p>
+                        </div>
+                        <div class="close_res" @click="closeRes"><p>X</p></div>
+                    </div>
+                    <div class="src_results">
+                        <a class="src_res_card" :href="'restaurant/'+rest.id" v-for="rest in filteredRest">
+                            <img :src="'img/restaurants/'+rest.image" alt="">
+                            <h2>@{{rest.name}}</h2>
+                        </a>  
+{{--                         <a class="typ_rest"  :href="'restaurant/'+rest.id">@{{rest.name}}</a>    --}}                 
+                    </div>
+                </div>
             </div>
             <div class="slider_box">
                 <h1>Tanti menu da poter ordinare</h1>

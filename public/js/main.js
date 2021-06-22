@@ -8,10 +8,12 @@ var app = new Vue ({
         nameFil: [],
         typeFil: [],
         filteredRest: [],
+        results: false,
     },
     
     methods: {
         searchName() {
+            this.results = false;
             this.nameFil = [];
             this.typeFil = [];
             this.filteredRest = [];
@@ -30,10 +32,16 @@ var app = new Vue ({
                     });
                 };
                 console.log(this.filteredRest);
+                this.results = true;
             });
         },
 
+        closeRes() {
+            this.results = false;
+        },
+
         totalSrc() {
+            this.results = false;
             this.nameFil = [];
             this.typeFil = [];
             this.filteredRest = [];
@@ -51,7 +59,7 @@ var app = new Vue ({
                         return restaurant.name.toLowerCase().includes(this.query.toLowerCase());
                     });
                 };
-                console.log(this.nameFil);
+/*                 console.log(this.nameFil); */
 
                 if (this.selType == "") {
                     this.typeFil = this.nameFil 
@@ -66,8 +74,8 @@ var app = new Vue ({
                         })
                     });
                 }
-                console.log(this.selType);
-                console.log(this.typeFil);
+/*                 console.log(this.selType);
+                console.log(this.typeFil); */
 
                 if (this.selCat == "") {
                     this.filteredRest = this.typeFil;
@@ -77,12 +85,15 @@ var app = new Vue ({
                     this.typeFil.forEach((restaurant) => {
                         restaurant.products.forEach((restProd) => {
                             if (restProd.category_id == this.selCat) {
-                                this.filteredRest.push(restaurant)
+                                if (!this.filteredRest.includes(restaurant)) {
+                                    this.filteredRest.push(restaurant)
+                                }
                             }
                         })
                     });
                 }
                 console.log(this.filteredRest);
+                this.results = true;
                 
             });
 
