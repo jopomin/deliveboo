@@ -38,6 +38,9 @@ var app = new Vue ({
 
         closeRes() {
             this.results = false;
+            this.selType = "";
+            this.selCat = "";
+            this.query = "";
         },
 
         totalSrc() {
@@ -93,10 +96,8 @@ var app = new Vue ({
                     });
                 }
                 console.log(this.filteredRest);
-                this.results = true;
-                
+                this.results = true;      
             });
-
         },
 
     }
