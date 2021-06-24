@@ -24,6 +24,7 @@ class PlacedOrdersTableSeeder extends Seeder
             $new_placorder->order_comment = $placorder['order_comment'];
             $new_placorder->product_comment = $placorder['product_comment'];
             $new_placorder->payment_status = $placorder['payment_status'];
+            $new_placorder->created_at = $placorder['created_at'];
 
             $new_placorder->save();
         }

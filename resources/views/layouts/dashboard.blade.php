@@ -79,8 +79,8 @@
                     </a>
                 </li>
                 <li>
-                    <a class=""
-                        href="">
+                    <a class="{{ Request::route()->getName() == 'admin.orders.stats' ? 'active' : null }}"
+                        href="{{route('admin.orders.stats')}}">
                         <i class="fas fa-chart-line"></i>
                         <span>Statistiche</span>
                     </a>
@@ -128,4 +128,12 @@
         @yield('content')
     </main>
 </div>
+
+<!-- Charting library -->
+<script src="https://unpkg.com/chart.js@2.9.3/dist/Chart.min.js"></script>
+<!-- Chartisan -->
+<script src="https://unpkg.com/@chartisan/chartjs@^2.1.0/dist/chartisan_chartjs.umd.js"></script>
+    
+@stack('js')
+
 </body>

@@ -23,16 +23,20 @@
 @endif
 
 {{-- Form Pagamento --}}
-
+<?php $order = session('cart');
+      $total = 0;
+      foreach ($order as $item) {
+        $total += $item['price'] * $item['quantity'];
+      }?>
 <div class="content">
     <form method="post" id="payment-form" action="{{ url('/payment/checkout')}}">
         @csrf
         <section>
             <label for="amount">
-                <span class="input-label">Amount</span>
+                <span class="input-label">Totale</span>
                 <div class="input-wrapper amount-wrapper">
                     {{-- Modificare il value per inserire il prezzo del carrello --}}
-                    <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="10">
+                    <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{$total}}" readonly>
                 </div>
             </label>
 
@@ -48,8 +52,8 @@
 
 {{-- Script --}}
 
-<script src="https://js.braintreegateway.com/web/dropin/1.13.0/js/dropin.min.js"></script>
-<script>
+<script type="application/javascript" src="https://js.braintreegateway.com/web/dropin/1.13.0/js/dropin.min.js"></script>
+<script type="application/javascript">
 var form = document.querySelector('#payment-form');
 var client_token = "{{ $token }}";
 braintree.dropin.create({
