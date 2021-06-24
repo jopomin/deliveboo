@@ -9,6 +9,7 @@ use App\Providers\Braintree_Configuration;
 
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,6 +37,7 @@ Route::prefix('admin')
     Route::get('/user', 'UserController@index')->name('admin.users.index');
     Route::get('/user/{user}', 'UserController@edit')->name('admin.users.edit');
     Route::put('/user/{user}', 'UserController@update')->name('admin.users.update');
+    Route::get('/orders/stats', 'OrderController@stats')->name('admin.orders.stats');
     Route::resource('/orders', OrderController::class)->names([
         'index' => 'admin.orders.index',
         'store' => 'admin.orders.store',

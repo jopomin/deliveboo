@@ -24,7 +24,6 @@
     
 </head>
 <body>
-    <div id="app">
         <header>
             
             <nav class="navbar  navbar-light bg-white shadow-sm">
@@ -88,6 +87,5 @@
         <main class="py-4 content">
             @yield('content')
         </main>
-    </div>
 </body>
 </html>

@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use Braintree\Gateway;
+use ConsoleTVs\Charts\Registrar as Charts;
 use Illuminate\Support\ServiceProvider;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -22,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Charts $charts)
     {
         $this->app->singleton(Gateway::class, function($app) {
             return new Gateway([
@@ -32,5 +34,9 @@ class AppServiceProvider extends ServiceProvider
                 'privateKey' => '8f488e8a534f960a54701a62651c6539'
             ]);
         });
+        $charts->register([
+            \App\Charts\SalesChart::class,
+            \App\Charts\OrdersChart::class
+        ]);
     }
 }

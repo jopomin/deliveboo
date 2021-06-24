@@ -29,17 +29,21 @@
 @endif
 
 {{-- Form Pagamento --}}
-
+<?php $order = session('cart');
+      $total = 0;
+      foreach ($order as $item) {
+        $total += $item['price'] * $item['quantity'];
+      }?>
 <div class="content">
         
     <form method="post" id="payment-form" action="{{ route('checkout')}}">
         @csrf
         <section>
             <label for="amount">
-                <span class="input-label">Totale Ordine</span>
+                <span class="input-label">Totale</span>
                 <div class="input-wrapper amount-wrapper">
                     {{-- Modificare il value per inserire il prezzo del carrello --}}
-                    <input id="amount" name="amount" type="tel" min="1" placeholder="Totale Ordine" value="{{ $total }}" readonly>
+                    <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{$total}}" readonly>
                 </div>
             </label>
             <div id="dropin-container"></div>
