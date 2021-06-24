@@ -1,10 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use Braintree\Gateway;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Providers\Braintree_Configuration;
-use Illuminate\Http\Request;
 
 
 
@@ -84,8 +85,6 @@ Route::get('/prova', 'ProductController@prova')->name('prova');
 
 
 
-/* BRAINTREE */
-
 Route::get('/payment', function () {
     $gateway = new Braintree\Gateway([
         'environment' => config('services.braintree.environment'),
@@ -99,10 +98,9 @@ Route::get('/payment', function () {
     return view('guest.orders.payment', [
         'token' => $token
     ]);
-}
-)->name('payment');
+})->name('payment');
 
-Route::post('/payment/checkout', function (Request $request) {
+Route::post('/thankyou', function (Request $request) {
     $gateway = new Braintree\Gateway([
         'environment' => config('services.braintree.environment'),
         'merchantId' => config('services.braintree.merchantId'),
@@ -111,15 +109,15 @@ Route::post('/payment/checkout', function (Request $request) {
     ]);
 
     $amount = $request->amount;
-    $nonce = $request->payment_method_nonce;
+    $nonce = 'fake-valid-nonce';
 
     $result = $gateway->transaction()->sale([
         'amount' => $amount,
         'paymentMethodNonce' => $nonce,
         'customer' => [
-            'firstName' => 'Tony',
-            'lastName' => 'Stark',
-            'email' => 'tony@avengers.com',
+            'firstName' => 'Giovanni',
+            'lastName' => 'Porcelli',
+            'email' => 'miamail@avengers.com',
         ],
         'options' => [
             'submitForSettlement' => true
@@ -129,14 +127,17 @@ Route::post('/payment/checkout', function (Request $request) {
     if ($result->success) {
         $transaction = $result->transaction;
 
-        return back()->with('success_message', 'Transaction successful. The ID is:'. $transaction->id);
+        session()->forget('cart');
+        
+        return view('guest.thankyou')->with('success_message', 'Transaction successful. The ID is:'. $transaction->id);
+
     } else {
         $errorString = "";
-
+        
         foreach ($result->errors->deepAll() as $error) {
             $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
         }
-
+        
         return back()->withErrors('An error occurred with the message: '.$result->message);
     }
-});
+})->name('checkout');

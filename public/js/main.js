@@ -9,6 +9,7 @@ var app = new Vue ({
         typeFil: [],
         filteredRest: [],
         results: false,
+        carts: [],
     },
     
     methods: {
@@ -99,6 +100,15 @@ var app = new Vue ({
                 this.results = true;      
             });
         },
+
+        printCarts() {
+            axios
+            .get('http://localhost:8000/api/cart')
+            .then ((response) => {
+                this.carts = response.data.results;
+                console.log(this.carts);
+            });
+        }
 
     }
     

@@ -268,7 +268,7 @@ class PlacedOrderProductTableSeeder extends Seeder
         $product131_60 = Product::find(131);
         $product131_60->placed_orders()->attach([60], ['quantity' => 2]);
         /* SOSTA EMILIANA */
-/*         $product137 = Product::find(137);
+        $product137 = Product::find(137);
         $product137->placed_orders()->attach([12], ['quantity' => 1]);
         $product139 = Product::find(139);
         $product139->placed_orders()->attach([12], ['quantity' => 1]);
@@ -299,7 +299,7 @@ class PlacedOrderProductTableSeeder extends Seeder
         $product138_66 = Product::find(138);
         $product138_66->placed_orders()->attach([66], ['quantity' => 2]);
         $product146_66 = Product::find(146);
-        $product146_66->placed_orders()->attach([66], ['quantity' => 2]); */
+        $product146_66->placed_orders()->attach([66], ['quantity' => 2]);
 
 }
 

@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-
 {{-- Successo della transazione --}}
 
 @if(session('success_message'))
@@ -22,59 +21,71 @@
     </div>
 @endif
 
+<?php $total = 0; ?>
+@if(is_array(session('cart')))
+    @foreach(session('cart') as $id => $details)
+        <?php $total += $details['price'] * $details['quantity'] ;?>
+    @endforeach
+@endif
+
 {{-- Form Pagamento --}}
 
 <div class="content">
-    <form method="post" id="payment-form" action="{{ url('/payment/checkout')}}">
+        
+    <form method="post" id="payment-form" action="{{ route('checkout')}}">
         @csrf
         <section>
             <label for="amount">
-                <span class="input-label">Amount</span>
+                <span class="input-label">Totale Ordine</span>
                 <div class="input-wrapper amount-wrapper">
                     {{-- Modificare il value per inserire il prezzo del carrello --}}
-                    <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="10">
+                    <input id="amount" name="amount" type="tel" min="1" placeholder="Totale Ordine" value="{{ $total }}" readonly>
                 </div>
             </label>
-
-            <div class="bt-drop-in-wrapper">
-                <div id="bt-dropin"></div>
-            </div>
+            <div id="dropin-container"></div>
         </section>
 
         <input id="nonce" name="payment_method_nonce" type="hidden" />
         <button class="button" type="submit"><span>Test Transaction</span></button>
+
+
     </form>
 </div>
 
-{{-- Script --}}
 
-<script src="https://js.braintreegateway.com/web/dropin/1.13.0/js/dropin.min.js"></script>
-<script>
-var form = document.querySelector('#payment-form');
-var client_token = "{{ $token }}";
-braintree.dropin.create({
-  authorization: client_token,
-  selector: '#bt-dropin',
-  paypal: {
-    flow: 'vault'
-  }
-}, function (createErr, instance) {
-  if (createErr) {
-    console.log('Create Error', createErr);
-    return;
-  }
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-    instance.requestPaymentMethod(function (err, payload) {
-      if (err) {
-        console.log('Request Payment Method Error', err);
-        return;
-      }
-      // Add the nonce to the form and submit
-      document.querySelector('#nonce').value = payload.nonce;
-      form.submit();
+
+<script type="application/javascript" src="https://js.braintreegateway.com/web/dropin/1.30.1/js/dropin.min.js"></script>
+<script type="application/javascript">
+    const form = document.getElementById('payment-form');
+    var client_token = "<?php echo($token) ?>";
+
+    braintree.dropin.create({
+        authorization: client_token,
+        selector: '#dropin-container',
+        paypal: {
+            flow: 'vault'
+        }
+    }, (createErr, dropinInstance) => {
+        if (createErr) {
+            console.log('Create Error', createErr);
+            return;
+        }
+
+        form.addEventListener('submit', event => {
+        event.preventDefault();
+
+        dropinInstance.requestPaymentMethod((err, payload) => {
+            if (err) {
+                console.log('Request Payment Method Error', err);
+                return;
+            }
+
+        document.getElementById('nonce').value = payload.nonce;
+        form.submit();
+        });
     });
-  });
-});
-</script>   
+    });
+</script>
+
+
 @endsection

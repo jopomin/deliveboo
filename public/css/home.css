@@ -525,3 +525,24 @@ label img{
     height: 100px;
     object-fit: cover;
 }
+
+/* THANK YOU PAGE */
+
+.ty_cont_over {
+    height: 100vh;
+    width: 100%;
+    background: rgba(125, 197, 30, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: #215f74;
+    text-align: center;
+}
+
+.ty_btn {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 20px 0;
+}
