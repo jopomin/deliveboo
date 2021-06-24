@@ -49946,3 +49946,5 @@ module.exports = __webpack_require__(/*! C:\Boolean\Progetto finale\deliveboo\re
 /***/ })
 
 /******/ });
+
+// The checkout route

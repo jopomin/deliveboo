@@ -848,7 +848,174 @@ return [
         'product_comment' => '-',
         'payment_status' => 1,
         'created_at' => '2021-05-24 09:56:35'
+    ],
 
+    /* BEER CONDICIO EXTRA 2 */
+
+    [
+        'customer_name' => 'Teresa Lattanzi',
+        'customer_phone' => '3334425415',
+        'doorbell' => 'Stevens - Lattanzi',
+        'total_price' => 125.00,
+        'address_delivery' => 'Via Mastropierro, 4 - Molfetta',
+        'order_comment' => '-',
+        'product_comment' => '-',
+        'payment_status' => 1,
+        'created_at' => '2021-01-21 09:56:35'
+    ],
+    [
+        'customer_name' => 'Tonino Ricci',
+        'customer_phone' => '3547896222',
+        'doorbell' => 'Ricci Srl',
+        'total_price' => 34.00,
+        'address_delivery' => 'Via dei Viaggianti, 12 - Molfetta',
+        'order_comment' => 'Zona Industriale',
+        'product_comment' => '-',
+        'payment_status' => 1,
+        'created_at' => '2021-06-24 09:56:35'
+    ],
+    [
+        'customer_name' => 'Sig.ra Manfredi',
+        'customer_phone' => '3205898878',
+        'doorbell' => 'Manfredi - Lerro',
+        'total_price' => 68.00,
+        'address_delivery' => 'Via Siracusa, 11 - Ruvo di Puglia',
+        'order_comment' => '-',
+        'product_comment' => '-',
+        'payment_status' => 1,
+        'created_at' => '2021-02-24 09:56:35'
+    ],
+    [
+        'customer_name' => 'Bruno Stella',
+        'customer_phone' => '3205898878',
+        'doorbell' => 'Stella - Venezia',
+        'total_price' => 25.00,
+        'address_delivery' => 'Via Rattazzi 88 - Molfetta',
+        'order_comment' => '-',
+        'product_comment' => 'cottura media',
+        'payment_status' => 1,
+        'created_at' => '2021-04-24 09:56:35'
+    ],
+    [
+        'customer_name' => 'Porzia Nettuno',
+        'customer_phone' => '3457887478',
+        'doorbell' => 'Nettuno',
+        'total_price' => 40.50,
+        'address_delivery' => 'Via Liguori, 23 - Molfetta',
+        'order_comment' => '-',
+        'product_comment' => '-',
+        'payment_status' => 1,
+        'created_at' => '2021-01-24 09:56:35'
+    ],
+    [
+        'customer_name' => 'Mazzanti Antonluca',
+        'customer_phone' => '3251451452',
+        'doorbell' => 'Mazzanti - Pistone',
+        'total_price' => 28.00,
+        'address_delivery' => 'Via Ricasoli, 5 - Molfetta',
+        'order_comment' => '-',
+        'product_comment' => 'belle ghiacciate',
+        'payment_status' => 1,
+        'created_at' => '2021-01-24 09:56:35'
+    ],
+    [
+        'customer_name' => 'Pastina',
+        'customer_phone' => '3472221515',
+        'doorbell' => 'Pastina - Rana',
+        'total_price' => 38.00,
+        'address_delivery' => 'Via Cinquepalme, 38/B - Molfetta',
+        'order_comment' => '-',
+        'product_comment' => 'Mayonese per patatine',
+        'payment_status' => 1,
+        'created_at' => '2021-03-24 09:56:35'
+    ],
+    [
+        'customer_name' => 'Ranieri Fiammetta',
+        'customer_phone' => '3336969888',
+        'doorbell' => 'Ranieri F.',
+        'total_price' => 52.00,
+        'address_delivery' => 'Via Lubiana, 8 - Molfetta',
+        'order_comment' => '-',
+        'product_comment' => '-',
+        'payment_status' => 1,
+        'created_at' => '2021-02-24 09:56:35'
+    ],
+    [
+        'customer_name' => 'Cresimante Duilio',
+        'customer_phone' => '3205898878',
+        'doorbell' => 'Cresimante - Rocca',
+        'total_price' => 56.00,
+        'address_delivery' => 'Via dei Sassi, 12 - Giovinazzo',
+        'order_comment' => '-',
+        'product_comment' => '-',
+        'payment_status' => 1,
+        'created_at' => '2021-04-24 09:56:35'
+    ],
+    [
+        'customer_name' => 'Lamberto Senna',
+        'customer_phone' => '3471712555',
+        'doorbell' => 'Dott. Senna',
+        'total_price' => 78.00,
+        'address_delivery' => 'Via Volpe, 33 - Molfetta',
+        'order_comment' => '-',
+        'product_comment' => '-',
+        'payment_status' => 1,
+        'created_at' => '2021-06-24 09:56:35'
+    ],
+    [
+        'customer_name' => 'Karim Seydoux',
+        'customer_phone' => '3477888986',
+        'doorbell' => 'Seydoux - Lima',
+        'total_price' => 52.00,
+        'address_delivery' => 'Via S.Giovanni, 8 - Molfetta',
+        'order_comment' => 'Di fronte all\'ingresso della stazione',
+        'product_comment' => 'Di fronte all\'ingresso della stazione',
+        'payment_status' => 1,
+        'created_at' => '2021-05-24 09:56:35'
+    ],
+    [
+        'customer_name' => 'Nina Saronno',
+        'customer_phone' => '3314777856',
+        'doorbell' => 'Merlo - Saronno',
+        'total_price' => 63.00,
+        'address_delivery' => 'Via Liguori, 11 - Molfetta',
+        'order_comment' => 'nessuno',
+        'product_comment' => 'nessuno',
+        'payment_status' => 1,
+        'created_at' => '2021-06-24 09:56:35'
+    ],
+    [
+        'customer_name' => 'Renato Bisceglie',
+        'customer_phone' => '35898745879',
+        'doorbell' => 'Bisceglie - Mininni',
+        'total_price' => 34.00,
+        'address_delivery' => 'Via Sergio Pansini, 12 - Molfetta',
+        'order_comment' => '-',
+        'product_comment' => '-',
+        'payment_status' => 1,
+        'created_at' => '2021-06-24 09:56:35'
+    ],
+    [
+        'customer_name' => 'Petracciano',
+        'customer_phone' => '3259990101',
+        'doorbell' => 'Petracciano L. - Salvemini G.',
+        'total_price' => 48.00,
+        'address_delivery' => 'Via Mennea, snc - Molfetta',
+        'order_comment' => 'ingresso sul retro',
+        'product_comment' => '-',
+        'payment_status' => 1,
+        'created_at' => '2021-01-24 09:56:35'
+    ],
+    [
+        'customer_name' => 'Parietti Luana',
+        'customer_phone' => '3338565987',
+        'doorbell' => 'Parietti Ing.',
+        'total_price' => 66.00,
+        'address_delivery' => 'Via S.Stefano, 3 - Terlizzi',
+        'order_comment' => '-',
+        'product_comment' => '-',
+        'payment_status' => 1,
+        'created_at' => '2021-05-24 09:56:35'
     ],
 
 ];
