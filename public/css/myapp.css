@@ -55,3 +55,9 @@ nav {
 .content {
     background-image: url('../img/pattern.jpg');
 }
+.col-form-label, .typology label:first-child {
+    font-weight: 600;
+}
+.typology {
+    margin: 0 auto;
+}

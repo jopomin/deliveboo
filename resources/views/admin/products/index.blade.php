@@ -28,10 +28,10 @@
                     <tr>
                         <td>ID</td>
                         <td>Nome</td>
-                        <td>Categoria</td>
-                        <td>Descrizione</td>
+                        <td class="hidden_mobile">Categoria</td>
+                        <td class="hidden_xsm">Descrizione</td>
                         <td>Prezzo</td>
-                        <td>Disponibilità</td>
+                        <td class="hidden_small">Disponibilità</td>
                         <td>Azioni</td>
                     </tr>
                 </thead>
@@ -40,10 +40,10 @@
                     <tr>
                         <td>{{$product->id}}</td>
                         <td>{{$product->name}}</td>
-                        <td>{{$product->category->name}}</td>
-                        <td>{{$product->description}}</td>
+                        <td class="hidden_mobile">{{$product->category->name}}</td>
+                        <td class="hidden_xsm">{{$product->description}}</td>
                         <td>€ {{$product->price}}</td>
-                        <td>{{ $product->visible == 1 ? 'Disponibile' : 'Non disponibile'}}</td>
+                        <td class="hidden_small">{{ $product->visible == 1 ? 'Disponibile' : 'Non disponibile'}}</td>
                         <td>
                             <a href="{{ route('admin.products.show', $product->id)}}" class="action_btn show far fa-eye"></a>
                             <a href="{{ route('admin.products.edit', $product->id)}}" class="action_btn edit fas fa-edit"></a>

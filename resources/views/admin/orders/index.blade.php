@@ -13,7 +13,8 @@
                         <tr>
                             <td width="50%">Prodotto</td>
                             <td>Prezzo</td>
-                            <td>Quantità</td>
+                            <td class="qt">qt</td>
+                            <td class="quantity">Quantità</td>
                             <td>Data</td>
                         </tr>
                     </thead>
@@ -23,7 +24,7 @@
                             <td>{{$order->name}}</td>
                             <td>{{$order->price}}</td>
                             <td>{{$order->quantity}}</td>
-                            <td>{{$order->date}}</td>
+                            <td>{{substr($order->date, 0, 10)}}</td>
                         </tr>
                         @endforeach
                     </tbody>

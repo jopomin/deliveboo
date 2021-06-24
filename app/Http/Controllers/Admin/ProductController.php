@@ -53,11 +53,13 @@ class ProductController extends Controller
         $newProduct->fill($formData);
         $newProduct->user_id = Auth::id();
 
+        dd($formData);
         if (array_key_exists('image', $formData)) {
             $image_path = Storage::put('products', $formData['image']);
             $data['image'] = $image_path;
         }
 
+        
         $newProduct->image = $data['image'];
 
         $newProduct->save();
