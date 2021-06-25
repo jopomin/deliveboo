@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Product;
+use App\Intolerance;
 
 class UserController extends Controller
 {
@@ -23,9 +24,11 @@ class UserController extends Controller
     {
         $restaurants = User::findOrFail($id);
         $products = Product::where([['user_id',$id],['visible', 0 ]])->get();
+        $intolerances = Intolerance::all();
         $data = [
             'restaurant' => $restaurants,
-            'menu' => $products
+            'menu' => $products,
+            'intolerances' => $intolerances
         ];
         return view('guest.restaurant_details',$data);
     }

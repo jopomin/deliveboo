@@ -16,6 +16,7 @@ class IntolerancesTableSeeder extends Seeder
         foreach($intolerances as $intolerance) {
             $new_intolerance = new Intolerance();
             $new_intolerance->name = $intolerance['name'];
+            $new_intolerance->icon = $intolerance['icon'];
             $new_intolerance->save();
         }
     }

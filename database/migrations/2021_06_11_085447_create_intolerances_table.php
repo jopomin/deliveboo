@@ -16,6 +16,7 @@ class CreateIntolerancesTable extends Migration
         Schema::create('intolerances', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->text('icon');
             $table->timestamps();
         });
     }
