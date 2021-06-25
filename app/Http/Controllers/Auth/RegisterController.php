@@ -11,6 +11,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class RegisterController extends Controller
 {
@@ -59,7 +60,6 @@ class RegisterController extends Controller
             'reference_name' => ['required', 'string', 'max:255'],
             'address' => ['required', 'string', 'max:255'],
             'vat_number' => ['required', 'string', 'size:11', 'unique:users'],
-            'image' => ['required', 'string'],
             'rating' => ['numeric']
         ]);
     }
@@ -71,18 +71,24 @@ class RegisterController extends Controller
     * @return \App\User
     */
     protected function create(array $data)
-    {
+    {   
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'reference_name' => $data['reference_name'],
             'address' => $data['address'],
-            'vat_number' => $data['vat_number'],
             'image' => $data['image'],
+            'vat_number' => $data['vat_number'],
             'rating' => $data['rating'],
             'typologies' => $data['typologies']
         ]);
+        
+        if(request()->hasFile('image')) {
+            $image = request()->file('image')->getClientOriginalName();
+            request()->file('image')->storeAs('users', $image);
+            $user->update(['image' => $image]);
+        }
 
         $user->typologies()->sync($data['typologies']);
 

@@ -5,7 +5,7 @@
     <div class="content">
         <div class="top_content">
             <h1 class="sect_main_title">Categorie</h1>
-            <a class="boo_btn create_btn" href="{{route('admin.categories.create')}}">Inserisci Categoria</a>
+            <a class="boo_btn create_btn" href="{{route('admin.categories.create')}}">Aggiungi Categoria</a>
         </div>
         <div class="bottom_content">
             @if(session('success_message'))
@@ -28,8 +28,8 @@
                     <tr>
                         <td>ID</td>
                         <td>Nome</td>
-                        <td>Slug</td>
-                        <td>Immagine</td>
+                        <td class="hidden_xsm">Slug</td>
+                        <td class="hidden_mobile">Immagine</td>
                         <td>Azioni</td>
                     </tr>
                 </thead>
@@ -38,8 +38,8 @@
                     <tr>
                         <td>{{$category->id}}</td>
                         <td>{{$category->name}}</td>
-                        <td>{{$category->slug}}</td>
-                        <td>{{$category->image}}</td>
+                        <td class="hidden_xsm">{{$category->slug}}</td>
+                        <td class="hidden_mobile">{{$category->image}}</td>
                         <td>
                             <a href="{{ route('admin.categories.show', $category->id)}}" class="action_btn show far fa-eye"></a>
                             <a href="{{ route('admin.categories.edit', $category->id)}}" class="action_btn edit fas fa-edit"></a>

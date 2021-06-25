@@ -68,7 +68,7 @@
                     <select name='category_id'>
                         <option value="">--</option>
                         @foreach ($categories as $category)
-                        <option value='{{$category->id}}' {{ old('category_id') == $category->id ? 'selected="selected"' : '' }}>{{$category->name}}</option>
+                        <option value='{{$category->id}}' {{ $category->id == old('category_id', $product->category_id) ? 'selected=selected' : '' }}>{{$category->name}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -78,8 +78,8 @@
                     @foreach ($intolerances as $intolerance)
                         <div class="form-check @error('intolerances') is-invalid @enderror">
                             
-                            <input name="intolerances[]" class="form-check-input" type="checkbox" value="{{ $intolerance->id }}">
-                            
+                            <input name="intolerances[]" class="form-check-input" type="checkbox" value="{{ $intolerance->id }}" 
+                            {{ $product->intolerances->contains($intolerance) ? 'checked=checked' : '' }}>
                             <label class="form-check-label">
                                 {{ $intolerance->name }}
                             </label>

@@ -319,6 +319,8 @@ table tbody tr:nth-of-type(2n+0) {
     padding: 10px;
     color: white;
     border-radius: 2px;
+    width: 35px;
+    text-align: center;
 }
 .action_btn.show {
     background-color: #7dc51e;
@@ -336,6 +338,7 @@ table tbody tr:nth-of-type(2n+0) {
 .top_content {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 .top_content h1 {
     color: #2f93b5;
@@ -426,6 +429,12 @@ table tbody tr:nth-of-type(2n+0) {
     object-fit: cover;
 }
 
+/* DASHBOARD ORDERS */
+
+.qt {
+    display: none;
+}
+
 @media screen and (max-width: 1200px) {
     .sidebar {
         width: 70px;
@@ -493,13 +502,28 @@ table tbody tr:nth-of-type(2n+0) {
     .recent_box > div {
         width: 100%;
     }
+    .hidden_small {
+        display: none;
+    }
 }
 @media screen and (max-width:750px) {
     .search_wrapper {
         display: none;
     }
+    .qt {
+        display: block;
+    }
+    .quantity {
+        display: none;
+    }
+    .hidden_xsm {
+        display: none;
+    }
 }
 @media screen and (max-width: 550px) {
+    .content_box {
+        width: 97%;
+    }
     .card_single {
         width: 100%;
     }
@@ -550,5 +574,10 @@ table tbody tr:nth-of-type(2n+0) {
     }
     .statistic_image img {
         width: 50%;
+    }
+}
+@media screen and (max-width: 450px) {
+    .hidden_mobile {
+        display: none;
     }
 }
