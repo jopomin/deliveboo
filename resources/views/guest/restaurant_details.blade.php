@@ -51,7 +51,7 @@
                         <img src="{{$product->image}}" alt="{{$product->name}}">
                         <div class="prod_details">
                             <div class="prod_descr">
-                                {{$product->description}}
+                                {{\Illuminate\Support\Str::limit($product->description, 120, $end='...')}}
                             </div>
                             <div class="intol_cont">
                             @foreach ($product->intolerances as $intol)
@@ -65,12 +65,12 @@
                     <div class="prod_info">
                         <div class="prod_text">
                             <a class="prod_name" href="{{ route('product_details', ['id' => $product->id]) }}">
-                                <h2>{{$product->name}}</h2>
+                                <h2>                                {{\Illuminate\Support\Str::limit($product->name, 23, $end='...')}}</h2>
                             </a>
                         </div>
                         <div class="prod_cart">
                             <p class="prod_price">€ {{$product->price}}</p>
-                            <a class="boo_btn create_btn add_prod_btn" href="{{ route('add_to_cart', ['id' => $product->id])}}">Aggiungi</a>
+                            <a class="boo_btn create_btn add_prod_btn" href="{{ route('add_to_cart', ['id' => $product->id])}}"><i class="fas fa-cart-plus"></i></a>
                         </div>
                     </div>
                 </div>
