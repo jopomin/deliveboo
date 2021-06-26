@@ -27,6 +27,13 @@
                         <li><strong>Indirizzo:</strong> {{$restaurant->address}}</li>
                         <li><strong>Contatti:</strong> {{$restaurant->email}}</li>
                         <li><strong>Referente:</strong> {{$restaurant->reference_name}}</li>
+                        <li><strong>Tipologie:</strong>
+                            @forelse ($restaurant->typologies as $type)
+                            {{ $type->name }}{{ !$loop->last ? ',' : '' }}
+                            @empty
+                                -
+                            @endforelse
+                        </li>
                         <li><a href="{{ route('restaurant_list') }}">
                             <input class="boo_btn back_btn rest_btn" type="button" value="Torna ai Ristoranti">
                         </a></li>
@@ -38,15 +45,6 @@
         {{-- RESTURANT PAGE: MENU --}}
 
         <div class="rest_menu">
-{{--             <ul>
-                @foreach ($menu as $product)
-                <li>
-                    <a href="{{ route('product_details', ['id' => $product->id]) }}">{{$product->name}} </a> 
-                    - Prezzo:{{$product->price}}€
-                    <a href="{{ route('add_to_cart', ['id' => $product->id])}}"><input type="button"value="Aggiungi al carrello" ></a>
-                </li>
-                @endforeach
-            </ul> --}}
                 @foreach ($menu as $product)
                 <div class="prod_card">
                     <div class="prod_pic">
@@ -78,6 +76,5 @@
                 </div>
                 @endforeach
         </div>
-
     </div>
 @endsection

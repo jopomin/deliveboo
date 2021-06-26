@@ -76,11 +76,107 @@ form button i {
     font-size: 120%;
 }
 
+/* RESTAURANTS LIST */
+
+.restaurants_list_main_cont {
+    font-family: 'Staatliches', cursive;
+    padding 30px 0;
+    width: 100%;
+    height: calc(100vh - (100px + 3rem));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rest_list_box {
+    width: 1040px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.rest_list_box {
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll; 
+}
+
+.rest_list_box::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
+.rest_list_box h2 {
+    font-size: 36px;
+    color: #2f93b5;
+    margin: 20px 0;
+}
+
+.rest_list_box h2:first-child {
+    margin-top: 0;
+}
+
+.rest_list_page_main_cont {
+    margin: 30px 0;
+}
+
+.rest_page_card_cont {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.rest_page_card {
+    width: 200px;
+    height: 250px;
+    margin: 0 10px 10px 0;
+    border-radius: 10px;
+    background: #2f93b5;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.rest_page_card:nth-child(5n+5) {
+    margin: 0 0 10px 0;
+}
+
+.rest_page_card_pic {
+    height: 200px;
+    width: 200px;
+}
+
+.rest_page_card_pic img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.rest_page_card_text {
+    height: 50px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2f93b5;
+    color: #fff;
+}
+
+.rest_page_card_text h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.rest_page_card:hover .rest_page_card_text {
+    background: #7dc51e;
+    color: #fff;    
+}
+
 /* RESTAURANT SINGLE PAGE */
 
 .rest_page_main_cont {
     margin: 0 auto;
     width: 1215px;
+    height: calc(100vh - (100px + 3rem));
     padding: 50px 0;
     font-family: 'Rubik', sans-serif;
 }
@@ -182,6 +278,7 @@ h1,
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    margin-top: 3px;
 }
 
 .prod_text {

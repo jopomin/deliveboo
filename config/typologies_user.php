@@ -2,6 +2,10 @@
 
 return [
     [
+        'typology_id' => 10,
+        'user_id' => 1,
+    ],
+    [
         'typology_id' => 12,
         'user_id' => 1,
     ],
@@ -12,6 +16,10 @@ return [
     [
         'typology_id' => 16,
         'user_id' => 1,
+    ],
+    [
+        'typology_id' => 9,
+        'user_id' => 2,
     ],
     [
         'typology_id' => 11,
@@ -27,6 +35,14 @@ return [
     ],
     [
         'typology_id' => 6,
+        'user_id' => 3,
+    ],
+    [
+        'typology_id' => 8,
+        'user_id' => 3,
+    ],
+    [
+        'typology_id' => 13,
         'user_id' => 3,
     ],
     [
