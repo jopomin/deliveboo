@@ -26,9 +26,29 @@
 <body>
     <div id="root">
         <header>
-            <nav>
+            <nav class="w_80">
                 <div class="logo">
                     <img src="{{asset('img/deliveboo_logo.png')}}" alt="Deliveboo Logo">
+                </div>
+                <input type="checkbox" id="home_nav_toggle">
+                <div class="hamburger_nav">
+                    <label for="home_nav_toggle" class="fas fa-hamburger"></label>
+                    <div class="dropdown_nav">
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="{{ route('restaurant_list') }}">I nostri ristoranti</a></li>
+                            @if (Route::has('login'))
+                            @auth
+                            <li><a href="{{ url('/admin') }}">Dashboard</a></li>
+                            @else
+                            @if (Route::has('register'))
+                            <a class="button login" href="{{ route('login') }}">Login</a>
+                            <a class="button register" href="{{ route('register') }}">Registrati</a>
+                            @endif
+                            @endauth
+                            @endif
+                        </ul>
+                    </div>
                 </div>
                 <ul>
                     <li><a href="#">About</a></li>
@@ -48,6 +68,9 @@
         </header>
         <main>
             <div class="jumbo">
+                <div class="jumbo_pattern">
+                    <img src="{{asset('img/cutlery.png')}}" alt="">
+                </div>
                 <div class="jumbo_image">
                     <img src="{{asset('img/jumbo_image.gif')}}" alt="Jumbo image">
                 </div>
@@ -86,7 +109,7 @@
                 </div>
             </div>
             <div class="slider_box">
-                <h1>Tanti menu da poter ordinare</h1>
+                <h1>I tuoi piatti preferiti, consegnati da noi.</h1>
                 <div id="slider">
                     <input type="radio" name="slider" id="foto1" checked>
                     <input type="radio" name="slider" id="foto2">
@@ -96,46 +119,139 @@
                     <label for="foto1" id="slide1"><img
                         src="{{asset('img/slider/foto1.jpg')}}"
                         alt=""></label>
-                    <label for="foto2" id="slide2"><img
-                        src="{{asset('img/slider/foto2.jpg')}}"
-                        alt=""></label>
-                    <label for="foto3" id="slide3"><img src="{{asset('img/slider/foto3.jpg')}}" alt=""></label>
-                    <label for="foto4" id="slide4"><img
-                        src="{{asset('img/slider/foto4.jpg')}}"
-                        alt=""></label>
-                    <label for="foto5" id="slide5"><img
-                        src="{{asset('img/slider/foto5.jpg')}}"
-                        alt=""></label>
-                </div>
-            </div>
-        </main>
-        <div class="src_res_main_cont" v-if="results" @click="closeRes">
-            <div class="src_res_box">
-                <div class="src_res_controller">
-                    <div class="src_res_ctrl_txt">
-                        <p>Risultati Ricerca</p>
-                    </div>
-                    <div class="close_src_res" @click="closeRes"><i class="fas fa-window-close"></i></div>
-                </div>
-                <div class="src_results">
-                    <a class="src_res_card" v-if="filteredRest.length > 0" :href="'restaurant/'+rest.id" v-for="rest in filteredRest">
-                        <div class="src_res_card_img">
-                            <img :src="'img/restaurants/'+rest.image" :alt="rest.name">
-                        </div>
-                        <div class="src_res_card_text">
-                            <h2>@{{rest.name}}</h2>
-                        </div>
-                    </a>
-                    <div class="no_res" v-if="filteredRest.length == 0">
-                        <p>Nessun ristorante corrisponde ai criteri di ricerca</p>
-                    </div>
-                </div> 
-                    
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script src="{{asset('js/main.js')}}"></script>
-    
-</body>
-</html>
-                
+                        <label for="foto2" id="slide2"><img
+                            src="{{asset('img/slider/foto2.jpg')}}"
+                            alt=""></label>
+                            <label for="foto3" id="slide3"><img src="{{asset('img/slider/foto3.jpg')}}" alt=""></label>
+                            <label for="foto4" id="slide4"><img
+                                src="{{asset('img/slider/foto4.jpg')}}"
+                                alt=""></label>
+                                <label for="foto5" id="slide5"><img
+                                    src="{{asset('img/slider/foto5.jpg')}}"
+                                    alt=""></label>
+                                </div>
+                            </div>
+                            <div class="card_container">
+                                <h1>Scegli il meglio per te!</h1>
+                                <div class="w_80">
+                                    <div class="card_content">
+                                        <div class="top_card">
+                                            <div class="card_content_img">
+                                                <img src="{{asset('img/cards/delivery.svg')}}" alt="delivery">
+                                            </div>
+                                        </div>
+                                        <div class="bottom_card">
+                                            <div class="text_bottom_card">
+                                                <h2>Ricevi tutto a casa tua nel più breve tempo possibile</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card_content">
+                                        <div class="top_card">
+                                            <div class="card_content_img">
+                                                <img src="{{asset('img/cards/eating_together.svg')}}" alt="delivery">
+                                            </div>
+                                        </div>
+                                        <div class="bottom_card">
+                                            <div class="text_bottom_card">
+                                                <h2>Puoi sorprendere il tuo partner con un'ampia scelta di prodotti</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card_content">
+                                        <div class="top_card">
+                                            <div class="card_content_img">
+                                                <img src="{{asset('img/cards/special_event.svg')}}" alt="delivery">
+                                            </div>
+                                        </div>
+                                        <div class="bottom_card">
+                                            <div class="text_bottom_card">
+                                                <h2>Anche un evento speciale può trasformarsi in qualcosa di unico</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card_content">
+                                        <div class="top_card">
+                                            <div class="card_content_img">
+                                                <img src="{{asset('img/cards/breakfast.svg')}}" alt="delivery">
+                                            </div>
+                                        </div>
+                                        <div class="bottom_card">
+                                            <div class="text_bottom_card">
+                                                <h2>Vuoi fare una colazione diversa dal solito?</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card_content">
+                                        <div class="top_card">
+                                            <div class="card_content_img">
+                                                <img src="{{asset('img/cards/hamburger.svg')}}" alt="delivery">
+                                            </div>
+                                        </div>
+                                        <div class="bottom_card">
+                                            <div class="text_bottom_card">
+                                                <h2>McDonald o Kebab? A te la scelta</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card_content">
+                                        <div class="top_card">
+                                            <div class="card_content_img">
+                                                <img src="{{asset('img/cards/ice_cream.svg')}}" alt="delivery">
+                                            </div>
+                                        </div>
+                                        <div class="bottom_card">
+                                            <div class="text_bottom_card">
+                                                <h2>Come non concludere la giornata con un bel gelato!</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+                        <footer>
+                            <div class="w_80">
+                                <div class="logo_footer">
+                                    <img src="img/deliveboo_logo_white.png" alt="Logo Deliveboo">
+                                </div>
+                                <div class="social_footer">
+                                    <i class="fab fa-facebook"></i>
+                                    <i class="fab fa-instagram"></i>
+                                    <i class="fab fa-youtube"></i>
+                                    <i class="fab fa-twitter"></i>
+                                </div>
+                                <div class="copyright">
+                                    <small>© 2021 Deliveboo</small>
+                                </div>
+                            </div>
+                        </footer>
+                        <div class="src_res_main_cont" v-if="results" @click="closeRes">
+                            <div class="src_res_box">
+                                <div class="src_res_controller">
+                                    <div class="src_res_ctrl_txt">
+                                        <p>Risultati Ricerca</p>
+                                    </div>
+                                    <div class="close_src_res" @click="closeRes"><i class="fas fa-window-close"></i></div>
+                                </div>
+                                <div class="src_results">
+                                    <a class="src_res_card" v-if="filteredRest.length > 0" :href="'restaurant/'+rest.id" v-for="rest in filteredRest">
+                                        <div class="src_res_card_img">
+                                            <img :src="'img/restaurants/'+rest.image" :alt="rest.name">
+                                        </div>
+                                        <div class="src_res_card_text">
+                                            <h2>@{{rest.name}}</h2>
+                                        </div>
+                                    </a>
+                                    <div class="no_res" v-if="filteredRest.length == 0">
+                                        <p>Nessun ristorante corrisponde ai criteri di ricerca</p>
+                                    </div>
+                                </div> 
+                            </div> 
+                            <!-- Scripts -->
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+                            <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+                            <script src="{{asset('js/main.js')}}"></script>
+                            
+                        </body>
+                        </html>
+                        

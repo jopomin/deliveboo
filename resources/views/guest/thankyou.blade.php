@@ -28,7 +28,6 @@
         <h1>Grazie per aver acquistato</h1>
         <a class="boo_btn back_btn ty_btn" href="{{ route('guest.homepage') }}">Torna alla Home</a>  
     </div>
-  
 </body>
 </html>
                 

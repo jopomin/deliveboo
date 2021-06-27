@@ -19,13 +19,19 @@
         <li>Referente : {{$restaurant->reference_name}}</li>
     </ul>
 </div>
+<?php $cart = session('cart');?>
+@if ($cart)
+@foreach ($cart as $item)
+    {{$item = $item['user_id']}}
+@endforeach  
+@endif
 <div class="menu">
     <ul>
         @foreach ($menu as $product)
         <li>
             <a href="{{ route('product_details', ['id' => $product->id]) }}">{{$product->name}} </a> 
             - Prezzo:{{$product->price}}€
-            <a href="{{ route('add_to_cart', ['id' => $product->id])}}"><input type="button"value="Aggiungi al carrello" ></a>
+                <a href="{{ empty($cart) || $item == $product->user_id ? route('add_to_cart', ['id' => $product->id]) : route('reset_cart')}}"><input type="button" value="Aggiungi al carrello" ></a>
         </li>
         @endforeach
     </ul>

@@ -183,13 +183,4 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
-    public function prova()
-    {
-        $data = session()->get('cart');
-
-        $dataProva = [
-            'data' => $data
-        ];
-        return view('prova' , $dataProva);
-    }
 }

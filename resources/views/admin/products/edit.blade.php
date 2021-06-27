@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Immagine</label>
+                    <label>Prezzo</label>
                     <input type="text" name="price" class="form-control @error('price') is-invalid @enderror" placeholder="Inserisci il titolo" value="{{ old('price', $product->price) }}" required>
                     @error('price')
                         <div class="invalid-feedback">{{ $message }}</div>

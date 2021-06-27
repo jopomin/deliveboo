@@ -22,8 +22,8 @@ body {
 .boo_btn {
     font-size: 13px;
     font-weight: 600;
-    padding: 12px 15px;
-    border-radius: 5px;
+    padding: 10px 15px;
+    border-radius: 3px;
     margin-bottom: 8px;
 }
 
@@ -52,13 +52,15 @@ a:hover {
 header {
     background-image: url('../img/pattern.jpg');
 }
-#search_toggle {
+#search_toggle, #home_nav_toggle {
     display: none;
 }
-nav {
+.w_80 {
     width: 80%;
-    height: 100px;
     margin: 0 auto;
+}
+nav {
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -70,6 +72,43 @@ nav {
 }
 .logo img {
     height: 100%;
+}
+.hamburger_nav {
+    display: none;
+    font-size: 200%;
+    margin-right: 20px;
+    color: #2f93b5;
+    z-index: 10;
+    position: relative;
+}
+.hamburger_nav label {
+    cursor: pointer;
+}
+.dropdown_nav {
+    background-color: white;
+    width: 300px;
+    position: absolute;
+    bottom: -350px;
+    right: 0;
+    z-index: 10;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display: none;
+}
+#home_nav_toggle:checked + .hamburger_nav .dropdown_nav {
+    display: block;
+}
+.dropdown_nav ul li {
+    width: 100%;
+}
+.dropdown_nav ul li a{
+    font-size: 90%;
+}
+.dropdown_nav .button {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
 }
 nav ul {
     list-style: none;
@@ -157,13 +196,24 @@ nav ul li a:hover:after {
 }
 .jumbo {
     width: 100%;
-    height: 600px;
+    min-height: calc(100vh - 100px);
     background-image: url('../img/pattern.jpg');
     display: flex;
     position: relative;
+    overflow: hidden;
+}
+.jumbo_pattern {
+    width: 200px;
+    position: absolute;
+    bottom: -60px;
+    right: 300px;
+    opacity: 0.5;
+}
+.jumbo_pattern img {
+    width: 100%;
 }
 .jumbo_image {
-    align-self: center;
+    align-self: flex-start;
     width: 50%;
 }
 .jumbo_content {
@@ -174,7 +224,7 @@ nav ul li a:hover:after {
     align-items: center;
     margin-top: 50px;
 }
-.jumbo_text h1, .slider_box h1 {
+.jumbo_text h1, .slider_box h1, .card_container h1 {
     font-size: 250%;
     color: #2f93b5;
     margin-bottom: 30px;
@@ -201,6 +251,7 @@ nav ul li a:hover:after {
     border-radius: 3px;
     padding: 30px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    z-index: 5;
 }
 .input_box p {
     text-align: center;
@@ -386,7 +437,90 @@ label img{
     object-fit:cover;
     border-radius:5px;
 }
+.card_container {
+    background-image: url('../img/pattern.jpg');
+    padding: 50px 0;
+}
+.card_container .w_80 {
+    display: flex;
+    flex-wrap: wrap;
+}
+.card_container h1 {
+    text-align: center;
+}
+.card_content {
+    width: calc(100% / 3 - 40px);
+    height: 600px;
+    background-color: white;
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 20px;
+    transition: 0.4s;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+.card_content:hover {
+    box-shadow: #7dc51e7f 0px 0px 0px 5px;
+    transition: 0.4s;
+}
+.top_card, .bottom_card {
+    height: 50%;
+    position: relative;
+}
+.card_content_img, .text_bottom_card {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+.card_content_img img {
+    width: 100%;
+}
+.bottom_card {
+    background: linear-gradient(#7dc51e 0, #7dc51e 5%, #2f93b5 5%, #2f93b5 100%);
+}
+.text_bottom_card {
+    text-align: center;
+    color: white;
+}
+/* FOOTER */
 
+footer {
+    background-color: #2f93b5;
+    padding: 50px 0;
+}
+.logo_footer {
+    width: 200px;
+    margin: 0 auto;
+}
+.logo_footer img {
+    width: 100%;
+}
+.social_footer {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin: 40px 0;
+    padding: 20px 0;
+    text-align: center;
+}
+.social_footer i {
+    margin: 0 10px;
+    font-size: 150%;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.social_footer i:hover {
+    color: #a1d4e6;
+    transition: 0.3s;
+}
+.copyright {
+    text-align: center;
+    color: white;
+}
 /* SEARCH RESULTS */
 
 .src_res_main_cont {
@@ -545,4 +679,79 @@ label img{
     font-size: 18px;
     font-weight: 400;
     margin: 20px 0;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 1200px) {
+    .jumbo {
+        display: block;
+        height: 1100px;
+    }
+    .jumbo_image {
+        width: 100%;
+    }
+    .jumbo_image img {
+        margin: 0 auto;
+        display: block;
+    }
+    .jumbo_content {
+        margin-top: 0;
+        margin-bottom: 250px;
+    }
+    .w_80 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    nav > ul {
+        display: none;
+    }
+    .hamburger_nav {
+        display: block;
+    }
+    .jumbo {
+        height: 870px;
+    }
+    .jumbo_image {
+        display: none;
+    }
+    .jumbo {
+        height: auto;
+    }
+    .jumbo_content {
+        margin-top: 100px;
+    }
+    #slider {
+        padding: 0;
+    }
+    #slider label {
+        width: 70%;
+        height: 100%;
+    }
+    .jumbo_pattern {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .card_content {
+        width: calc(100% / 2 - 40px);
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .logo {
+        height: 60%;
+    }
+    .input_box {
+        width: 90%;
+    }
+    .jumbo_text h1 {
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .card_content {
+        width: 100%;
+    }
 }
