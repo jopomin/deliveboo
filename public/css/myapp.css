@@ -109,3 +109,22 @@ nav {
     width: 86%;
     margin: 0 auto;
 }
+.title_text {
+    text-align: center;
+    font-size: 3em;
+    color: #2f93b5;
+    margin: 30px;
+}
+
+.fish-row {
+    border-bottom: #2f93b5 1px double;
+    border-top: #2f93b5 1px double;
+    height: 3px;
+    width: 100%; max-width: 100%;
+    margin: 50px 0 50px 0;
+}
+.hellohal {
+    width: 100px; margin: -33px auto 0; 
+    display: block; z-index: 100;
+    background: #ffffff;
+}
