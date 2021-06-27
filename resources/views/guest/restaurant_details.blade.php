@@ -7,7 +7,7 @@
         
         <div class="rest_main_info">
             <div class="rest_main_info_pic">
-                <img src="{{asset('img/restaurants/' . $restaurant->image)}}" alt="{{$restaurant->name}}">
+                <img class='rounded-lg shadow' src="{{asset('img/restaurants/' . $restaurant->image)}}" alt="{{$restaurant->name}}">
             </div>
             <div class="rest_main_info_text">
                 <div class="restaurant_name">
@@ -46,7 +46,7 @@
 
         <div class="rest_menu">
                 @foreach ($menu as $product)
-                <div class="prod_card">
+                <div class="prod_card shadow">
                     <div class="prod_pic">
                         <img src="{{$product->image}}" alt="{{$product->name}}">
                         <div class="prod_details">

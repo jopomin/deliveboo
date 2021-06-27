@@ -100,3 +100,12 @@ nav {
     color: #fff;
     background: #2f93b5;
 }
+
+.linear {
+    display: inline-block;
+}
+
+.width_four_card {
+    width: 86%;
+    margin: 0 auto;
+}
