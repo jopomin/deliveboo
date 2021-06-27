@@ -64,9 +64,10 @@ class OrderController extends Controller
             }
         }
         
-        session()->forget('cart');
+/*         session()->forget('cart'); */
         
-        return redirect()->route('restaurant_list')->with('success', 'Ordine effettuato');
+        return view('payment');
+        /* ->with('success', 'Ordine effettuato'); */
     }
     
     /**

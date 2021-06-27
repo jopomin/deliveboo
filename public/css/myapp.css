@@ -5,6 +5,7 @@
     text-decoration: none;
     list-style-type: none;
 }
+
 a:hover {
     text-decoration: none;
 }
@@ -18,14 +19,17 @@ nav {
     align-items: center;
     justify-content: space-between;
 }
+
 .logo {
     height: 80%;
     margin-left: 20px;
     cursor: pointer;
 }
+
 .logo img {
     height: 100%;
 }
+
 .button {
     font-family: 'Staatliches', cursive;
     padding: 10px 20px;
@@ -36,28 +40,91 @@ nav {
     margin: 0 10px;
     transition: 0.3s;
 }
+
 .button:hover {
     transition: 0.3s;
     color: white;
 }
+
 .button.login {
     background-color: #2f93b5;
 }
+
 .button.register {
     background-color: #7dc51e;
 }
+
 .button.login:hover {
     background-color: #215f74;
 }
+
 .button.register:hover {
     background-color: #50830e;
 }
+
 .content {
     background-image: url('../img/pattern.jpg');
 }
+
 .col-form-label, .typology label:first-child {
     font-weight: 600;
 }
+
 .typology {
     margin: 0 auto;
+}
+
+.boo_btn {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 10px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+
+.btn_form {
+    border-width: 0;
+    margin-top: 15px;
+}
+
+.btn_form i {
+    margin-right: 6px;
+}
+
+.create_btn {
+    color: #fff;
+    background: #7dc51e;
+}
+
+.back_btn {
+    color: #fff;
+    background: #2f93b5;
+}
+
+.linear {
+    display: inline-block;
+}
+
+.width_four_card {
+    width: 86%;
+    margin: 0 auto;
+}
+.title_text {
+    text-align: center;
+    font-size: 3em;
+    color: #2f93b5;
+    margin: 30px;
+}
+
+.fish-row {
+    border-bottom: #2f93b5 1px double;
+    border-top: #2f93b5 1px double;
+    height: 3px;
+    width: 100%; max-width: 100%;
+    margin: 50px 0 50px 0;
+}
+.hellohal {
+    width: 100px; margin: -33px auto 0; 
+    display: block; z-index: 100;
+    background: #ffffff;
 }

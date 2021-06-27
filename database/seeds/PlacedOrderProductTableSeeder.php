@@ -18,84 +18,105 @@ class PlacedOrderProductTableSeeder extends Seeder
         $product1->placed_orders()->attach([1], ['quantity' => 3]);
         $product2 = Product::find(2);
         $product2->placed_orders()->attach([1], ['quantity' => 2]);
+
         $product3 = Product::find(3);
         $product3->placed_orders()->attach([13], ['quantity' => 1]);
         $product5 = Product::find(5);
         $product5->placed_orders()->attach([13], ['quantity' => 1]);
+        
         $product2_14 = Product::find(2);
         $product2_14->placed_orders()->attach([14], ['quantity' => 4]);
         $product7_14 = Product::find(7);
         $product7_14->placed_orders()->attach([14], ['quantity' => 2]);
         $product9_14 = Product::find(9);
         $product9_14->placed_orders()->attach([14], ['quantity' => 2]);
+
         $product5_15 = Product::find(5);
         $product5_15->placed_orders()->attach([15], ['quantity' => 2]);
+
         $product1_16 = Product::find(1);
         $product1_16->placed_orders()->attach([16], ['quantity' => 2]);
         $product3_16 = Product::find(3);
         $product3_16->placed_orders()->attach([16], ['quantity' => 3]);
+
         $product1_17 = Product::find(1);
         $product1_17->placed_orders()->attach([17], ['quantity' => 2]);
         $product2_17 = Product::find(2);
         $product2_17->placed_orders()->attach([17], ['quantity' => 2]);
-        $product2_67 = Product::find(2);
-        $product2_67->placed_orders()->attach([67], ['quantity' => 5]);
-        $product10_67 = Product::find(10);
-        $product10_67->placed_orders()->attach([67], ['quantity' => 3]);
-        $product5_68 = Product::find(5);
-        $product5_68->placed_orders()->attach([68], ['quantity' => 2]);
-        $product4_69 = Product::find(4);
-        $product4_69->placed_orders()->attach([69], ['quantity' => 4]);
+
+        $product2_66 = Product::find(2);
+        $product2_66->placed_orders()->attach([66], ['quantity' => 5]);
+        $product10_66 = Product::find(10);
+        $product10_66->placed_orders()->attach([66], ['quantity' => 3]);
+
+        $product5_67 = Product::find(5);
+        $product5_67->placed_orders()->attach([67], ['quantity' => 2]);
+        
+        $product4_68 = Product::find(4);
+        $product4_68->placed_orders()->attach([68], ['quantity' => 4]);
+
+        $product1_69 = Product::find(1);
+        $product1_69->placed_orders()->attach([69], ['quantity' => 2]);
+        $product11_69 = Product::find(11);
+        $product11_69->placed_orders()->attach([69], ['quantity' => 1]);
+
         $product1_70 = Product::find(1);
-        $product1_70->placed_orders()->attach([70], ['quantity' => 2]);
-        $product11_70 = Product::find(11);
-        $product11_70->placed_orders()->attach([70], ['quantity' => 1]);
-        $product1_71 = Product::find(1);
-        $product1_71->placed_orders()->attach([71], ['quantity' => 3]);
-        $product9_71 = Product::find(9);
-        $product9_71->placed_orders()->attach([71], ['quantity' => 3]);
-        $product6_72 = Product::find(6);
-        $product6_72->placed_orders()->attach([72], ['quantity' => 2]);
+        $product1_70->placed_orders()->attach([70], ['quantity' => 3]);
+        $product9_70 = Product::find(9);
+        $product9_70->placed_orders()->attach([70], ['quantity' => 3]);
+
+        $product6_71 = Product::find(6);
+        $product6_71->placed_orders()->attach([71], ['quantity' => 2]);
+        $product7_71 = Product::find(7);
+        $product7_71->placed_orders()->attach([71], ['quantity' => 2]);
+
         $product7_72 = Product::find(7);
         $product7_72->placed_orders()->attach([72], ['quantity' => 2]);
-        $product7_73 = Product::find(7);
-        $product7_73->placed_orders()->attach([73], ['quantity' => 2]);
+        $product3_72 = Product::find(3);
+        $product3_72->placed_orders()->attach([72], ['quantity' => 4]);
+
         $product3_73 = Product::find(3);
-        $product3_73->placed_orders()->attach([73], ['quantity' => 4]);
-        $product3_74 = Product::find(3);
-        $product3_74->placed_orders()->attach([74], ['quantity' => 3]);
-        $product5_74 = Product::find(5);
-        $product5_74->placed_orders()->attach([74], ['quantity' => 2]);
+        $product3_73->placed_orders()->attach([73], ['quantity' => 3]);
+        $product5_73 = Product::find(5);
+        $product5_73->placed_orders()->attach([73], ['quantity' => 2]);
+
         $product2_74 = Product::find(2);
-        $product2_74->placed_orders()->attach([75], ['quantity' => 3]);
-        $product5_75 = Product::find(5);
-        $product5_75->placed_orders()->attach([75], ['quantity' => 1]);
-        $product1_76 = Product::find(1);
-        $product1_76->placed_orders()->attach([76], ['quantity' => 5]);
-        $product8_76 = Product::find(8);
-        $product8_76->placed_orders()->attach([76], ['quantity' => 4]);
+        $product2_74->placed_orders()->attach([74], ['quantity' => 3]);
+        $product5_74 = Product::find(5);
+        $product5_74->placed_orders()->attach([74], ['quantity' => 1]);
+
+        $product1_75 = Product::find(1);
+        $product1_75->placed_orders()->attach([75], ['quantity' => 5]);
+        $product8_75 = Product::find(8);
+        $product8_75->placed_orders()->attach([75], ['quantity' => 4]);
+
+        $product3_76 = Product::find(3);
+        $product3_76->placed_orders()->attach([76], ['quantity' => 4]);
+        $product6_76 = Product::find(6);
+        $product6_76->placed_orders()->attach([76], ['quantity' => 4]);
+
         $product3_77 = Product::find(3);
-        $product3_77->placed_orders()->attach([77], ['quantity' => 4]);
-        $product6_77 = Product::find(6);
-        $product6_77->placed_orders()->attach([77], ['quantity' => 4]);
-        $product3_78 = Product::find(3);
-        $product3_78->placed_orders()->attach([78], ['quantity' => 2]);
+        $product3_77->placed_orders()->attach([77], ['quantity' => 2]);
+        $product4_77 = Product::find(4);
+        $product4_77->placed_orders()->attach([77], ['quantity' => 3]);
+
         $product4_78 = Product::find(4);
-        $product4_78->placed_orders()->attach([78], ['quantity' => 3]);
-        $product4_79 = Product::find(4);
-        $product4_79->placed_orders()->attach([79], ['quantity' => 1]);
+        $product4_78->placed_orders()->attach([78], ['quantity' => 1]);
+        $product5_78 = Product::find(5);
+        $product5_78->placed_orders()->attach([78], ['quantity' => 1]);
+
         $product5_79 = Product::find(5);
-        $product5_79->placed_orders()->attach([79], ['quantity' => 1]);
-        $product5_80 = Product::find(5);
-        $product5_80->placed_orders()->attach([80], ['quantity' => 2]);
-        $product7_80 = Product::find(7);
-        $product7_80->placed_orders()->attach([80], ['quantity' => 2]);
-        $product1_81 = Product::find(1);
-        $product1_81->placed_orders()->attach([81], ['quantity' => 4]);
-        $product2_81 = Product::find(2);
-        $product2_81->placed_orders()->attach([81], ['quantity' => 2]);
+        $product5_79->placed_orders()->attach([79], ['quantity' => 2]);
+        $product7_79 = Product::find(7);
+        $product7_79->placed_orders()->attach([79], ['quantity' => 2]);
+
+        $product1_80 = Product::find(1);
+        $product1_80->placed_orders()->attach([80], ['quantity' => 4]);
+        $product2_80 = Product::find(2);
+        $product2_80->placed_orders()->attach([80], ['quantity' => 2]);
 
         /* SAPEMORE */
+
         $product17 = Product::find(17);
         $product17->placed_orders()->attach([2], ['quantity' => 2]);
         $product18 = Product::find(18);
@@ -114,7 +135,9 @@ class PlacedOrderProductTableSeeder extends Seeder
         $product15_20->placed_orders()->attach([20], ['quantity' => 1]);
         $product18_20 = Product::find(18);
         $product18_20->placed_orders()->attach([20], ['quantity' => 1]);
+
         /* ERBAVOGLIO */
+
         $product30 = Product::find(30);
         $product30->placed_orders()->attach([3], ['quantity' => 1]);
         $product33 = Product::find(33);
@@ -133,7 +156,9 @@ class PlacedOrderProductTableSeeder extends Seeder
         $product29_24->placed_orders()->attach([24], ['quantity' => 2]);
         $product32_24 = Product::find(32);
         $product32_24->placed_orders()->attach([24], ['quantity' => 2]);
+
         /* XO */
+
         $product40 = Product::find(40);
         $product40->placed_orders()->attach([4], ['quantity' => 2]);
         $product47 = Product::find(47);
@@ -152,7 +177,9 @@ class PlacedOrderProductTableSeeder extends Seeder
         $product50_28->placed_orders()->attach([28], ['quantity' => 2]);
         $product51_28 = Product::find(51);
         $product51_28->placed_orders()->attach([28], ['quantity' => 2]);
+
         /* L'INSOLITO */
+
         $product60 = Product::find(60);
         $product60->placed_orders()->attach([5], ['quantity' => 2]);
         $product61 = Product::find(61);
@@ -173,7 +200,9 @@ class PlacedOrderProductTableSeeder extends Seeder
         $product52_33->placed_orders()->attach([33], ['quantity' => 1]);
         $product54_33 = Product::find(54);
         $product54_33->placed_orders()->attach([33], ['quantity' => 1]);
+
         /* A RA GGHJAZZA */
+
         $product62 = Product::find(62);
         $product62->placed_orders()->attach([6], ['quantity' => 2]);
         $product65 = Product::find(65);
@@ -190,7 +219,9 @@ class PlacedOrderProductTableSeeder extends Seeder
         $product63_36->placed_orders()->attach([36], ['quantity' => 2]);
         $product69_36 = Product::find(69);
         $product69_36->placed_orders()->attach([36], ['quantity' => 1]);
+
         /* MOMO PIZZERIA */
+
         $product72 = Product::find(72);
         $product72->placed_orders()->attach([7], ['quantity' => 2]);
         $product73 = Product::find(73);
@@ -217,7 +248,9 @@ class PlacedOrderProductTableSeeder extends Seeder
         $product73_41->placed_orders()->attach([41], ['quantity' => 4]);
         $product74_42 = Product::find(74);
         $product74_42->placed_orders()->attach([42], ['quantity' => 2]);
+
         /* I-SUSHI */
+
         $product82 = Product::find(82);
         $product82->placed_orders()->attach([8], ['quantity' => 1]);
         $product85 = Product::find(85);
@@ -240,7 +273,9 @@ class PlacedOrderProductTableSeeder extends Seeder
         $product85_46->placed_orders()->attach([46], ['quantity' => 1]);
         $product88_46 = Product::find(88);
         $product88_46->placed_orders()->attach([46], ['quantity' => 2]);
+
         /* TIGELLA */
+
         $product97 = Product::find(97);
         $product97->placed_orders()->attach([9], ['quantity' => 2]);
         $product103 = Product::find(103);
@@ -263,7 +298,9 @@ class PlacedOrderProductTableSeeder extends Seeder
         $product99_50->placed_orders()->attach([50], ['quantity' => 2]);
         $product102_50 = Product::find(102);
         $product102_50->placed_orders()->attach([50], ['quantity' => 1]);
+
         /* PIZZA GOURMET */
+
         $product111 = Product::find(111);
         $product111->placed_orders()->attach([10], ['quantity' => 3]);
         $product113 = Product::find(113);
@@ -302,6 +339,7 @@ class PlacedOrderProductTableSeeder extends Seeder
         $product119_56->placed_orders()->attach([56], ['quantity' => 1]);
 
         /* DAI C'ANDAM */
+
         $product123 = Product::find(123);
         $product123->placed_orders()->attach([11], ['quantity' => 1]);
         $product124 = Product::find(124);
@@ -324,7 +362,9 @@ class PlacedOrderProductTableSeeder extends Seeder
         $product125_60->placed_orders()->attach([60], ['quantity' => 3]);
         $product131_60 = Product::find(131);
         $product131_60->placed_orders()->attach([60], ['quantity' => 2]);
+
         /* SOSTA EMILIANA */
+
         $product137 = Product::find(137);
         $product137->placed_orders()->attach([12], ['quantity' => 1]);
         $product139 = Product::find(139);
@@ -342,21 +382,17 @@ class PlacedOrderProductTableSeeder extends Seeder
         $product141_63 = Product::find(141);
         $product141_63->placed_orders()->attach([63], ['quantity' => 1]);
         $product137_64 = Product::find(137);
-        $product137_64->placed_orders()->attach([64], ['quantity' => 2]);
-        $product141_64 = Product::find(141);
-        $product141_64->placed_orders()->attach([64], ['quantity' => 2]);
-        $product137_65 = Product::find(137);
-        $product137_65->placed_orders()->attach([65], ['quantity' => 4]);
-        $product141_65 = Product::find(141);
-        $product141_65->placed_orders()->attach([65], ['quantity' => 2]);
-        $product140_65 = Product::find(140);
-        $product140_65->placed_orders()->attach([65], ['quantity' => 2]);
-        $product139_66 = Product::find(139);
-        $product139_66->placed_orders()->attach([66], ['quantity' => 2]);
-        $product138_66 = Product::find(138);
-        $product138_66->placed_orders()->attach([66], ['quantity' => 2]);
-        $product146_66 = Product::find(146);
-        $product146_66->placed_orders()->attach([66], ['quantity' => 2]);
+        $product137_64->placed_orders()->attach([64], ['quantity' => 4]);
+        $product138_64 = Product::find(138);
+        $product138_64->placed_orders()->attach([64], ['quantity' => 2]);
+        $product140_64 = Product::find(140);
+        $product140_64->placed_orders()->attach([64], ['quantity' => 2]);
+        $product135_65 = Product::find(135);
+        $product135_65->placed_orders()->attach([65], ['quantity' => 2]);
+        $product138_65 = Product::find(138);
+        $product138_65->placed_orders()->attach([65], ['quantity' => 2]);
+        $product146_65 = Product::find(146);
+        $product146_65->placed_orders()->attach([65], ['quantity' => 2]);
 
 }
 

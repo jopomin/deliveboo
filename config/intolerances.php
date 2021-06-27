@@ -2,16 +2,20 @@
 
 return [
     [
-        'name' => 'Lactose Free'
+        'name' => 'Lactose Free',
+        'icon' => 'lactose.png'
     ],
     [
-        'name' => 'Gluten Free'
+        'name' => 'Gluten Free',
+        'icon' => 'gluten.png'
     ],
     [
-        'name' => 'Vegetariano'
+        'name' => 'Vegetariano',
+        'icon' => 'veget.png'
     ],
     [
-        'name' => 'Vegano'
+        'name' => 'Vegano',
+        'icon' => 'veg.png'
     ],
 ];
 

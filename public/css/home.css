@@ -590,14 +590,27 @@ footer {
 
 .src_res_card {
     width: 200px;
+    height: 250px;
+    background: #2f93b5;
+    color: #fff;
     margin: 0 10px 10px 0;
     border-radius: 10px;
     overflow: hidden;
+    cursor: pointer;
+}
+
+.src_res_card_pic {
+    width: 200px;
+    height: 200px;
+}
+
+.src_res_card_pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .src_res_card_text {
-    background: #2f93b5;
-    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -609,12 +622,12 @@ footer {
     margin: 0;
 }
 
-.src_res_card:hover .src_res_card_text {
+.src_res_card:hover {
     background: #7dc51e;
     color: #fff;
 }
 
-.src_res_card:active .src_res_card_text {
+.src_res_card:active {
     background: #7dc51e;
     color: #215f74;
 }
@@ -623,16 +636,6 @@ footer {
     margin: 0 0 10px 0;
 }
 
-.src_res_card_img {
-    width: 200px;
-    height: 200px;
-}
-
-.src_res_card_img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
 .no_res {
     position: absolute;

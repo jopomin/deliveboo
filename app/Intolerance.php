@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Intolerance extends Model
 {
     protected $fillable = [
-        'name'
+        'name', 'icon'
     ];
 
     public function products() 
