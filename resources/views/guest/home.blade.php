@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 <ul>
-                    <li><a href="#">About</a></li>
+                    <li><a href="{{ route('about') }}">About</a></li>
                     <li><a href="{{ route('restaurant_list') }}">I nostri ristoranti</a></li>
                     @if (Route::has('login'))
                     @auth
