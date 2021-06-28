@@ -80,7 +80,7 @@ form button i {
 
 .restaurants_list_main_cont {
     font-family: 'Staatliches', cursive;
-    padding 30px 0;
+    padding: 30px 0;
     width: 100%;
     height: calc(100vh - (100px + 3rem));
     display: flex;
@@ -449,6 +449,37 @@ h1,
     font-size: 18px;
     font-weight: 600;
     margin: 25px 0 10px;
+}
+
+.cart_prod_box {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.prqt_box {
+    justify-content: flex-end;
+}
+
+.form-control:focus {
+    background: none;
+    border: 1px solid #555;
+    box-shadow: none;
+}
+
+label.form-check-label,
+.cart_prod_box h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+label.form-check-label {
+    color: #2f93b5;
+}
+
+.cart_prod_box h4 {
+    color: #555;
 }
 
 #name_label {

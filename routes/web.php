@@ -1,5 +1,6 @@
 <?php
 
+use App\Placed_order;
 use Braintree\Gateway;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -80,7 +81,6 @@ Route::delete('remove-from-cart', 'ProductController@cartdestroy')->name('delete
 Route::get('cartReset', 'ProductController@resetCart')->name('reset_cart');
 Route::get('order', 'OrderController@create')->name('orders.create');
 Route::post('order', 'OrderController@store')->name('orders.store');
-
 
 
 Route::get('/prova', 'ProductController@prova')->name('prova');
