@@ -235,7 +235,7 @@
                                 </div>
                                 <div class="src_results">
                                     <a class="src_res_card" v-if="filteredRest.length > 0" :href="'restaurant/'+rest.id" v-for="rest in filteredRest">
-                                        <div class="src_res_card_img">
+                                        <div class="src_res_card_pic">
                                             <img :src="'img/restaurants/'+rest.image" :alt="rest.name">
                                         </div>
                                         <div class="src_res_card_text">

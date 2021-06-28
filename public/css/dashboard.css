@@ -200,7 +200,7 @@ main {
     display: flex;
     justify-content: space-between;
     background-color: white;
-    padding: 60px 30px;
+    padding: 60px 20px;
     border-radius: 2px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     width: calc(100% / 4 - 20px);
