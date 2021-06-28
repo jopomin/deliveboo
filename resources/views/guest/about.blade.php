@@ -5,7 +5,7 @@
 <div class="about_main_cont">
     <div class="about_header">
         <h1>Il team di Deliveboo</h1>
-        <p class="about_text"><strong>Deliveboo</strong> è una web app sviluppata dal 'Team 5 - Classe 26' come progetto finale del corso intensivo per Full Stack Web Developers di Boolean Careers. <strong>Linguaggi/framework utilizzati:</strong> HTML, CSS, Vue.js, Laravel. Passando sulle schede dei singoli componenti del team si può accedere ai relativi profili Linkedin e GitHub.</p>
+        <p class="about_text"><strong>Deliveboo</strong> è un sito web sviluppato dal 'Team 5 - Classe 26' come progetto finale del corso intensivo per Full Stack Web Developers di Boolean Careers. <strong>Linguaggi/framework utilizzati:</strong> HTML, CSS, Vue.js, Laravel. Passando sulle schede dei singoli componenti del team si può accedere ai relativi profili Linkedin e GitHub.</p>
     </div>
     <div class="devs_card_cont">
         <div class="devs_card">
