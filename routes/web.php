@@ -88,6 +88,7 @@ Route::get('/prova', 'ProductController@prova')->name('prova');
 
 
 Route::get('/payment', function () {
+    
     $gateway = new Braintree\Gateway([
         'environment' => config('services.braintree.environment'),
         'merchantId' => config('services.braintree.merchantId'),
@@ -103,6 +104,8 @@ Route::get('/payment', function () {
 })->name('payment');
 
 Route::post('/thankyou', function (Request $request) {
+    $id_order = $_GET['id_order'];
+    $placed_orders = Placed_order::find($id_order);
     $gateway = new Braintree\Gateway([
         'environment' => config('services.braintree.environment'),
         'merchantId' => config('services.braintree.merchantId'),
@@ -128,7 +131,8 @@ Route::post('/thankyou', function (Request $request) {
 
     if ($result->success) {
         $transaction = $result->transaction;
-
+        $placed_orders->payment_status = 1;
+        $placed_orders->save();
         session()->forget('cart');
         
         return view('guest.thankyou')->with('success_message', 'Transaction successful. The ID is:'. $transaction->id);

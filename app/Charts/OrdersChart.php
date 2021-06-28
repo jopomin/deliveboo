@@ -25,6 +25,7 @@ class OrdersChart extends BaseChart
         ->join("products", "product_id", "=", "products.id")
         ->join("users", "user_id", "=", "users.id")
         ->where("user_id", "=", Auth::id())
+            ->where("payment_status", "=", 1)
             ->whereYear("placed_orders.created_at", "=", "2021")
             ->groupBy("month")
             ->orderBy("month")

@@ -21,6 +21,7 @@ class HomeController extends Controller
         ->join("users", "user_id", "=", "users.id")
         ->select("placed_order_id")
         ->where("user_id", "=", Auth::id())
+        ->where("payment_status", "=", 1)
         ->groupBy("placed_order_id")
         ->get();
 
@@ -37,6 +38,7 @@ class HomeController extends Controller
         ->join("products", "product_id", "=", "products.id")
         ->join("users", "user_id", "=", "users.id")
         ->where("user_id", "=", Auth::id())
+        ->where("payment_status", "=", 1)
         ->sum("total_price");
 
         $recent_orders = DB::table("placed_orders")
@@ -45,6 +47,7 @@ class HomeController extends Controller
         ->join("users", "user_id", "=", "users.id")
         ->select("products.name as name", "products.price as price", "quantity", "placed_orders.created_at as date")
         ->where("users.id", "=", Auth::id())
+        ->where("payment_status", "=", 1)
         ->limit(8)
         ->orderBy("date", "desc")
         ->get();
@@ -55,6 +58,7 @@ class HomeController extends Controller
         ->join("users", "user_id", "=", "users.id")
         ->select("placed_orders.customer_name as name", "placed_orders.address_delivery as address", "placed_orders.created_at as date")
         ->where("users.id", "=", Auth::id())
+        ->where("payment_status", "=", 1)
         ->limit(8)
         ->groupBy("placed_orders.id")
         ->orderBy("date", "desc")

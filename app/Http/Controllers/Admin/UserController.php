@@ -31,7 +31,7 @@ class UserController extends Controller
     }
 
     public function update(Request $request, User $user)
-    {
+    {        
         $data = $request->all();
         $this->valida($request);
         $user->name = $data['name'];
@@ -39,9 +39,8 @@ class UserController extends Controller
         $user->address = $data['address'];
         $user->reference_name = $data['reference_name'];
         $user->vat_number = $data['vat_number'];
-        $user->image = $data['image'];
         $user->update($data);
-
+        
         return redirect()->route('admin.users.index')->with('info', 'Utente modificato');
     }
 }

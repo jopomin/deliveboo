@@ -40,7 +40,7 @@
     </div>
     <div class="card_single">
         <div>
-            <h1>€{{$sale}}</h1>
+            <h1>€{{ceil($sale)}}</h1>
             <span>Guadagni</span>
         </div>
         <div class="statistic_image">

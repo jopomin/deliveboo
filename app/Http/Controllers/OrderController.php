@@ -85,11 +85,11 @@ class OrderController extends Controller
                 $new_order->products()->attach($data['products'][$i], ['quantity' => $cart[$data['products'][$i]]['quantity']]);
             }
         }
-        
+        $id_order = $new_order->id;
 /*         session()->forget('cart'); */
         
 /*         return redirect()->route('restaurant_list')->with('success', 'Ordine effettuato'); */
-        return redirect()->route('payment');
+        return redirect()->route('payment', compact('id_order'));
 
 
 

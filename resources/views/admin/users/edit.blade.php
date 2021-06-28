@@ -59,7 +59,7 @@
                 </div>
                 <div class="form-group">
                     @if($user->image)
-                        <img class="img-thumbnail" style="height:200px" src="" alt="">
+                        <img class="img-thumbnail" style="height:200px" src="{{asset('img\restaurants\\')}}{{Auth::user()->image}}" alt="">
                     @else
                         <p>Immagine non presente</p>
                         <label for="image">Immagine copertina</label>

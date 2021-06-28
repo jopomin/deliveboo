@@ -9,7 +9,7 @@
         </div>
         <div class="bottom_content">
             <h1>{{$user->name}}</h1>
-            <img src="{{asset('storage/' . $user->image)}}" style="width:250px" alt="">
+            <img src="{{asset('img\restaurants\\')}}{{Auth::user()->image}}" style="width:250px" alt="">
             <h2 style="margin-top: 10px">{{$user->reference_name}}</h2>
             <div>{{$user->address}}</div>
             <div>{{$user->email}}</div>
@@ -17,5 +17,5 @@
         </div>
     </div>
 </div>
-
+@include('sweetalert::alert')
 @endsection

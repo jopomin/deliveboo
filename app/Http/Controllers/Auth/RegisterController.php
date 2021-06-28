@@ -60,7 +60,8 @@ class RegisterController extends Controller
             'reference_name' => ['required', 'string', 'max:255'],
             'address' => ['required', 'string', 'max:255'],
             'vat_number' => ['required', 'string', 'size:11', 'unique:users'],
-            'rating' => ['numeric']
+            'image' => ['required', 'mimes:jpeg,jpg,bmp,svg,png,tiff'],
+            'rating' => ['sometimes', 'numeric']
         ]);
     }
     
@@ -71,23 +72,23 @@ class RegisterController extends Controller
     * @return \App\User
     */
     protected function create(array $data)
-    {   
-        $user = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'reference_name' => $data['reference_name'],
-            'address' => $data['address'],
-            'image' => $data['image'],
-            'vat_number' => $data['vat_number'],
-            'rating' => $data['rating'],
-            'typologies' => $data['typologies']
-        ]);
-        
-        if(request()->hasFile('image')) {
-            $image = request()->file('image')->getClientOriginalName();
-            request()->file('image')->storeAs('users', $image);
-            $user->update(['image' => $image]);
+    {
+        if (request()->hasFile('image')) {
+            $imageupload = request()->file('image');
+            $imagename = time() . '.' . $imageupload->getClientOriginalExtension();
+            $imagepath = public_path('/img/restaurants/');
+            $imageupload->move($imagepath, $imagename);
+            $user = User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'reference_name' => $data['reference_name'],
+                'address' => $data['address'],
+                'image' => $imagename,
+                'vat_number' => $data['vat_number'],
+                'rating' => $data['rating'],
+                'typologies' => $data['typologies']
+            ]);
         }
 
         $user->typologies()->sync($data['typologies']);

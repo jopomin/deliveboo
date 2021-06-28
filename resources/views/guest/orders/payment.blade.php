@@ -33,10 +33,11 @@
       $total = 0;
       foreach ($order as $item) {
         $total += $item['price'] * $item['quantity'];
+        $id_order = $_GET['id_order'];
       }?>
 <div class="content">
         
-    <form method="post" id="payment-form" action="{{ route('checkout')}}">
+    <form method="post" id="payment-form" action="{{ route('checkout', ['id_order' => $id_order])}}">
         @csrf
         <section>
             <label for="amount">

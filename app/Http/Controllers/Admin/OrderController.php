@@ -31,17 +31,6 @@ class OrderController extends Controller
     
     public function stats() {
 
-        $sales = DB::table("placed_orders")
-        ->selectRaw('SUM(total_price) AS price, MONTH(placed_orders.created_at) AS month')
-        ->join("placed_order_product", "placed_order_id", "=", "placed_orders.id")
-        ->join("products", "product_id", "=", "products.id")
-        ->join("users", "user_id", "=", "users.id")
-        ->where("user_id", "=", Auth::id())
-        ->whereYear("placed_orders.created_at", "=", "2021")
-        ->groupBy("month")
-        ->orderBy('month')
-        ->get();
-
         return view('admin.orders.stats');
     }
     /**
