@@ -29,6 +29,10 @@ Route::post('register', 'Auth\RegisterController@register');
 
 Route::get('/', 'HomeController@index')->name('guest.homepage');
 
+Route::get('/about', function() {
+    return view('guest.about');
+})->name('about');
+
 Route::prefix('admin')
     ->namespace('Admin')
     ->middleware('auth')
@@ -102,7 +106,7 @@ Route::get('/payment', function () {
     ]);
 })->name('payment');
 
-Route::post('/thankyou', function (Request $request) {
+Route::post('/thankyou', function (Request $request, Placed_order $placed_order) {
     $gateway = new Braintree\Gateway([
         'environment' => config('services.braintree.environment'),
         'merchantId' => config('services.braintree.merchantId'),
@@ -128,6 +132,8 @@ Route::post('/thankyou', function (Request $request) {
 
     if ($result->success) {
         $transaction = $result->transaction;
+
+        $orders = 
 
         session()->forget('cart');
         

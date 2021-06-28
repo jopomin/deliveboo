@@ -134,6 +134,7 @@ form button i {
     background: #2f93b5;
     overflow: hidden;
     cursor: pointer;
+    
 }
 
 .rest_page_card:nth-child(5n+5) {
