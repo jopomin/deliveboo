@@ -273,17 +273,9 @@ h1,
     background: #fff;
     overflow: hidden;
 }
-<<<<<<< HEAD
 .w_80 .prod_pic {
     width: auto;
 }
-=======
-
-.prod_card:nth-child(3n+3) {
-    margin: 0 0 15px 0;
-}
-
->>>>>>> f7e2c363883b67d5dafa93fbda67ea0920d6fe90
 .prod_pic {
     width: 390px;
     height: 180px;
@@ -566,7 +558,6 @@ label.form-check-label {
     color: #7dc51e;
 }
 
-<<<<<<< HEAD
 @media screen and (max-width: 900px) {
     .w_80 .prod_card {
         width: calc(100% / 2 - 40px);
@@ -578,58 +569,3 @@ label.form-check-label {
         width: 100%;
     }
 }
-=======
-
-/* MEDIA QUERIES */
-
-@media screen and (max-width: 1200px) {
-    
-    .rest_page_main_cont {
-        width: 795px;
-    }
-
-    .prod_card:nth-child(3n+3) {
-        margin: 0 15px 15px 0;
-    }
-
-    .prod_card:nth-child(2n+2) {
-        margin: 0 0 15px 0;
-    }
-
-}
-
-@media screen and (max-width: 800px) {
-
-    .rest_page_main_cont {
-        width: 400px;
-    }
-
-    .rest_main_info {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .rest_main_info_pic {
-        margin: 0 0 40px 0;
-    }
-
-    .rest_main_info_text {
-        width: 100%;
-    }
-
-    .rest_menu {
-        justify-content: center;
-    }
-
-    .prod_card {
-        margin: 0 0 15px 0;
-    }
-
-}
-
-@media screen and (max-width: 550px) {
-
-
-
-}
->>>>>>> f7e2c363883b67d5dafa93fbda67ea0920d6fe90

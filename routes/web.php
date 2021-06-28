@@ -107,13 +107,9 @@ Route::get('/payment', function () {
     ]);
 })->name('payment');
 
-<<<<<<< HEAD
 Route::post('/thankyou', function (Request $request) {
     $id_order = $_GET['id_order'];
     $placed_orders = Placed_order::find($id_order);
-=======
-Route::post('/thankyou', function (Request $request, Placed_order $placed_order) {
->>>>>>> f7e2c363883b67d5dafa93fbda67ea0920d6fe90
     $gateway = new Braintree\Gateway([
         'environment' => config('services.braintree.environment'),
         'merchantId' => config('services.braintree.merchantId'),
@@ -139,14 +135,8 @@ Route::post('/thankyou', function (Request $request, Placed_order $placed_order)
 
     if ($result->success) {
         $transaction = $result->transaction;
-<<<<<<< HEAD
         $placed_orders->payment_status = 1;
         $placed_orders->save();
-=======
-
-        $orders = 
-
->>>>>>> f7e2c363883b67d5dafa93fbda67ea0920d6fe90
         session()->forget('cart');
         
         return view('guest.thankyou')->with('success_message', 'Transaction successful. The ID is:'. $transaction->id);
