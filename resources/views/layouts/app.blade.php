@@ -26,11 +26,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/myapp.css') }}" rel="stylesheet">
     <link href="{{ asset('css/cart.css') }}" rel="stylesheet">
-<<<<<<< HEAD
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
-=======
     <link href="{{ asset('css/about.css') }}" rel="stylesheet">
->>>>>>> f7e2c363883b67d5dafa93fbda67ea0920d6fe90
 
     
 </head>
