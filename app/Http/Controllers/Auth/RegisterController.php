@@ -60,8 +60,7 @@ class RegisterController extends Controller
             'reference_name' => ['required', 'string', 'max:255'],
             'address' => ['required', 'string', 'max:255'],
             'vat_number' => ['required', 'string', 'size:11', 'unique:users'],
-            'image' => ['required', 'mimes:jpeg,jpg,bmp,svg,png,tiff'],
-            'rating' => ['sometimes', 'numeric']
+            'image' => ['required', 'mimes:jpeg,jpg,bmp,svg,png,tiff']
         ]);
     }
     
@@ -86,7 +85,6 @@ class RegisterController extends Controller
                 'address' => $data['address'],
                 'image' => $imagename,
                 'vat_number' => $data['vat_number'],
-                'rating' => $data['rating'],
                 'typologies' => $data['typologies']
             ]);
         }

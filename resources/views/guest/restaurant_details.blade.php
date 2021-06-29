@@ -74,7 +74,6 @@
                 </div>
                 <div class="rest_prod_cart">
                     <p class="rest_prod_price">€ {{$product->price}}</p>
-                    <a class="boo_btn create_btn add_prod_btn" href="{{ route('add_to_cart', ['id' => $product->id])}}"><i class="fas fa-cart-plus"></i></a>
                 </div>
             </div>
         </div>

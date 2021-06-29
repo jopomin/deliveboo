@@ -111,20 +111,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="rating" class="col-md-4 col-form-label text-md-right">{{ __('Valutazione') }}</label>
-                            
-                            <div class="col-md-6">
-                                <input id="rating" type="text" class="form-control @error('rating') is-invalid @enderror" name="rating" value="{{ old('rating') }}" required autocomplete="rating" autofocus>
-                                
-                                @error('rating')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-                        
+
                         <div class="form-group row">
                             <div class="col-md-3 typology">
                             <label for="typologies" class="text-md-right">{{ __('Tipologia') }}</label>

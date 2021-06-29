@@ -23,7 +23,7 @@ class ProductController extends Controller
     {
         $products = Product::where('user_id',$id)->orderBy('name')->get();
         $data = [
-            'products' => $products
+            'products' => $products,
         ];
 
         return view('products', $data);
