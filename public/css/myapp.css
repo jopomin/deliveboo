@@ -5,7 +5,9 @@
     text-decoration: none;
     list-style-type: none;
 }
-
+.container {
+    min-height: calc(100vh - 150px);
+}
 a:hover {
     text-decoration: none;
 }
@@ -64,6 +66,8 @@ nav {
 
 .content {
     background-image: url('../img/pattern.jpg');
+    padding: 20px;
+    min-height: calc(100vh - 150px);
 }
 
 .typology {
@@ -123,4 +127,9 @@ nav {
     width: 100px; margin: -33px auto 0; 
     display: block; z-index: 100;
     background: #ffffff;
+}
+
+input#total_price, input#amount {
+    background-color: transparent;
+    border: none;
 }

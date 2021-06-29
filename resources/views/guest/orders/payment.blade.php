@@ -44,16 +44,13 @@
                 <span class="input-label">Totale</span>
                 <div class="input-wrapper amount-wrapper">
                     {{-- Modificare il value per inserire il prezzo del carrello --}}
-                    <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{$total}}" readonly>
+                    <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{number_format($total, 2)}}" readonly>
                 </div>
             </label>
             <div id="dropin-container"></div>
         </section>
-
         <input id="nonce" name="payment_method_nonce" type="hidden" />
-        <button class="button" type="submit"><span>Test Transaction</span></button>
-
-
+        <button class="button" type="submit"><span>Paga ora</span></button>
     </form>
 </div>
 

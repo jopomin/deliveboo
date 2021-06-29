@@ -56,7 +56,7 @@
                 <label for="product_comment">Note per i prodotti (facoltative)</label>
                 <textarea class="form-control" name="product_comment" id="product_comment" cols="30" rows="10"></textarea>
                 <label for="total_price">Prezzo totale:</label>
-                <input class="form-control" type="numeric" id="total_price" name="total_price" value="{{$total}}" readonly>
+                <input class="form-control" type="numeric" id="total_price" name="total_price" value="{{number_format($total, 2)}}" readonly>
             </div>
             <div class="form-group">
                 <button type="submit" class="boo_btn create_btn pay_btn">

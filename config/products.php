@@ -11,7 +11,7 @@ return
         'price' => 10,
         'description' => 'Panino con doppio Hamburger, bacon e cheddar filante, insalata e pomodoro.',
         'image' => 'https://images.fidhouse.com/fidelitynews/wp-content/uploads/sites/6/2016/10/1476377789_0b563e27ac4eef4682e3e059e115ad8d2bcc7474-299601403.jpg',
-        'visible' => 0
+        'visible' => 1
     ],
 
     [
@@ -31,7 +31,7 @@ return
         'price' => 6,
         'description' => 'Una porzione di chips cotte al forno spolverate di pecorino, una porzione ricoperte da cheddar filante e una porzione di chips classiche.',
         'image' => 'https://blog.giallozafferano.it/rossellainpadella/wp-content/uploads/2015/05/chips-cacio-pepeUFF.jpg',
-        'visible' => 0
+        'visible' => 1
     ],
         //Secondi
     [
@@ -74,7 +74,7 @@ return
         'description' => 'Birra di grano bavarese per eccellenza, colore giallo e un’abbondante
         schiuma bianca persistente. Aroma di frutta bianca matura.',
         'image' => 'https://cdn.shopify.com/s/files/1/0514/3088/3500/products/confezione6bottiglie0_75godiva_1024x1024@2x.jpg?v=1607710446',
-        'visible' => 0
+        'visible' => 1
     ],
 
     [
@@ -115,7 +115,7 @@ return
         'price' => 5,
         'description' => 'Torta di produzione propria.',
         'image' => 'https://www.ricettedellanonna.net/wp-content/uploads/2021/03/torta-barozzi-620x407.jpg',
-        'visible' => 0
+        'visible' => 1
     ],
 
     [

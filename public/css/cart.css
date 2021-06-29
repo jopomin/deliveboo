@@ -24,6 +24,7 @@ input[type=checkbox] {
     width: 450px;
     padding: 20px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    z-index: 10;
 }
 #cart_toggle:checked + .dropdown .drop_menu {
     display: block;
@@ -482,7 +483,6 @@ h1,
 .os_order_info_section label {
     color: #2f93b5;
     font-size: 18px;
-    font-weight: 600;
     margin: 25px 0 10px;
 }
 
@@ -567,5 +567,12 @@ label.form-check-label {
 @media screen and (max-width: 550px) {
     .w_80 .prod_card {
         width: 100%;
+    }
+    .dropdown .drop_menu {
+        width: 300px;
+        left: -230px;
+    }
+    .logo {
+        height: 60%;
     }
 }
