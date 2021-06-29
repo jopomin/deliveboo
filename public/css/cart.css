@@ -77,105 +77,77 @@ form button i {
     font-size: 120%;
 }
 
-/* RESTAURANTS LIST */
+/* RESTAURANTS LIST PAGE */
 
-.restaurants_list_main_cont {
-    font-family: 'Staatliches', cursive;
-    padding: 30px 0;
-    width: 100%;
-    height: calc(100vh - (100px + 3rem));
+.rest_info {
+    height: 70px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.rest_info_typ {
+    height: 70px;
+    text-align: center;
+    padding-top: 10px;
+    color: black;
+    padding-top: 0;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
-.rest_list_box {
-    width: 1040px;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
+.rest_info_typ h2 {
+    margin-bottom: 0;
 }
 
-.rest_list_box {
-    -ms-overflow-style: none; /* for Internet Explorer, Edge */
-    scrollbar-width: none; /* for Firefox */
-    overflow-y: scroll; 
-}
-
-.rest_list_box::-webkit-scrollbar {
-    display: none; /* for Chrome, Safari, and Opera */
-}
-
-.rest_list_box h2 {
-    font-size: 36px;
+.w_80 .rest_info h2 {
+    margin-bottom: 0;
+    margin-top: 7px;
     color: #2f93b5;
-    margin: 20px 0;
+    text-align: center;
 }
 
-.rest_list_box h2:first-child {
-    margin-top: 0;
+.w_80 .rest_card:hover .rest_info h2 {
+    color: #7dc51e;
 }
 
-.rest_list_page_main_cont {
-    margin: 30px 0;
+.linear .rest_info {
+    justify-content: center;
 }
 
-.rest_page_card_cont {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+.w_80 .rest_card {
+    width: calc(100% / 3 - 40px);
+    margin: 20px;
 }
 
-.rest_page_card {
-    width: 200px;
+.rest_card {
+    width: 390px;
     height: 250px;
-    margin: 0 10px 10px 0;
+    margin: 0 15px 15px 0;
     border-radius: 10px;
-    background: #2f93b5;
+    background: #fff;
     overflow: hidden;
-    cursor: pointer;
-    
 }
 
-.rest_page_card:nth-child(5n+5) {
-    margin: 0 0 10px 0;
+.w_80 .rest_pic {
+    width: auto;
 }
 
-.rest_page_card_pic {
-    height: 200px;
-    width: 200px;
+.rest_pic {
+    width: 390px;
+    height: 180px;
+    position: relative;
 }
 
-.rest_page_card_pic img {
-    height: 100%;
+.rest_pic img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
-.rest_page_card_text {
-    height: 50px;
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #2f93b5;
-    color: #fff;
-}
+/* RESTAURANT DETAILS PAGE */
 
-.rest_page_card_text h3 {
-    font-size: 18px;
-    margin: 0;
-}
-
-.rest_page_card:hover .rest_page_card_text {
-    background: #7dc51e;
-    color: #fff;    
-}
-
-/* RESTAURANT SINGLE PAGE */
-
-.rest_page_main_cont {
+.rest_det_main_cont {
     margin: 0 auto;
     width: 1200px;
     min-height: calc(100vh - (100px + 3rem));
@@ -187,86 +159,41 @@ input[type="button"] {
     border: none;
 }
 
-.rest_main_info {
+.rest_det_main_info {
     margin-bottom: 40px;
     display: flex;
 }
 
-.rest_main_info_pic {
+.rest_det_main_info_pic {
     margin-right: 30px;
 }
 
-.rest_main_info_pic img {
+.rest_det_main_info_pic img {
     height: 200px;
     width: 200px;
     object-fit: cover;
 }
 
-.rest_btn {
+.rest_det_btn {
     margin-top: 15px;
 }
 
-.rest_header {
+.rest_det_header {
     font-weight: 600;
 }
 
 h1,
-.rest_info ul li {
+.rest_det_info ul li {
     color: #555;
 }
 
-.rest_menu {
+.rest_det_menu {
     display: flex;
-    height: 250px;
-    overflow-y: scroll;
     flex-wrap: wrap;
     font-family: 'Rubik', sans-serif;
 }
 
-.rest_menu {
-    -ms-overflow-style: none; /* for Internet Explorer, Edge */
-    scrollbar-width: none; /* for Firefox */
-    overflow-y: scroll; 
-}
-
-.rest_menu::-webkit-scrollbar {
-    display: none; /* for Chrome, Safari, and Opera */
-}
-
-.prod_info {
-    height: 70px;
-    text-align: center;
-    padding-top: 10px;
-}
-.prod_info_typ {
-    height: 70px;
-    text-align: center;
-    padding-top: 10px;
-    color: black;
-    padding-top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.prod_info_typ h2 {
-    margin-bottom: 0;
-}
-.w_80 .prod_info h2 {
-    margin-bottom: 0;
-    color: #2f93b5;
-    text-align: center;
-}
-.w_80 .prod_card:hover .prod_info h2 {
-    color: #7dc51e;
-}
-.linear .prod_info {
-    justify-content: center;
-}
-.w_80 .prod_card {
-    width: calc(100% / 3 - 40px);
-    margin: 20px;
-}
-.prod_card {
+.rest_prod_card {
     width: 390px;
     height: 250px;
     margin: 0 15px 15px 0;
@@ -274,16 +201,18 @@ h1,
     background: #fff;
     overflow: hidden;
 }
-.w_80 .prod_pic {
-    width: auto;
+
+.rest_prod_card:nth-child(3n+3) {
+    margin: 0 0 15px 0;
 }
-.prod_pic {
+
+.rest_prod_pic {
     width: 390px;
     height: 180px;
     position: relative;
 }
 
-.prod_details {
+.rest_prod_details {
     position: absolute;
     top: 0;
     left: 0;
@@ -298,48 +227,48 @@ h1,
     visibility: hidden;
 }
 
-.prod_descr {
+.rest_prod_descr {
     color: #fff;
     font-weight: 600;
     font-size: 14px;
     max-width: 50%;
 }
 
-.prod_pic img {
+.rest_prod_pic img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.prod_info {
+.rest_prod_info {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 13px 20px 10px;
 }
 
-.prod_text {
+.rest_prod_text {
     max-width: 50%;
     margin-right: 20px;
 }
 
-.prod_name {
+.rest_prod_name {
     color: #2f93b5;
 }
 
-.prod_name h2 {
+.rest_prod_name h2 {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 0;
 }
 
-.prod_cart {
+.rest_prod_cart {
     max-width: 50%;
     display: flex;
     align-items: center;
 }
 
-.prod_price {
+.rest_prod_price {
     font-size: 18px;
     text-align: right;
     margin-right: 15px;
@@ -369,7 +298,7 @@ h1,
     object-fit: cover;    
 }
 
-.prod_pic:hover .prod_details {
+.rest_prod_pic:hover .rest_prod_details {
     visibility: visible;
 }
 
@@ -558,14 +487,143 @@ label.form-check-label {
     color: #7dc51e;
 }
 
-@media screen and (max-width: 900px) {
-    .w_80 .prod_card {
+@media screen and (max-width: 1200px) {
+
+    .rest_det_main_cont {
+        width: 795px;
+    }
+
+    .rest_prod_card:nth-child(3n+3) {
+        margin: 0 15px 15px 0;
+    }
+
+    .rest_prod_card:nth-child(2n+2) {
+        margin: 0 0 15px 0;
+    }
+
+    .w_80 .rest_card {
         width: calc(100% / 2 - 40px);
     }
+
+}
+
+@media screen and (max-width: 900px) {
+
+    .rest_det_main_cont {
+        width: 550px;
+    }
+
+    .rest_det_main_info {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .rest_det_main_info_pic {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    
+    .rest_det_main_info_pic img {
+        height: 200px;
+        width: 390px;
+        object-fit: cover;
+    }
+    
+    .rest_det_btn {
+        margin-top: 15px;
+    }
+    
+    .rest_det_header {
+        font-weight: 600;
+    }
+    
+    .rest_det_info {
+        width: 390px;
+    }
+
+    h1,
+    .rest_det_info ul li {
+        color: #555;
+    }
+
+    .rest_det_menu {
+        justify-content: center;
+    }
+
+    .rest_prod_card:nth-child(3n+3) {
+        margin: 0 0 15px 0;
+    }
+
+    .rest_prod_card:nth-child(2n+2) {
+        margin: 0 0 15px 0;
+    }
+
+    .rest_prod_card {
+        margin: 0 0 15px 0;
+    }
+
+    .w_80 .rest_card {
+        width: calc(100% / 2 - 40px);
+    }
+
 }
 
 @media screen and (max-width: 550px) {
-    .w_80 .prod_card {
+
+    .rest_det_main_cont {
+        width: 390px;
+    }
+
+    .rest_det_main_info {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .rest_det_main_info_pic {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    
+    .rest_det_main_info_pic img {
+        height: 200px;
+        width: 390px;
+        object-fit: cover;
+    }
+    
+    .rest_det_btn {
+        margin-top: 15px;
+    }
+    
+    .rest_det_header {
+        font-weight: 600;
+    }
+    
+    .rest_det_info {
+        width: 390px;
+    }
+
+    h1,
+    .rest_det_info ul li {
+        color: #555;
+    }
+
+    .rest_det_menu {
+        justify-content: center;
+    }
+
+    .rest_prod_card:nth-child(3n+3) {
+        margin: 0 0 15px 0;
+    }
+
+    .rest_prod_card:nth-child(2n+2) {
+        margin: 0 0 15px 0;
+    }
+
+    .rest_prod_card {
+        margin: 0 0 15px 0;
+    }
+
+    .w_80 .rest_card {
         width: 100%;
     }
     .dropdown .drop_menu {

@@ -5,11 +5,11 @@
 <h1 class="title_text">I NOSTRI RISTORANTI</h1>
 <div class="w_80 width_four_card">
     @foreach ($restaurants as $restaurant)
-    <a class="prod_card linear shadow" href="{{ route('restaurants_details', $restaurant->id) }}">
-        <div class="prod_pic">
+    <a class="rest_card linear shadow" href="{{ route('restaurants_details', $restaurant->id) }}">
+        <div class="rest_pic">
             <img src="{{asset('img/restaurants/' . $restaurant->image)}}" alt="">
         </div>
-        <div class='prod_info'>
+        <div class='rest_info'>
             <h2>
                 {{$restaurant->name}}
             </h2>
@@ -56,12 +56,12 @@
 <h1 class='title_text'>LE TIPOLOGIE DI RISTORANTI</h1>
 <div class="w_80 width_four_card">
     @foreach ($typologies as $typology)
-    <div class="prod_card linear shadow">
-        <div class="prod_pic">
+    <div class="rest_card linear shadow">
+        <div class="rest_pic">
             <img src="{{asset('img/typologies/' . $typology->image)}}" alt="">
         </div>
         <div>
-            <div class='prod_info_typ'>
+            <div class='rest_info_typ'>
                 <h2>{{$typology->name}}</h2>
                 {{-- <a href="{{ route('restaurants_details', $restaurant->id) }}"><input class='boo_btn back_btn' type="button"value="VEDI RISTORANTE" ></a> --}}
             </div>  
