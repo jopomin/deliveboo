@@ -78,6 +78,7 @@
             </div>
         </div>
         @endif
+        @if($product->visible == 1)
         <div class="rest_prod_card shadow">
             <div class="rest_prod_pic">
                 <img src="{{$product->image}}" alt="{{$product->name}}">
@@ -106,6 +107,7 @@
                 </div>
             </div>
         </div>
+        @endif
         @endforeach
     </div>
 </div>
